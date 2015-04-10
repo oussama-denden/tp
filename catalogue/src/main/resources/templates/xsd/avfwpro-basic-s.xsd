@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.nordnet.com/soo/avfwpro" xmlns:avfwpro="http://www.nordnet.com/soo/avfwpro">
+  <xs:element name="productProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="avfwpro:customerData"/>
+      </xs:sequence>
+      <xs:attribute name="nnbo_offerName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="customerData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="avfwpro:email"/>
+        <xs:element ref="avfwpro:firstName"/>
+        <xs:element ref="avfwpro:lastName"/>
+        <xs:element ref="avfwpro:company"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="email" type="xs:NCName"/>
+  <xs:element name="firstName" type="xs:NCName"/>
+  <xs:element name="lastName" type="xs:NCName"/>
+  <xs:element name="company" type="xs:NCName"/>
+</xs:schema>

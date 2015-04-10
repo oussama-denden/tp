@@ -1,0 +1,9 @@
+<gilat:productProperties xmlns:gilat="http://www.nordnet.com/astra-gilat">
+	<gilat:offerElements>
+		<gilat:name>Product.Name</gilat:name>
+		<gilat:voip>Process.Is_VoIP</gilat:voip>
+		<gilat:freezone>True</gilat:freezone>
+		<gilat:abondance>False</gilat:abondance>
+		<gilat:optionPlus>Process.Is_option_plus</gilat:optionPlus>
+	</gilat:offerElements>
+</gilat:productProperties>

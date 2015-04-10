@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc 
+	http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/data/jpa 
+		http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- This will automatically locate any and all property files you have 
+		within your classpath, provided they fall under the META-INF/spring directory. 
+		The located property files are parsed and their values can then be used within 
+		application context files in the form of ${propertyKey}. -->
+	<context:property-placeholder location="classpath*:META-INF/spring/*.properties" />
+
+	<context:component-scan base-package="com.nordnet.topaze.businessprocess.core.service" />
+	<context:component-scan base-package="com.nordnet.topaze.businessprocess.core.mock" />
+	<context:component-scan base-package="com.nordnet.topaze.client.rest" />
+
+	<!-- <import resource="classpath:/META-INF/spring/applicationContextTracage.xml" 
+		/> -->
+	<bean id="restURLProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:rest-url.properties" />
+	</bean>
+
+	<bean id="topazeExceptionsProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:topaze-exceptions.properties" />
+	</bean>
+
+	<bean id="dynamicProperties"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<!-- check property file(s) every 1 second -->
+		<property name="cacheSeconds" value="1" />
+		<property name="basenames">
+			<list>
+				<value>dynamic</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Bean d'acces au Contexte -->
+	<bean id="applicationContextHolder"
+		class="com.nordnet.topaze.businessprocess.core.util.spring.ApplicationContextHolder" />
+
+	<bean id="netCatalogueMock"
+		class="com.nordnet.topaze.businessprocess.core.test.mock.NetCatalogueMock" />
+		
+				<!-- declaration du restTemplate avec un custom 'errorHandler' -->
+	<bean class="org.springframework.web.client.RestTemplate">
+    	<property name="errorHandler">
+        	<bean class="com.nordnet.topaze.client.rest.RestClientResponseErrorHandler" />
+    	</property>
+	</bean>
+	
+	<bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
+	
+
+</beans>

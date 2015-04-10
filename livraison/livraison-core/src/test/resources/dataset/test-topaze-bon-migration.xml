@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+<bonpreparation/>
+<bonpreparation id="1" reference="REF_BM_GLOBAL" dateInitiation="[now-7days]" datePreparation="[now]" idClient="ID_CLIENT" typeBonPreparation="MIGRATION" />
+<bonpreparation id="5" reference="REF_BM_GLOBAL_A_PREPARER" dateInitiation="[now-7days]" datePreparation="[now]" idClient="ID_CLIENT" typeBonPreparation="LIVRAISON"/>
+<bonpreparation id="2" reference="REF_BM_GLOBAL_MIGRATION" dateInitiation="[now-7days]" datePreparation="[now]" idClient="ID_CLIENT" typeBonPreparation="MIGRATION" />
+
+
+<elementlivraison id="2" reference="REF_EM1" addresseLivraison="ADR_LIV" bonPreparationParent="2" retailerPackagerId="CODE_PRODUIT" dateInitiation="[now-7days]" datePreparation="[now]" acteur="SWAP" referenceProduit="REF_PRODUIT" typeBonPreparation="MIGRATION" />
+<elementlivraison id="3" reference="REF_EM2" addresseLivraison="ADR_LIV" bonPreparationParent="2" retailerPackagerId="CODE_PRODUIT" dateInitiation="[now-7days]" datePreparation="[now]" acteur="SWAP" referenceProduit="REF_PRODUIT" typeBonPreparation="MIGRATION" />
+<elementlivraison id="4" reference="REF_EM3" addresseLivraison="ADR_LIV" bonPreparationParent="2" retailerPackagerId="CODE_PRODUIT" dateInitiation="[now-7days]" datePreparation="[now]" acteur="SWAP" referenceProduit="REF_PRODUIT_TEMPLATE" typeBonPreparation="MIGRATION" />
+
+<elementlivraison id="6" reference="REF_BM_A_RETOUR" addresseLivraison="ADR_LIV" bonPreparationParent="5" retailerPackagerId="CODE_PRODUIT" dateInitiation="[now-7days]" acteur="SWAP" referenceProduit="REF_PRODUIT" typeBonPreparation="MIGRATION" />
+<elementlivraison id="7" reference="REF_BM_A_LIVRE" addresseLivraison="ADR_LIV" bonPreparationParent="5" retailerPackagerId="CODE_PRODUIT" dateInitiation="[now-7days]" acteur="SWAP" referenceProduit="REF_PRODUIT" typeBonPreparation="MIGRATION" />
+<elementlivraison id="8" reference="REF_BM_A_PREPARER3" addresseLivraison="ADR_LIV" bonPreparationParent="5" retailerPackagerId="CODE_PRODUIT" dateInitiation="[now-7days]" acteur="PACKAGER" referenceProduit="REF_PRODUIT_TEMPLATE" typeBonPreparation="LIVRAISON" />
+</dataset>

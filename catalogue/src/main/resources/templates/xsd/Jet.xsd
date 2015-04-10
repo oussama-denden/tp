@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.nordnet.com/eutelsatsatellite" xmlns:eutelsat="http://www.nordnet.com/eutelsatsatellite">
+  <xs:element name="productProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="eutelsat:offerElements"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="offerElements">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="eutelsat:productId"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="productId" type="xs:NCName"/>
+</xs:schema>

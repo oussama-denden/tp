@@ -1,0 +1,14 @@
+<email:productProperties xmlns:email="http://www.nordnet.com/email"
+	nnbo_offerName="email.confort.m">
+	<email:emailbox>
+		<email:address>Client.Email.NN</email:address>
+		<email:name>Client.Email.FirstName</email:name>
+		<email:lastname>Client.Email.LastName</email:lastname>
+		<email:clearPassword />
+		<email:enableEmailReception>true</email:enableEmailReception>
+		<email:enableIMAP>true</email:enableIMAP>
+		<email:enablePOP3>true</email:enablePOP3>
+		<email:enableWebMail>true</email:enableWebMail>
+		<email:policy />
+	</email:emailbox>
+</email:productProperties>

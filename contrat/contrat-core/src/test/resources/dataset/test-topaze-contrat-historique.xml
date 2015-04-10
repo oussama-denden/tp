@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+
+<contrat id="1" reference="REF_GB" titre="Contrat Global"  dateValidation="[now]" dateDebutFacturation="[now]" dateDerniereFacture="[now]" dateFinContrat="[now]" datePreparation="[now]"  idClient="1"/>
+
+<elementcontractuel id="2" numeroCommande="1" modeFacturation="PREMIER_MOIS"  referenceProduit="PROD-01" titre="Contrat ABONNEMENT"  contratParent="1" montant="1000" typeTVA="S" dateValidation="[now]" dateDerniereFacture="[now]"  dateFinContrat="[now]"  datePreparation="[now]"  dateDebutFacturation="[now]" duree="2"/>
+<elementcontractuel id="3" numeroCommande="1" modeFacturation="DATE_ANNIVERSAIRE"  referenceProduit="PROD-02" titre="Contrat SERVICE"  contratParent="1"  montant="1000" typeTVA="S" dateValidation="[now]" dateDerniereFacture="[now]"  dateFinContrat="[now]"  datePreparation="[now]"  dateDebutFacturation="[now]" />
+<elementcontractuel id="4" numeroCommande="1" modeFacturation="DATE_ANNIVERSAIRE"  referenceProduit="PROD-03" titre="Contrat ABONNEMENT"  contratParent="1"  montant="1000" typeTVA="S" dateValidation="[now]" dateDerniereFacture="[now]"  dateFinContrat="[now]"  datePreparation="[now]"  dateDebutFacturation="[now]" />
+
+</dataset>

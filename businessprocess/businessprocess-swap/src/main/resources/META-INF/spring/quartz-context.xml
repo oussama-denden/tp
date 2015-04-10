@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="swapService"
+		class="com.nordnet.topaze.businessprocess.swap.service.SwapServiceImpl" />
+	<bean id="restClientSwap" class="com.nordnet.topaze.client.rest.RestClientSwap" />
+
+	<!-- Job Details Beans -->
+	<bean name="swapLivreJob"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="com.nordnet.topaze.businessprocess.swap.cron.SwapLivreJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="swapService" value-ref="swapService" />
+				<entry key="restClientSwap" value-ref="restClientSwap" />
+			</map>
+		</property>
+		<property name="durability" value="true" />
+	</bean>
+
+	<bean name="swapRetourJob"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="com.nordnet.topaze.businessprocess.swap.cron.SwapRetourJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="swapService" value-ref="swapService" />
+				<entry key="restClientSwap" value-ref="restClientSwap" />
+			</map>
+		</property>
+		<property name="durability" value="true" />
+	</bean>
+
+	<!-- Cron Triggers-->
+	<bean id="cronTriggerLivre" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="swapLivreJob" />
+		<property name="cronExpression" value="${cronSwap}" />
+	</bean>
+
+	<bean id="cronTriggerRetour" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="swapRetourJob" />
+		<property name="cronExpression" value="${cronSwap}" />
+	</bean>
+	
+	<!-- Job Schedulers Beans -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="jobDetails">
+			<list>
+				<ref bean="swapLivreJob" />
+				<ref bean="swapRetourJob" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="cronTriggerLivre" />
+				<ref bean="cronTriggerRetour" />
+			</list>
+		</property>
+	</bean>
+</beans>

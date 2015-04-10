@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "..\dtd\Topaze.dtd">
+<dataset>
+<bonpreparation id="1" reference="REF_BP_GLOBAL_RETOUR" addressLivraison="ADR_LIV" dateInitiation="[now-7days]" idClient="1"  typeBonPreparation="GLOBAL" etatBonPreparation="RECUPERATION"  />
+<bonpreparation id="2" reference="REF_SBP_1" addressLivraison="ADR_LIV" bonPreparationParent="1" codeProduit="CODE_PRODUIT_1" dateInitiation="[now-7days]" idClient="1"  outilLivraison="PACKAGER" referenceProduit="REF_PRODUIT_1" typeBonPreparation="ABONNEMENT" etatBonPreparation="RECUPERATION" />
+<bonpreparation id="3" reference="REF_SBP_2" addressLivraison="ADR_LIV" bonPreparationParent="1" codeProduit="CODE_PRODUIT_2" dateInitiation="[now-7days]" idClient="1"  outilLivraison="NETDELIVERY" referenceProduit="REF_PRODUIT_2" typeBonPreparation="LOCATION" etatBonPreparation="RECUPERATION"  codeColis="CODE_COLIS_TST_1"/>
+<bonpreparation id="4" reference="REF_SBP_3" addressLivraison="ADR_LIV" bonPreparationParent="1" codeProduit="CODE_PRODUIT_3" dateInitiation="[now-7days]" idClient="1"  outilLivraison="NETDELIVERY" referenceProduit="REF_PRODUIT_3" typeBonPreparation="LOCATION" etatBonPreparation="RECUPERATION"  codeColis="CODE_COLIS_TST_1"/>
+
+<bonpreparation id="5" reference="REF_BP_GLOBAL_RETOUR_NON_PREPARER" addressLivraison="ADR_LIV" dateInitiation="[now-7days]" idClient="1"  typeBonPreparation="GLOBAL" etatBonPreparation="RECUPERATION"  />
+<bonpreparation id="6" reference="REF_SBP_4" addressLivraison="ADR_LIV" bonPreparationParent="5" codeProduit="CODE_PRODUIT_1" dateInitiation="[now-7days]" datePreparation="[now]" idClient="1"  outilLivraison="PACKAGER" referenceProduit="REF_PRODUIT_1" typeBonPreparation="ABONNEMENT" etatBonPreparation="RECUPERATION" />
+<bonpreparation id="7" reference="REF_SBP_5" addressLivraison="ADR_LIV" bonPreparationParent="5" codeProduit="CODE_PRODUIT_2" dateInitiation="[now-7days]" datePreparation="[now]" idClient="1"  outilLivraison="NETDELIVERY" referenceProduit="REF_PRODUIT_2" typeBonPreparation="LOCATION" etatBonPreparation="RECUPERATION"  codeColis="CODE_COLIS_TST_1"/>
+<bonpreparation id="8" reference="REF_SBP_6" addressLivraison="ADR_LIV" bonPreparationParent="5" codeProduit="CODE_PRODUIT_3" dateInitiation="[now-7days]" idClient="1"  outilLivraison="NETDELIVERY" referenceProduit="REF_PRODUIT_3" typeBonPreparation="LOCATION" etatBonPreparation="RECUPERATION"  codeColis="CODE_COLIS_TST_1"/>
+</dataset>

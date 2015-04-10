@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="NetCommunication - Mail - Recette" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="NetCommMailWSImplServiceSoapBinding" type="wsdl" bindingName="{http://www.nordnet.com/netcommmail/schemas}NetCommMailWSImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommMail?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:endpoints><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommMail</con:endpoint></con:endpoints><con:operation isOneWay="false" action="getCommunication" name="getCommunication" bindingOperationName="getCommunication" type="Request-Response" outputName="getCommunicationResponse" inputName="getCommunication" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="CUSTOMER - 12345"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommMail</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommmail/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:getCommunication>
+         <!--Optional:-->
+         <idRecipient>12345</idRecipient>
+         <!--Optional:-->
+         <typeRecipient>CUSTOMER</typeRecipient>
+      </sch:getCommunication>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getCommunication"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getLastSentMail" name="getLastSentMail" bindingOperationName="getLastSentMail" type="Request-Response" outputName="getLastSentMailResponse" inputName="getLastSentMail" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommMail</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommmail/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:getLastSentMail>
+         <!--Optional:-->
+         <templateName>gero et</templateName>
+         <!--Optional:-->
+         <reference>sonoras imperio</reference>
+         <!--Optional:-->
+         <referenceType>CUSTOMER_REF</referenceType>
+      </sch:getLastSentMail>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getLastSentMail"/></con:call></con:operation><con:operation isOneWay="false" action="listSentMail" name="listSentMails" bindingOperationName="listSentMails" type="Request-Response" outputName="listSentMailsResponse" inputName="listSentMails" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommMail</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommmail/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:listSentMails>
+         <!--Optional:-->
+         <reference>gero et</reference>
+         <!--Optional:-->
+         <referenceType>SUBSCRIPTION_REF</referenceType>
+         <!--Optional:-->
+         <earliestDate>aeoliam venit</earliestDate>
+      </sch:listSentMails>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="listSentMail"/></con:call></con:operation><con:operation isOneWay="false" action="prepareLetterForNetPrint" name="prepareLetterForNetPrint" bindingOperationName="prepareLetterForNetPrint" type="Request-Response" outputName="prepareLetterForNetPrintResponse" inputName="prepareLetterForNetPrint" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommMail</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommmail/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:prepareLetterForNetPrint>
+         <!--Zero or more repetitions:-->
+         <pdfFiles>
+            <name>gero et</name>
+            <content>cid:697254215335</content>
+         </pdfFiles>
+         <!--Optional:-->
+         <offerKey>sonoras imperio</offerKey>
+         <!--Optional:-->
+         <adress>
+            <id>10</id>
+            <lastName>quae divum incedo</lastName>
+            <firstName>verrantque per auras</firstName>
+            <!--Optional:-->
+            <compagny>per auras</compagny>
+            <!--Optional:-->
+            <email>circum claustra</email>
+            <!--Optional:-->
+            <phoneNumber>nimborum in</phoneNumber>
+            <adress1>foedere certo</adress1>
+            <!--Optional:-->
+            <adress2>profundum quippe ferant</adress2>
+            <zipCode>et carcere</zipCode>
+            <city>iovis rapidum iaculata</city>
+            <country>speluncis abdidit</country>
+            <civility>MLLE</civility>
+         </adress>
+      </sch:prepareLetterForNetPrint>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="prepareLetterForNetPrint"/></con:call></con:operation><con:operation isOneWay="false" action="resendMail" name="resendMail" bindingOperationName="resendMail" type="Request-Response" outputName="resendMailResponse" inputName="resendMail" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommMail</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommmail/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:resendMail>
+         <mailId>10</mailId>
+         <!--Optional:-->
+         <userInfos>
+            <userName>gero et</userName>
+            <httpUserAgent>sonoras imperio</httpUserAgent>
+            <ip>quae divum incedo</ip>
+         </userInfos>
+      </sch:resendMail>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="resendMail"/></con:call></con:operation><con:operation isOneWay="false" action="sendMail" name="sendMail" bindingOperationName="sendMail" type="Request-Response" outputName="sendMailResponse" inputName="sendMail" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="NNCOM_LICENSE_SECURITOO_MOBILE"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommMail</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommmail/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:sendMail>
+         <templateName>NNCOM_LICENSE_SECURITOO_MOBILE</templateName>
+         <idRecipient>12345</idRecipient>
+         <typeRecipient>CUSTOMER</typeRecipient>
+         <dynamicFields>
+            <Field>
+               <name>DATE_JOUR</name>
+               <value>2015-02-12</value>
+            </Field>
+            <Field>
+               <name>DEST</name>
+               <value>gilles.masy.ext@nordnet.fr</value>
+            </Field>
+            <Field>
+               <name>CUSTOMER_REF</name>
+               <value>ref_client</value>
+            </Field>
+            <Field>
+               <name>PRODUCT_REF</name>
+               <value>ref_product</value>
+            </Field>
+            <!-- <Field>
+               <name>COMPANY</name>
+               <value>SII</value>
+            </Field> -->
+            <Field>
+               <name>CIV_PRENOM_NOM</name>
+               <value>Mr Masy Gilles</value>
+            </Field>
+            <Field>
+               <name>NOMPACK</name>
+               <value>Securitoo Mobile</value>
+            </Field>
+            <Field>
+               <name>LICENSE_KEY</name>
+               <value>num_licence_key</value>
+            </Field>
+         </dynamicFields>
+         <userInfos>
+            <userName>admin</userName>
+            <httpUserAgent>test</httpUserAgent>
+            <ip>192.168.0.1</ip>
+         </userInfos>
+      </sch:sendMail>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="sendMail"/><con:wsrmConfig version="1.2"/></con:call><con:call name="NNCOM_ETAT_AD_RENEW"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommMail</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommmail/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:sendMail>
+         <templateName>NNCOM_ETAT_AD_RENEW</templateName>
+         <idRecipient>12345</idRecipient>
+         <typeRecipient>CUSTOMER</typeRecipient>
+         <dynamicFields>
+            <Field>
+               <name>DATE_JOUR</name>
+               <value>2015-02-12</value>
+            </Field>
+            <Field>
+               <name>DEST</name>
+               <value>gilles.masy.ext@nordnet.fr</value>
+            </Field>
+            <Field>
+               <name>CUSTOMER_REF</name>
+               <value>ref_client</value>
+            </Field>
+            <Field>
+               <name>PRODUCT_REF</name>
+               <value>ref_product</value>
+            </Field>
+            <!-- <Field>
+               <name>COMPANY</name>
+               <value>SII</value>
+            </Field> -->
+            <Field>
+               <name>CIV_PRENOM_NOM</name>
+               <value>Mr Masy Gilles</value>
+            </Field>
+            <Field>
+               <name>NOMPACK</name>
+               <value>Securitoo Mobile</value>
+            </Field>
+            <Field>
+               <name>LICENSE_KEY</name>
+               <value>num_licence_key</value>
+            </Field>
+         </dynamicFields>
+         <userInfos>
+            <userName>admin</userName>
+            <httpUserAgent>test</httpUserAgent>
+            <ip>192.168.0.1</ip>
+         </userInfos>
+      </sch:sendMail>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="sendMail"/><con:wsrmConfig version="1.2"/></con:call><con:call name="NNCOM_ETAT_AD"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommMail</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommmail/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:sendMail>
+         <templateName>NNCOM_ETAT_AD</templateName>
+         <idRecipient>12345</idRecipient>
+         <typeRecipient>CUSTOMER</typeRecipient>
+         <dynamicFields>
+            <Field>
+               <name>DATE_JOUR</name>
+               <value>2015-02-12</value>
+            </Field>
+            <Field>
+               <name>DEST</name>
+               <value>gilles.masy.ext@nordnet.fr</value>
+            </Field>
+            <Field>
+               <name>CUSTOMER_REF</name>
+               <value>ref_client</value>
+            </Field>
+            <Field>
+               <name>PRODUCT_REF</name>
+               <value>ref_product</value>
+            </Field>
+            <!-- <Field>
+               <name>COMPANY</name>
+               <value>SII</value>
+            </Field> -->
+            <Field>
+               <name>CIV_PRENOM_NOM</name>
+               <value>Mr Masy Gilles</value>
+            </Field>
+            <Field>
+               <name>NOMPACK</name>
+               <value>Securitoo Mobile</value>
+            </Field>
+            <Field>
+               <name>LICENSE_KEY</name>
+               <value>num_licence_key</value>
+            </Field>
+         </dynamicFields>
+         <userInfos>
+            <userName>admin</userName>
+            <httpUserAgent>test</httpUserAgent>
+            <ip>192.168.0.1</ip>
+         </userInfos>
+      </sch:sendMail>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="sendMail"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="COMPLEMENT" username="topaze" password="1e2cec460349e1218f534ce337042895" wssType="PasswordText">http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommMail</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>

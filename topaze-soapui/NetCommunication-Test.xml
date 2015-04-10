@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="NetCommunication - Recette" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="NetCommSmsWSImplServiceSoapBinding" type="wsdl" bindingName="{http://www.nordnet.com/netcommsms/schemas}NetCommSmsWSImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://10.100.119.12:8080/net-comm-ws-0.0.1-SNAPSHOT/services/netCommSms?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:endpoints><con:endpoint>http://10.100.119.12:8080/net-comm-ws-0.0.1-SNAPSHOT/services/netCommSms</con:endpoint></con:endpoints><con:operation isOneWay="false" action="getCommunication" name="getCommunication" bindingOperationName="getCommunication" type="Request-Response" outputName="getCommunicationResponse" inputName="getCommunication" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.100.119.12:8080/net-comm-ws-0.0.1-SNAPSHOT/services/netCommSms</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommsms/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:getCommunication>
+         <!--Optional:-->
+         <idRecipient>?</idRecipient>
+         <!--Optional:-->
+         <typeRecipient>?</typeRecipient>
+         <!--Optional:-->
+         <startDate>?</startDate>
+         <!--Optional:-->
+         <endDate>?</endDate>
+      </sch:getCommunication>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getCommunication"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getLastSentSMS" name="getLastSentSMS" bindingOperationName="getLastSentSMS" type="Request-Response" outputName="getLastSentSMSResponse" inputName="getLastSentSMS" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.100.119.12:8080/net-comm-ws-0.0.1-SNAPSHOT/services/netCommSms</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommsms/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:getLastSentSMS>
+         <!--Optional:-->
+         <templateName>?</templateName>
+         <!--Optional:-->
+         <reference>?</reference>
+         <!--Optional:-->
+         <referenceType>?</referenceType>
+      </sch:getLastSentSMS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getLastSentSMS"/></con:call></con:operation><con:operation isOneWay="false" action="ListSentSMS" name="listSentSMS" bindingOperationName="listSentSMS" type="Request-Response" outputName="listSentSMSResponse" inputName="listSentSMS" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.100.119.12:8080/net-comm-ws-0.0.1-SNAPSHOT/services/netCommSms</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommsms/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:listSentSMS>
+         <!--Optional:-->
+         <reference>?</reference>
+         <!--Optional:-->
+         <referenceType>?</referenceType>
+         <!--Optional:-->
+         <earliestDate>?</earliestDate>
+      </sch:listSentSMS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ListSentSMS"/></con:call></con:operation><con:operation isOneWay="false" action="resendSMS" name="resendSMS" bindingOperationName="resendSMS" type="Request-Response" outputName="resendSMSResponse" inputName="resendSMS" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.100.119.12:8080/net-comm-ws-0.0.1-SNAPSHOT/services/netCommSms</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommsms/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:resendSMS>
+         <smsId>?</smsId>
+         <!--Optional:-->
+         <userInfos>
+            <userName>?</userName>
+            <httpUserAgent>?</httpUserAgent>
+            <ip>?</ip>
+         </userInfos>
+      </sch:resendSMS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="resendSMS"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="sendSMS" name="sendSMS" bindingOperationName="sendSMS" type="Request-Response" outputName="sendSMSResponse" inputName="sendSMS" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.100.119.12:8080/net-comm-ws-0.0.1-SNAPSHOT/services/netCommSms</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommsms/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:sendSMS>
+         <!--Optional:-->
+         <templateName>?</templateName>
+         <!--Optional:-->
+         <dynamicFields>
+            <!--1 or more repetitions:-->
+            <Field>
+               <name>?</name>
+               <value>?</value>
+            </Field>
+         </dynamicFields>
+         <!--Optional:-->
+         <userInfos>
+            <userName>?</userName>
+            <httpUserAgent>?</httpUserAgent>
+            <ip>?</ip>
+         </userInfos>
+      </sch:sendSMS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="sendSMS"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

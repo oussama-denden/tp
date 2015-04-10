@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+
+<contrat id="1" reference="REF_GB" titre="Contrat Pour Test" datePreparation="[now]"  />
+<contrat id="2" reference="REF_GB2" titre="Contrat Pour Test" datePreparation="[now]" />
+
+<elementcontractuel id="2" numeroCommande="1" modePaiement="CHEQUE" periodicite="2" modeFacturation="PREMIER_MOIS"    referenceProduit="PROD-01" typeProduit="SERVICE" titre="Contrat ABONNEMENT" numEC="1" datePreparation="[now]" dateDebutFacturation="[now]" contratParent="1" referenceModePaiement="rum-0001" montant="22" typeTVA="S"/>
+<elementcontractuel id="3" numeroCommande="1" modePaiement="CHEQUE" periodicite="3" modeFacturation="DATE_ANNIVERSAIRE"  referenceProduit="PROD-02" typeProduit="BIEN" titre="Contrat LOCATION" numEC="2" datePreparation="[now]" dateDebutFacturation="[now]" contratParent="1" referenceModePaiement="rum-0002" montant="12" typeTVA="S"/>
+<elementcontractuel id="4" numeroCommande="1" modePaiement="CHEQUE" modeFacturation="PREMIER_MOIS"  referenceProduit="PROD-03" titre="Contrat VENTE" typeProduit="BIEN" numEC="3"  datePreparation="[now]" dateDebutFacturation="[now]" contratParent="1" referenceModePaiement="rum-0003" montant="12" typeTVA="S"/>
+<elementcontractuel id="5" numeroCommande="1" modePaiement="CHEQUE" modeFacturation="DATE_ANNIVERSAIRE"  referenceProduit="PROD-01" titre="Contrat VENTE" typeProduit="BIEN" numEC="4" datePreparation="[now]" contratParent="1" referenceModePaiement="rum-0004" montant="12" typeTVA="S"/>
+<elementcontractuel id="6" numeroCommande="1" modePaiement="CHEQUE" periodicite="1" modeFacturation="PREMIER_MOIS"    referenceProduit="PROD-01" titre="Contrat ABONNEMENT" typeProduit="BIEN" numEC="5" datePreparation="[now]" dateDebutFacturation="[now]" contratParent="2" referenceModePaiement="rum-0001" montant="22" typeTVA="S"/>
+
+<fraiscontrat id="1" titre="Frais de dossier" montant="20" typeFrais="CREATION" />
+
+<elementcontractuelfraiscontrat elementcontractuel_id="2" frais_id="1"/>
+
+
+
+<reduction id="1" contextReduction="GLOBAL" numEC="5" referenceContrat="REF_GB2" typeValeur="MOIS" valeur="2" typeReduction="CONTRAT" isAffichableSurFacture="false" />
+</dataset>

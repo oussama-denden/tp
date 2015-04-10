@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="NetStock-Qualif" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="NetStockServiceSoapBinding" type="wsdl" bindingName="{http://www.nordnet.com/net-stock}NetStockServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService?wsdl"><con:part><con:url>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.nordnet.com/net-stock" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://www.nordnet.com/net-stock" xmlns:intf="http://www.nordnet.com/net-stock" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns1="http://www.nordnet.com/net-stock/types" xmlns:tns2="http://www.nordnet.com/net-stock/faults" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+  <wsdl:types>
+    <schema targetNamespace="http://www.nordnet.com/net-stock/types" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://www.nordnet.com/net-stock/faults"/>
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <complexType name="TProductCategory">
+        <sequence>
+          <element name="id" nillable="true" type="xsd:long"/>
+          <element name="label" nillable="true" type="xsd:string"/>
+          <element name="description" nillable="true" type="xsd:string"/>
+          <element name="socId" nillable="true" type="xsd:long"/>
+          <element name="visible" nillable="true" type="xsd:boolean"/>
+          <element name="type" nillable="true" type="xsd:boolean"/>
+          <element name="products" nillable="true" type="tns1:TArrayOfProduct"/>
+        </sequence>
+      </complexType>
+      <complexType name="TArrayOfProductCategory">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:TProductCategory[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="TStockMovementCategory">
+        <sequence>
+          <element name="value_" nillable="true" type="xsd:string"/>
+          <element name="id" type="xsd:int"/>
+        </sequence>
+      </complexType>
+      <complexType name="TStockMovementType">
+        <sequence>
+          <element name="id" nillable="true" type="xsd:long"/>
+          <element name="label" nillable="true" type="xsd:string"/>
+          <element name="stockMovements" nillable="true" type="tns1:TArrayOfStockMovement"/>
+          <element name="stockmovementcategory" nillable="true" type="tns1:TStockMovementCategory"/>
+        </sequence>
+      </complexType>
+      <complexType name="TArrayOfWarehouse">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:TWarehouse[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="TUser">
+        <sequence>
+          <element name="admin" nillable="true" type="xsd:int"/>
+          <element name="creationDate" nillable="true" type="xsd:dateTime"/>
+          <element name="cryptedPassword" nillable="true" type="xsd:string"/>
+          <element name="dateLastLogin" nillable="true" type="xsd:dateTime"/>
+          <element name="datePreviousLogin" nillable="true" type="xsd:dateTime"/>
+          <element name="egroupwareId" nillable="true" type="xsd:long"/>
+          <element name="email" nillable="true" type="xsd:string"/>
+          <element name="entity" nillable="true" type="xsd:int"/>
+          <element name="firstName" nillable="true" type="xsd:string"/>
+          <element name="id" nillable="true" type="xsd:long"/>
+          <element name="lang" nillable="true" type="xsd:string"/>
+          <element name="ldapSid" nillable="true" type="xsd:long"/>
+          <element name="login" nillable="true" type="xsd:string"/>
+          <element name="memberId" nillable="true" type="xsd:long"/>
+          <element name="moduleComm" nillable="true" type="xsd:int"/>
+          <element name="moduleCompta" nillable="true" type="xsd:int"/>
+          <element name="name" nillable="true" type="xsd:string"/>
+          <element name="note" nillable="true" type="xsd:string"/>
+          <element name="officeFax" nillable="true" type="xsd:string"/>
+          <element name="officePhone" nillable="true" type="xsd:string"/>
+          <element name="password" nillable="true" type="xsd:string"/>
+          <element name="phenixLogin" nillable="true" type="xsd:string"/>
+          <element name="phenixPass" nillable="true" type="xsd:string"/>
+          <element name="products" nillable="true" type="tns1:TArrayOfProduct"/>
+          <element name="socPeopleId" nillable="true" type="xsd:long"/>
+          <element name="societyId" nillable="true" type="xsd:long"/>
+          <element name="statut" nillable="true" type="xsd:boolean"/>
+          <element name="stockMovements" nillable="true" type="tns1:TArrayOfStockMovement"/>
+          <element name="tempPassword" nillable="true" type="xsd:string"/>
+          <element name="updateDate" nillable="true" type="xsd:dateTime"/>
+          <element name="userMobile" nillable="true" type="xsd:string"/>
+          <element name="warehouses" nillable="true" type="tns1:TArrayOfWarehouse"/>
+          <element name="webcalLogin" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="TStockMovement">
+        <sequence>
+          <element name="creationDate" nillable="true" type="xsd:dateTime"/>
+          <element name="id" nillable="true" type="xsd:long"/>
+          <element name="movementType" nillable="true" type="xsd:int"/>
+          <element name="nbrProducts" nillable="true" type="xsd:int"/>
+          <element name="price" nillable="true" type="xsd:double"/>
+          <element name="product" nillable="true" type="tns1:TProduct"/>
+          <element name="stockMovementType" nillable="true" type="tns1:TStockMovementType"/>
+          <element name="updateDate" nillable="true" type="xsd:dateTime"/>
+          <element name="userAuthor" nillable="true" type="tns1:TUser"/>
+          <element name="warehouse" nillable="true" type="tns1:TWarehouse"/>
+        </sequence>
+      </complexType>
+      <complexType name="TArrayOfStockMovement">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:TStockMovement[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="TWarehouse">
+        <sequence>
+          <element name="address" nillable="true" type="xsd:string"/>
+          <element name="city" nillable="true" type="xsd:string"/>
+          <element name="countryId" nillable="true" type="xsd:long"/>
+          <element name="creationDate" nillable="true" type="xsd:dateTime"/>
+          <element name="description" nillable="true" type="xsd:string"/>
+          <element name="id" nillable="true" type="xsd:long"/>
+          <element name="label" nillable="true" type="xsd:string"/>
+          <element name="placeName" nillable="true" type="xsd:string"/>
+          <element name="pmpVal" nillable="true" type="xsd:double"/>
+          <element name="productStocks" nillable="true" type="tns1:TArrayOfProductStock"/>
+          <element name="status" nillable="true" type="xsd:boolean"/>
+          <element name="stockMovements" nillable="true" type="tns1:TArrayOfStockMovement"/>
+          <element name="updateDate" nillable="true" type="xsd:dateTime"/>
+          <element name="userAuthor" nillable="true" type="tns1:TUser"/>
+          <element name="zipCode" nillable="true" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="TProductStock">
+        <sequence>
+          <element name="id" nillable="true" type="xsd:long"/>
+          <element name="updateDate" nillable="true" type="xsd:dateTime"/>
+          <element name="currentStock" nillable="true" type="xsd:double"/>
+          <element name="pmp" nillable="true" type="xsd:double"/>
+          <element name="product" nillable="true" type="tns1:TProduct"/>
+          <element name="warehouse" nillable="true" type="tns1:TWarehouse"/>
+        </sequence>
+      </complexType>
+      <complexType name="TArrayOfProductStock">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:TProductStock[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="TProduct">
+        <sequence>
+          <element name="barcode" nillable="true" type="xsd:string"/>
+          <element name="barcodeTypeId" nillable="true" type="xsd:long"/>
+          <element name="canvas" nillable="true" type="xsd:string"/>
+          <element name="creationDate" nillable="true" type="xsd:dateTime"/>
+          <element name="description" nillable="true" type="xsd:string"/>
+          <element name="duration" nillable="true" type="xsd:string"/>
+          <element name="finished" nillable="true" type="xsd:boolean"/>
+          <element name="id" nillable="true" type="xsd:long"/>
+          <element name="importKey" nillable="true" type="xsd:string"/>
+          <element name="label" nillable="true" type="xsd:string"/>
+          <element name="note" nillable="true" type="xsd:string"/>
+          <element name="partNumber" nillable="true" type="xsd:string"/>
+          <element name="pmp" nillable="true" type="xsd:double"/>
+          <element name="price" nillable="true" type="xsd:double"/>
+          <element name="priceBaseType" nillable="true" type="xsd:string"/>
+          <element name="priceMin" nillable="true" type="xsd:double"/>
+          <element name="priceMinTTC" nillable="true" type="xsd:double"/>
+          <element name="priceTTC" nillable="true" type="xsd:double"/>
+          <element name="productCategories" nillable="true" type="tns1:TArrayOfProductCategory"/>
+          <element name="productStocks" nillable="true" type="tns1:TArrayOfProductStock"/>
+          <element name="productTypeId" nillable="true" type="xsd:long"/>
+          <element name="ref" nillable="true" type="xsd:string"/>
+          <element name="sale" nillable="true" type="xsd:boolean"/>
+          <element name="stock" nillable="true" type="xsd:int"/>
+          <element name="stockAlertThreshold" nillable="true" type="xsd:int"/>
+          <element name="stockLoc" nillable="true" type="xsd:string"/>
+          <element name="stockMinimumThreshold" nillable="true" type="xsd:int"/>
+          <element name="stockMovements" nillable="true" type="tns1:TArrayOfStockMovement"/>
+          <element name="tvaRate" nillable="true" type="xsd:double"/>
+          <element name="updateDate" nillable="true" type="xsd:dateTime"/>
+          <element name="userAuthor" nillable="true" type="tns1:TUser"/>
+          <element name="volume" nillable="true" type="xsd:double"/>
+          <element name="volumeUnits" nillable="true" type="xsd:boolean"/>
+          <element name="weight" nillable="true" type="xsd:double"/>
+          <element name="weightUnits" nillable="true" type="xsd:boolean"/>
+        </sequence>
+      </complexType>
+      <complexType name="TArrayOfProduct">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:TProduct[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="TArrayOfString">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:string[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="TArrayOfLong">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="xsd:long[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="TArrayOfStockMovementType">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:TStockMovementType[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+      <complexType name="TArrayOfUser">
+        <complexContent>
+          <restriction base="soapenc:Array">
+            <attribute ref="soapenc:arrayType" wsdl:arrayType="tns1:TUser[]"/>
+          </restriction>
+        </complexContent>
+      </complexType>
+    </schema>
+    <schema targetNamespace="http://www.nordnet.com/net-stock/faults" xmlns="http://www.w3.org/2001/XMLSchema">
+      <import namespace="http://www.nordnet.com/net-stock/types"/>
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <complexType abstract="true" name="GenericFault">
+        <sequence>
+          <element name="errorCode" nillable="true" type="xsd:string"/>
+          <element name="reason" type="xsd:string"/>
+        </sequence>
+      </complexType>
+      <complexType name="DataSourceFault">
+        <complexContent>
+          <extension base="tns2:GenericFault">
+            <sequence/>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="NotFoundFault">
+        <complexContent>
+          <extension base="tns2:GenericFault">
+            <sequence/>
+          </extension>
+        </complexContent>
+      </complexType>
+      <complexType name="NotRespectedRulesFault">
+        <complexContent>
+          <extension base="tns2:GenericFault">
+            <sequence/>
+          </extension>
+        </complexContent>
+      </complexType>
+    </schema>
+  </wsdl:types>
+  <wsdl:message name="isProductInStockRequest">
+    <wsdl:part name="productRef" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="NotFoundFault">
+    <wsdl:part name="fault" type="tns2:NotFoundFault"/>
+  </wsdl:message>
+  <wsdl:message name="addStockMovementResponse">
+    <wsdl:part name="addStockMovementReturn" type="tns1:TArrayOfStockMovement"/>
+  </wsdl:message>
+  <wsdl:message name="getWarehousesRequest"></wsdl:message>
+  <wsdl:message name="getVersionRequest"></wsdl:message>
+  <wsdl:message name="getPackContentsResponse">
+    <wsdl:part name="packContentsReturn" type="tns1:TArrayOfProduct"/>
+  </wsdl:message>
+  <wsdl:message name="getStockMovementsByProductAndWarehouseResponse">
+    <wsdl:part name="getStockMovementsByProductAndWarehouseReturn" type="tns1:TArrayOfStockMovement"/>
+  </wsdl:message>
+  <wsdl:message name="getWarehousesStockInformationRequest">
+    <wsdl:part name="warehouseIds" type="tns1:TArrayOfLong"/>
+  </wsdl:message>
+  <wsdl:message name="getVersionResponse">
+    <wsdl:part name="getVersionReturn" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="addStockMovementRequest">
+    <wsdl:part name="productRef" type="xsd:string"/>
+    <wsdl:part name="warehouseId" type="soapenc:long"/>
+    <wsdl:part name="quantity" type="soapenc:int"/>
+    <wsdl:part name="userId" type="soapenc:long"/>
+    <wsdl:part name="stockMovementTypeId" type="soapenc:long"/>
+  </wsdl:message>
+  <wsdl:message name="getStockMovementTypesResponse">
+    <wsdl:part name="getStockMovementTypesReturn" type="tns1:TArrayOfStockMovementType"/>
+  </wsdl:message>
+  <wsdl:message name="isProductInStockResponse">
+    <wsdl:part name="isProductInStockReturn" type="soapenc:boolean"/>
+  </wsdl:message>
+  <wsdl:message name="getStockMovementTypesRequest"></wsdl:message>
+  <wsdl:message name="getProductsStockInformationResponse">
+    <wsdl:part name="getProductsStockInformationReturn" type="tns1:TArrayOfProductStock"/>
+  </wsdl:message>
+  <wsdl:message name="getProductCategoriesStockInformationRequest">
+    <wsdl:part name="productCategoriesIds" type="tns1:TArrayOfLong"/>
+  </wsdl:message>
+  <wsdl:message name="getProductCategoriesStockInformationResponse">
+    <wsdl:part name="getProductCategoriesStockInformationReturn" type="tns1:TArrayOfProductStock"/>
+  </wsdl:message>
+  <wsdl:message name="getUsersResponse">
+    <wsdl:part name="getUsersReturn" type="tns1:TArrayOfUser"/>
+  </wsdl:message>
+  <wsdl:message name="DataSourceFault">
+    <wsdl:part name="fault" type="tns2:DataSourceFault"/>
+  </wsdl:message>
+  <wsdl:message name="getStockMovementsByProductAndWarehouseRequest">
+    <wsdl:part name="productRef" type="xsd:string"/>
+    <wsdl:part name="warehouseId" type="soapenc:long"/>
+  </wsdl:message>
+  <wsdl:message name="getPacksResponse">
+    <wsdl:part name="packsReturn" type="tns1:TArrayOfProduct"/>
+  </wsdl:message>
+  <wsdl:message name="getProductsStockInformationRequest">
+    <wsdl:part name="productRefs" type="tns1:TArrayOfString"/>
+  </wsdl:message>
+  <wsdl:message name="getWarehousesResponse">
+    <wsdl:part name="getWarehousesReturn" type="tns1:TArrayOfWarehouse"/>
+  </wsdl:message>
+  <wsdl:message name="getProductsResponse">
+    <wsdl:part name="getProductsReturn" type="tns1:TArrayOfProduct"/>
+  </wsdl:message>
+  <wsdl:message name="getPackContentsRequest">
+    <wsdl:part name="productRef" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="isProductInStockByLabelResponse">
+    <wsdl:part name="isProductInStockByLabelReturn" type="soapenc:boolean"/>
+  </wsdl:message>
+  <wsdl:message name="getWarehousesStockInformationResponse">
+    <wsdl:part name="getWarehousesStockInformationReturn" type="tns1:TArrayOfProductStock"/>
+  </wsdl:message>
+  <wsdl:message name="getUsersRequest"></wsdl:message>
+  <wsdl:message name="NotRespectedRulesFault">
+    <wsdl:part name="fault" type="tns2:NotRespectedRulesFault"/>
+  </wsdl:message>
+  <wsdl:message name="getProductCategoriesResponse">
+    <wsdl:part name="getProductCategoriesReturn" type="tns1:TArrayOfProductCategory"/>
+  </wsdl:message>
+  <wsdl:message name="getPacksRequest">
+    <wsdl:part name="productRef" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:message name="getProductsRequest"></wsdl:message>
+  <wsdl:message name="getProductCategoriesRequest"></wsdl:message>
+  <wsdl:message name="isProductInStockByLabelRequest">
+    <wsdl:part name="productLabel" type="xsd:string"/>
+  </wsdl:message>
+  <wsdl:portType name="NetStockService">
+    <wsdl:operation name="getPacks" parameterOrder="productRef">
+      <wsdl:input message="impl:getPacksRequest" name="getPacksRequest"/>
+      <wsdl:output message="impl:getPacksResponse" name="getPacksResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getPackContents" parameterOrder="productRef">
+      <wsdl:input message="impl:getPackContentsRequest" name="getPackContentsRequest"/>
+      <wsdl:output message="impl:getPackContentsResponse" name="getPackContentsResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <wsdl:input message="impl:getVersionRequest" name="getVersionRequest"/>
+      <wsdl:output message="impl:getVersionResponse" name="getVersionResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="isProductInStock" parameterOrder="productRef">
+      <wsdl:input message="impl:isProductInStockRequest" name="isProductInStockRequest"/>
+      <wsdl:output message="impl:isProductInStockResponse" name="isProductInStockResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="isProductInStockByLabel" parameterOrder="productLabel">
+      <wsdl:input message="impl:isProductInStockByLabelRequest" name="isProductInStockByLabelRequest"/>
+      <wsdl:output message="impl:isProductInStockByLabelResponse" name="isProductInStockByLabelResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getProductsStockInformation" parameterOrder="productRefs">
+      <wsdl:input message="impl:getProductsStockInformationRequest" name="getProductsStockInformationRequest"/>
+      <wsdl:output message="impl:getProductsStockInformationResponse" name="getProductsStockInformationResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWarehousesStockInformation" parameterOrder="warehouseIds">
+      <wsdl:input message="impl:getWarehousesStockInformationRequest" name="getWarehousesStockInformationRequest"/>
+      <wsdl:output message="impl:getWarehousesStockInformationResponse" name="getWarehousesStockInformationResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getProductCategoriesStockInformation" parameterOrder="productCategoriesIds">
+      <wsdl:input message="impl:getProductCategoriesStockInformationRequest" name="getProductCategoriesStockInformationRequest"/>
+      <wsdl:output message="impl:getProductCategoriesStockInformationResponse" name="getProductCategoriesStockInformationResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="addStockMovement" parameterOrder="productRef warehouseId quantity userId stockMovementTypeId">
+      <wsdl:input message="impl:addStockMovementRequest" name="addStockMovementRequest"/>
+      <wsdl:output message="impl:addStockMovementResponse" name="addStockMovementResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+      <wsdl:fault message="impl:NotRespectedRulesFault" name="NotRespectedRulesFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <wsdl:input message="impl:getProductsRequest" name="getProductsRequest"/>
+      <wsdl:output message="impl:getProductsResponse" name="getProductsResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getWarehouses">
+      <wsdl:input message="impl:getWarehousesRequest" name="getWarehousesRequest"/>
+      <wsdl:output message="impl:getWarehousesResponse" name="getWarehousesResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getStockMovementTypes">
+      <wsdl:input message="impl:getStockMovementTypesRequest" name="getStockMovementTypesRequest"/>
+      <wsdl:output message="impl:getStockMovementTypesResponse" name="getStockMovementTypesResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <wsdl:input message="impl:getUsersRequest" name="getUsersRequest"/>
+      <wsdl:output message="impl:getUsersResponse" name="getUsersResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getProductCategories">
+      <wsdl:input message="impl:getProductCategoriesRequest" name="getProductCategoriesRequest"/>
+      <wsdl:output message="impl:getProductCategoriesResponse" name="getProductCategoriesResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="getStockMovementsByProductAndWarehouse" parameterOrder="productRef warehouseId">
+      <wsdl:input message="impl:getStockMovementsByProductAndWarehouseRequest" name="getStockMovementsByProductAndWarehouseRequest"/>
+      <wsdl:output message="impl:getStockMovementsByProductAndWarehouseResponse" name="getStockMovementsByProductAndWarehouseResponse"/>
+      <wsdl:fault message="impl:DataSourceFault" name="DataSourceFault"/>
+      <wsdl:fault message="impl:NotFoundFault" name="NotFoundFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetStockServiceSoapBinding" type="impl:NetStockService">
+    <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getPacks">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getPacksRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getPacksResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPackContents">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getPackContentsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getPackContentsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getVersionRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getVersionResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isProductInStock">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="isProductInStockRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="isProductInStockResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isProductInStockByLabel">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="isProductInStockByLabelRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="isProductInStockByLabelResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductsStockInformation">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getProductsStockInformationRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getProductsStockInformationResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWarehousesStockInformation">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getWarehousesStockInformationRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getWarehousesStockInformationResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductCategoriesStockInformation">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getProductCategoriesStockInformationRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getProductCategoriesStockInformationResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addStockMovement">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="addStockMovementRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="addStockMovementResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotRespectedRulesFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotRespectedRulesFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProducts">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getProductsRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getProductsResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getWarehouses">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getWarehousesRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getWarehousesResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getStockMovementTypes">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getStockMovementTypesRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getStockMovementTypesResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getUsers">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getUsersRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getUsersResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProductCategories">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getProductCategoriesRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getProductCategoriesResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getStockMovementsByProductAndWarehouse">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getStockMovementsByProductAndWarehouseRequest">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:input>
+      <wsdl:output name="getStockMovementsByProductAndWarehouseResponse">
+        <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:output>
+      <wsdl:fault name="DataSourceFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataSourceFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotFoundFault">
+        <wsdlsoap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="NotFoundFault" namespace="http://www.nordnet.com/net-stock" use="encoded"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NetStockSrv">
+    <wsdl:port binding="impl:NetStockServiceSoapBinding" name="NetStockService">
+      <wsdlsoap:address location="http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="addStockMovement" bindingOperationName="addStockMovement" type="Request-Response" outputName="addStockMovementResponse" inputName="addStockMovementRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:addStockMovement soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <productRef xsi:type="xsd:string">?</productRef>
+         <warehouseId xsi:type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">?</warehouseId>
+         <quantity xsi:type="soapenc:int" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">?</quantity>
+         <userId xsi:type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">?</userId>
+         <stockMovementTypeId xsi:type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">?</stockMovementTypeId>
+      </net:addStockMovement>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/addStockMovementRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getPackContents" bindingOperationName="getPackContents" type="Request-Response" outputName="getPackContentsResponse" inputName="getPackContentsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:getPackContents soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <productRef xsi:type="xsd:string">?</productRef>
+      </net:getPackContents>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/getPackContentsRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getPacks" bindingOperationName="getPacks" type="Request-Response" outputName="getPacksResponse" inputName="getPacksRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:getPacks soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <productRef xsi:type="xsd:string">avfw.basic</productRef>
+      </net:getPacks>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/getPacksRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getProductCategories" bindingOperationName="getProductCategories" type="Request-Response" outputName="getProductCategoriesResponse" inputName="getProductCategoriesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:getProductCategories soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/getProductCategoriesRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getProductCategoriesStockInformation" bindingOperationName="getProductCategoriesStockInformation" type="Request-Response" outputName="getProductCategoriesStockInformationResponse" inputName="getProductCategoriesStockInformationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:getProductCategoriesStockInformation soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <productCategoriesIds xsi:type="typ:TArrayOfLong" soapenc:arrayType="xsd:long[]" xmlns:typ="http://www.nordnet.com/net-stock/types"/>
+      </net:getProductCategoriesStockInformation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/getProductCategoriesStockInformationRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getProducts" bindingOperationName="getProducts" type="Request-Response" outputName="getProductsResponse" inputName="getProductsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:getProducts soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/getProductsRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getProductsStockInformation" bindingOperationName="getProductsStockInformation" type="Request-Response" outputName="getProductsStockInformationResponse" inputName="getProductsStockInformationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:getProductsStockInformation soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <productRefs xsi:type="typ:TArrayOfString" soapenc:arrayType="xsd:string[]" xmlns:typ="http://www.nordnet.com/net-stock/types"/>
+      </net:getProductsStockInformation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/getProductsStockInformationRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getStockMovementsByProductAndWarehouse" bindingOperationName="getStockMovementsByProductAndWarehouse" type="Request-Response" outputName="getStockMovementsByProductAndWarehouseResponse" inputName="getStockMovementsByProductAndWarehouseRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:getStockMovementsByProductAndWarehouse soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <productRef xsi:type="xsd:string">?</productRef>
+         <warehouseId xsi:type="soapenc:long" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">?</warehouseId>
+      </net:getStockMovementsByProductAndWarehouse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/getStockMovementsByProductAndWarehouseRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getStockMovementTypes" bindingOperationName="getStockMovementTypes" type="Request-Response" outputName="getStockMovementTypesResponse" inputName="getStockMovementTypesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:getStockMovementTypes soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/getStockMovementTypesRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getUsers" bindingOperationName="getUsers" type="Request-Response" outputName="getUsersResponse" inputName="getUsersRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:getUsers soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/getUsersRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getVersion" bindingOperationName="getVersion" type="Request-Response" outputName="getVersionResponse" inputName="getVersionRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:getVersion soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/getVersionRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getWarehouses" bindingOperationName="getWarehouses" type="Request-Response" outputName="getWarehousesResponse" inputName="getWarehousesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:getWarehouses soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/getWarehousesRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getWarehousesStockInformation" bindingOperationName="getWarehousesStockInformation" type="Request-Response" outputName="getWarehousesStockInformationResponse" inputName="getWarehousesStockInformationRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:getWarehousesStockInformation soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <warehouseIds xsi:type="typ:TArrayOfLong" soapenc:arrayType="xsd:long[]" xmlns:typ="http://www.nordnet.com/net-stock/types"/>
+      </net:getWarehousesStockInformation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/getWarehousesStockInformationRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="isProductInStock" bindingOperationName="isProductInStock" type="Request-Response" outputName="isProductInStockResponse" inputName="isProductInStockRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:isProductInStock soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <productRef xsi:type="xsd:string">?</productRef>
+      </net:isProductInStock>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/isProductInStockRequest"/></con:call></con:operation><con:operation isOneWay="false" action="" name="isProductInStockByLabel" bindingOperationName="isProductInStockByLabel" type="Request-Response" outputName="isProductInStockByLabelResponse" inputName="isProductInStockByLabelRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-stock-ws-1.0.x/services/NetStockService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-stock">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:isProductInStockByLabel soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+         <productLabel xsi:type="xsd:string">?</productLabel>
+      </net:isProductInStockByLabel>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/net-stock/NetStockService/isProductInStockByLabelRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

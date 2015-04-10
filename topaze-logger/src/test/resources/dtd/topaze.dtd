@@ -1,0 +1,15 @@
+<!ELEMENT dataset (
+    tracage*)>
+
+<!ELEMENT tracage EMPTY>
+<!ATTLIST tracage
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED
+    descr CDATA #IMPLIED
+    ip CDATA #IMPLIED
+    reference CDATA #IMPLIED
+    target CDATA #IMPLIED
+    type CDATA #IMPLIED
+    user CDATA #IMPLIED
+>
+

@@ -1,0 +1,41 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.nordnet.topaze</groupId>
+		<artifactId>topaze</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>client-rest</artifactId>
+	<packaging>jar</packaging>
+	<name>client-rest</name>
+	<description>client-rest</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.nordnet.topaze</groupId>
+			<artifactId>topaze-exception</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nordnet.common</groupId>
+			<artifactId>valueObject</artifactId>
+			<version>1.0.3-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>client-rest</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>${version.java}</source>
+					<target>${version.java}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

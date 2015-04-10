@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/jee 
+        http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<import resource="classpath:/META-INF/spring/applicationContextTracage-dev.xml" />
+
+	<!-- This will automatically locate any and all property files you have 
+		within your classpath, provided they fall under the META-INF/spring directory. 
+		The located property files are parsed and their values can then be used within 
+		application context files in the form of ${propertyKey}. -->
+	<context:property-placeholder location="classpath*:META-INF/spring/*.properties" />
+
+	<context:component-scan base-package="com.nordnet.topaze.businessprocess.facture" />
+	<context:component-scan base-package="com.nordnet.topaze.client.rest" />
+
+
+	<!-- Load activeMq related configuration -->
+	<import resource="activemq-context.xml" />
+
+	<!-- Load Quartz related configuration -->
+	<import resource="quartz-context.xml" />
+
+	<bean id="restURLProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:rest-url.properties" />
+	</bean>
+
+	<bean class="org.springframework.web.client.RestTemplate">
+		<property name="errorHandler">
+			<bean class="com.nordnet.topaze.client.rest.RestClientResponseErrorHandler" />
+		</property>
+	</bean>
+
+	<bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />
+
+	<bean id="topazeExceptionsProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:topaze-exceptions.properties" />
+	</bean>
+
+	<bean id="dynamicProperties"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<!-- check property file(s) every 1 second -->
+		<property name="cacheSeconds" value="1" />
+		<property name="basenames">
+			<list>
+				<value>file:${dynamic.properties}</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="log4jInitialization"
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="targetClass" value="org.springframework.util.Log4jConfigurer" />
+		<property name="targetMethod" value="initLogging" />
+		<property name="arguments">
+			<list>
+				<value>classpath:/log4j-dev.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Bean d'acces au Contexte -->
+	<bean id="applicationContextHolder"
+		class="com.nordnet.topaze.businessprocess.facture.utils.spring.ApplicationContextHolder" />
+
+	<bean id="sendAlert"
+		class="com.nordnet.topaze.businessprocess.facture.mock.SendAlertMock" />
+
+	<bean id="netCatalogClientFake" class="com.nordnet.netcatalog.ws.client.fake.NetCatalogClientFake" />
+	<bean id="netCatalogClient" class="com.nordnet.netcatalog.ws.client.NetCatalogClient" />
+</beans>

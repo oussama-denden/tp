@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+<bonpreparation/>
+<bonpreparation id="1" reference="REF_BP_LIVRAISON" dateInitiation="[now-7days]"  idClient="ID_CLIENT" typeBonPreparation="LIVRAISON" />
+<bonpreparation id="2" reference="REF_BP__RETOUR" dateInitiation="[now-7days]"  dateLivraisonTermine="[now]" idClient="ID_CLIENT" typeBonPreparation="RETOUR" />
+<bonpreparation id="3" reference="REF_BP_LIVRAISON" dateInitiation="[now-7days]" dateLivraisonTermine="[now]"  idClient="ID_CLIENT" typeBonPreparation="MIGRATION"/>
+
+<elementlivraison id="4" reference="REF_SBP1" addresseLivraison="ADR_LIV" bonPreparationParent="1" retailerPackagerId="CODE_PRODUIT" codeColis="1" dateInitiation="[now-7days]"   dateLivraisonTermine="[now]"  acteur="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="LIVRAISON" />
+<elementlivraison id="5" reference="REF_SBP2" addresseLivraison="ADR_LIV" bonPreparationParent="1" retailerPackagerId="CODE_PRODUIT" codeColis="2" dateInitiation="[now-7days]"  dateLivraisonTermine="[now]" acteur="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="LIVRAISON" />
+<elementlivraison id="6" reference="REF_SBP3" addresseLivraison="ADR_LIV" bonPreparationParent="1" retailerPackagerId="CODE_PRODUIT" codeColis="3" dateInitiation="[now-7days]"  dateLivraisonTermine="[now]" acteur="NETDELIVERY" referenceProduit="REF_PRODUIT_TEMPLATE" typeBonPreparation="LIVRAISON" />
+
+<elementlivraison id="7" reference="REF_SBP1" addresseLivraison="ADR_LIV" bonPreparationParent="3" retailerPackagerId="CODE_PRODUIT_1" codeColis="5" datePreparation="[now]"  dateInitiation="[now-7days]"  dateLivraisonTermine="[now+7days]" dateRetourTermine="[now+7days]"  acteur="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="MIGRATION" />
+<elementlivraison id="8" reference="REF_SBP1" addresseLivraison="ADR_LIV" bonPreparationParent="3" retailerPackagerId="CODE_PRODUIT" codeColis="6" dateInitiation="[now-7days]" dateLivraisonTermine="[now]"   acteur="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="LIVRAISON" />
+<elementlivraison id="9" reference="REF_SBP1" addresseLivraison="ADR_LIV" bonPreparationParent="3" retailerPackagerId="CODE_PRODUIT" codeColis="7" dateInitiation="[now-7days]" dateLivraisonTermine="[now]"   acteur="PACKAGER" referenceProduit="REF_PRODUIT_TEMPLATE" typeBonPreparation="LIVRAISON" />
+
+
+
+<elementlivraison id="10" reference="REF_SBP1" addresseLivraison="ADR_LIV" bonPreparationParent="2" retailerPackagerId="CODE_PRODUIT" codeColis="1" dateInitiation="[now-7days]"   dateLivraisonTermine="[now]"  dateRetourTermine="[now]" acteur="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="RETOUR" />
+<elementlivraison id="11" reference="REF_SBP2" addresseLivraison="ADR_LIV" bonPreparationParent="2" retailerPackagerId="CODE_PRODUIT" codeColis="2" dateInitiation="[now-7days]"  dateLivraisonTermine="[now]" dateRetourTermine="[now]" acteur="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="RETOUR" />
+<elementlivraison id="12" reference="REF_SBP3" addresseLivraison="ADR_LIV" bonPreparationParent="2" retailerPackagerId="CODE_PRODUIT" codeColis="3" dateInitiation="[now-7days]"  dateLivraisonTermine="[now]" dateRetourTermine="[now]" acteur="PACKAGER" referenceProduit="REF_PRODUIT_TEMPLATE" typeBonPreparation="RETOUR" />
+
+</dataset>

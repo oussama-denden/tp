@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+<bonpreparation/>
+<bonpreparation id="1" reference="REF_BP_GLOBAL" dateInitiation="[now-7days]" datePreparation="[now]" idClient="ID_CLIENT" typeBonPreparation="LIVRAISON" causeNonlivraison="CAUSE_NON_LIVRAIS_TST"/>
+<elementlivraison id="2" reference="REF_SBP1" addresseLivraison="ADR_LIV" bonPreparationParent="1" retailerPackagerId="CODE_PRODUIT" dateInitiation="[now-7days]" datePreparation="[now]" acteur="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="LOCATION" causeNonlivraison="CAUSE_NON_LIVRAIS_TST" codeColis="CODE_COLIS_TST"/>
+<elementlivraison id="3" reference="REF_SBP2" addresseLivraison="ADR_LIV" bonPreparationParent="1" retailerPackagerId="CODE_PRODUIT" dateInitiation="[now-7days]" datePreparation="[now]" acteur="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="LIVRAISON" causeNonlivraison="CAUSE_NON_LIVRAIS_TST" codeColis="CODE_COLIS_TST1"/>
+<elementlivraison id="4" reference="REF_SBP3" addresseLivraison="ADR_LIV" bonPreparationParent="1" retailerPackagerId="CODE_PRODUIT" dateInitiation="[now-7days]" datePreparation="[now]" acteur="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="LIVRAISON" causeNonlivraison="" codeColis="CODE_COLIS_TST1"/>
+</dataset>

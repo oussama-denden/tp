@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc 
+	http://www.springframework.org/schema/jdbc/spring-jdbc-3.1.xsd
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/data/jpa 
+		http://www.springframework.org/schema/data/jpa/spring-jpa-.xsd
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<context:component-scan base-package="com.nordnet.topaze.finder.service" />
+	<context:component-scan base-package="com.nordnet.topaze.finder.dao" />
+	
+	<!-- database support -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://localhost:3306/topaze_test" />
+		<property name="username" value="test" />
+		<property name="password" value="test" />
+	</bean>
+	
+	<jdbc:initialize-database data-source="dataSource">
+		<jdbc:script location="classpath:/sql/init_mysql.sql"
+			encoding="UTF-8" />
+	</jdbc:initialize-database>
+
+	<bean id="topazeExceptionsProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:topaze-exceptions.properties" />
+	</bean>
+
+	<!-- Bean d'acces au Contexte -->
+	<bean id="applicationContextHolder"
+		class="com.nordnet.topaze.finder.util.spring.ApplicationContextHolder" />
+		
+		
+	<bean id="sqlQueryProperties"
+		class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:sqlQuery.properties" />
+	</bean>
+	
+	<bean id="dynamicProperties"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<!-- check property file(s) every 1 second -->
+		<property name="cacheSeconds" value="1" />
+		<property name="basenames">
+			<list>
+				<value>file:${dynamic.properties}</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

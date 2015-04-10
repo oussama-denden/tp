@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+
+<contrat id="1" reference="REF_CONTRAT" titre="Contrat Pour Test" datePreparation="[now]"  />
+
+<elementcontractuel id="2" numEC="1" numeroCommande="1" modePaiement="CHEQUE" periodicite="2" modeFacturation="PREMIER_MOIS" referenceProduit="PROD-01" typeProduit="SERVICE" titre="Contrat ABONNEMENT" datePreparation="[now]" dateDebutFacturation="[now]" contratParent="1" referenceModePaiement="rum-0001" montant="22" typeTVA="S"/>
+
+<reduction id="1" contextReduction="GLOBAL" referenceContrat="REF_CONTRAT" typeValeur="MOIS" valeur="2" typeReduction="CONTRAT" isAffichableSurFacture="false" dateAnnulation="[now]"/>
+<reduction id="2" contextReduction="GLOBAL" referenceContrat="REF_CONTRAT" typeValeur="MOIS" valeur="2" typeReduction="CONTRAT" isAffichableSurFacture="false" />
+<reduction id="3" contextReduction="GLOBAL" referenceContrat="REF_CONTRAT" typeValeur="MOIS" valeur="2" typeReduction="CONTRAT" isAffichableSurFacture="false" codeCatalogueReduction="ref-catalogue"/>
+<reduction id="4" contextReduction="PARTIEL" numEC="1" referenceContrat="REF_CONTRAT" typeValeur="MOIS" valeur="2" typeReduction="CONTRAT" isAffichableSurFacture="false" nbUtilisationEnCours="3" nbUtilisationMax="3"/>
+<reduction id="5" contextReduction="PARTIEL" numEC="1" referenceContrat="REF_CONTRAT" typeValeur="MOIS" valeur="2" typeReduction="CONTRAT" isAffichableSurFacture="false" dateDebut="[now-10months]" dateFin="[now-10days]"/>
+<reduction id="6" contextReduction="PARTIEL" numEC="1" referenceContrat="REF_CONTRAT" typeValeur="MOIS" valeur="2" typeReduction="CONTRAT" isAffichableSurFacture="false" codeCatalogueReduction="ref-catalogue"/>
+
+</dataset>

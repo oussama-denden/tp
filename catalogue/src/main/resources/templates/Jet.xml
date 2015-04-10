@@ -1,0 +1,5 @@
+<eutelsat:productProperties xmlns:eutelsat="http://www.nordnet.com/eutelsatsatellite">
+	<eutelsat:offerElements>
+		<eutelsat:productId>Product.Id_packager</eutelsat:productId>
+	</eutelsat:offerElements>
+</eutelsat:productProperties>

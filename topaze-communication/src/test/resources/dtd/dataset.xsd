@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" xmlns:dflt="test_topaze">
+	<xsd:import namespace="test_topaze" schemaLocation="test_topaze.xsd" />
+	<xsd:element name="dataset">
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+
+				<xsd:element name="dbmaintain_scripts" type="dflt:dbmaintain_scripts__type" />
+				<xsd:element name="produit" type="dflt:produit__type" />
+				<xsd:element name="fraisproduit" type="dflt:fraisproduit__type" />
+				<xsd:element name="prix" type="dflt:prix__type" />
+				<xsd:element name="contrat" type="dflt:contrat__type" />
+				<xsd:element name="fraiscontrat" type="dflt:fraiscontrat__type" />
+				<xsd:element name="tarif" type="dflt:tarif__type" />
+				<xsd:element name="bonpreparation" type="dflt:bonpreparation__type" />
+
+				<xsd:any namespace="test_topaze" />
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

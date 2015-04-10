@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Topaze - Prod" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://si2-srv.si-core.nordnet.fr:8080" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:endpoints><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint></con:endpoints><con:resource name="" path="/contrat-core/contrat/"><con:settings/><con:parameters/><con:resource name="preparer" path="preparer"><con:settings/><con:parameters/><con:method name="Method 1" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:prep="http://si2-srv.si-core.nordnet.fr/contrat-core/contrat/preparer">prep:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:prep="http://si2-srv.si-core.nordnet.fr/contrat-core/contrat/preparer">prep:Response</con:element></con:representation><con:request name="Jet" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+ "user": "test",
+ "produits": [
+{
+      "reference": "jet",
+      "numeroCommande": "12345",
+      "label": "Abonnement jet 10Go",
+      "typeProduit": "SERVICE",
+      "prix": {
+        "periodicite": "1",
+        "typeTVA": "R",
+        "montant": "30",
+        "frais": [
+          {
+            "montant": "30",
+            "typeFrais": "creation"
+          }
+        ],
+        "modePaiement": "SEPA",
+        "modeFacturation": "PREMIER_MOIS"
+      }
+    },
+    {
+      "reference": "option.plus.50g",
+      "refProduitParent": "jet",
+      "numeroCommande": "12345",
+      "label": "Option+ 50Go",
+      "typeProduit": "SERVICE",
+      "prix": {
+        "periodicite": "1",
+        "typeTVA": "R",
+        "montant": "50",
+        "frais": [
+          {
+            "montant": "50",
+            "typeFrais": "resiliation",
+            "nombreMois": "12",
+            "ordre": "1"
+          },
+          {
+            "montant": "30",
+            "typeFrais": "resiliation",
+            "ordre": "2"
+          }
+        ],
+        "modePaiement": "SEPA",
+        "modeFacturation": "PREMIER_MOIS"
+      }
+    },
+    {
+      "reference": "kit-sat",
+      "refProduitParent": "jet",
+      "numeroCommande": "12345",
+      "label": "Kit Satellite Jet",
+      "typeProduit": "BIEN",
+      "prix": {
+        "engagement" : "24",
+        "duree" : "48",
+        "periodicite" : "3",
+        "typeTVA": "R",
+        "montant": "30",
+        "modePaiement": "SEPA",
+        "modeFacturation": "PREMIER_MOIS"
+      }
+    }
+  ]
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="avfw.essentiel" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+  "user": "test",
+  "produits": [
+    {
+      "numEC" : 1,
+      "reference": "avfw.essentiel",
+      "numeroCommande": "12345",
+      "label": "Antivirus Securitoo",
+      "typeProduit": "SERVICE",
+      "prix": {
+        "periodicite": 1,
+        "typeTVA": "R",
+        "montant": 4.17,
+        "modePaiement": "SEPA",
+        "modeFacturation": "DATE_ANNIVERSAIRE"
+      }
+    }
+  ]
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="avfw.confort" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+  "user": "test",
+  "produits": [
+    {
+      "numEC" : 1,
+      "reference": "avfw.confort",
+      "numeroCommande": "12345",
+      "label": "Antivirus Securitoo",
+      "typeProduit": "SERVICE",
+      "prix": {
+        "periodicite": 1,
+        "typeTVA": "R",
+        "montant": 4.17,
+        "modePaiement": "SEPA",
+        "modeFacturation": "DATE_ANNIVERSAIRE"
+      }
+    }
+  ]
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="avfw.prestige" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+  "user": "test",
+  "produits": [
+    {
+      "numEC" : 1,
+      "reference": "avfw.confort",
+      "numeroCommande": "12345",
+      "label": "Antivirus Securitoo",
+      "typeProduit": "SERVICE",
+      "prix": {
+        "periodicite": 1,
+        "typeTVA": "R",
+        "montant": 4.17,
+        "modePaiement": "SEPA",
+        "modeFacturation": "DATE_ANNIVERSAIRE"
+      }
+    }
+  ]
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="gérer" path="{refContrat}/"><con:settings/><con:parameters><con:parameter><con:name>refContrat</con:name><con:value>refContrat</con:value><con:style>TEMPLATE</con:style><con:default>refContrat</con:default></con:parameter></con:parameters><con:resource name="valider" path="valider"><con:settings/><con:parameters/><con:method name="Method 1" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:val="http://si2-srv.si-core.nordnet.fr/contrat-core/contrat/00000002/valider">val:Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>400</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Jet" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+  "idClient": "00131",
+  "idAdrFacturation": "685",
+  "paiementInfos": [
+    {
+      "referenceProduit": "jet",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "option.plus.50g",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "kit-sat",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    }
+  ],
+  "politiqueValidation": 
+  {
+  	"fraisCreation": "true",
+  	"checkIsPackagerCreationPossible" : "true"
+  }
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="avfw.essentiel" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+  "user": "SoapUITest",
+  "idClient": "00131",
+  "idAdrFacturation": "adrFact1",
+  "paiementInfos": [
+    {
+      "numEC": 1,
+      "referenceProduit": "avfw.essentiel",
+      "idAdrLivraison": "adrLiv1",
+      "referenceModePaiement": "SEPA"
+    }
+  ],
+  "politiqueValidation": {
+    "fraisCreation": true,
+    "checkIsPackagerCreationPossible": true
+  }
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refContrat" value="${#TestCase#RefContrat}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request><con:request name="avfw.confort" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+  "user": "SoapUITest",
+  "idClient": "00131",
+  "idAdrFacturation": "adrFact1",
+  "paiementInfos": [
+    {
+      "numEC": 1,
+      "referenceProduit": "avfw.confort",
+      "idAdrLivraison": "adrLiv1",
+      "referenceModePaiement": "SEPA"
+    }
+  ],
+  "politiqueValidation": {
+    "fraisCreation": true,
+    "checkIsPackagerCreationPossible": true
+  }
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refContrat" value="${#TestCase#RefContrat}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request><con:request name="avfw.prestige" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+  "user": "SoapUITest",
+  "idClient": "00131",
+  "idAdrFacturation": "adrFact1",
+  "paiementInfos": [
+    {
+      "numEC": 1,
+      "referenceProduit": "avfw.prestige",
+      "idAdrLivraison": "adrLiv1",
+      "referenceModePaiement": "SEPA"
+    }
+  ],
+  "politiqueValidation": {
+    "fraisCreation": true,
+    "checkIsPackagerCreationPossible": true
+  }
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refContrat" value="" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource></con:resource><con:method name="" method="POST"><con:settings/><con:parameters/></con:method></con:resource></con:interface><con:testSuite name="Processus - Antivirus" id="82b19b06-3812-4853-91ee-c295a2dd3ac7"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Vente avfw.essentiel" searchProperties="true" id="eee758a1-c8c1-471c-a94b-f25dd0dc2afa">
+      <con:settings/>
+      <con:testStep type="calltestcase" name="Contrat Antivirus" id="e580eaa2-5ed5-48d4-9740-715925af4713"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>cbe5ee85-876a-408f-aef7-a6c8d4207df7</con:targetTestCase><con:properties><con:property><con:name>RefCommande</con:name><con:value>e140f603-e0b7-4674-8068-e9180300f9bd</con:value></con:property><con:property><con:name>RefContrat</con:name><con:value>a9732ede</con:value></con:property></con:properties><con:returnProperties><con:entry>RefCommande</con:entry><con:entry>RefContrat</con:entry></con:returnProperties><con:runMode>SINGLETON_AND_WAIT</con:runMode></con:config></con:testStep>
+      
+      
+      
+      
+      
+      
+      <con:testStep type="jdbc" name="Politique Validation" id="894f68e5-afdd-47b5-a8a3-6e645db56d5a">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://mysql-bddclients.securitoo.com:3306/topaze?user=gmasy&amp;password=drftgyh8</con:connectionString>
+          <con:query>select * from politiquevalidation 
+where id  = 
+(select politiqueValidationId from contrat 
+  where reference = "${Contrat Antivirus#refContrat}")</con:query>
+          <con:assertion type="Simple Contains" name="Frais Création = True">
+            <con:configuration><token>&lt;POLITIQUEVALIDATION.FRAISCREATION>1&lt;/POLITIQUEVALIDATION.FRAISCREATION></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration>
+          </con:assertion>
+          <con:assertion type="Simple Contains" name="CheckIsPackagerCreationPossible = False">
+            <con:configuration><token>&lt;POLITIQUEVALIDATION.CHECKISPACKAGERCREATIONPOSSIBLE>0&lt;/POLITIQUEVALIDATION.CHECKISPACKAGERCREATIONPOSSIBLE></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration>
+          </con:assertion><con:properties/>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="jdbc" name="Contrat" id="6aa85496-2697-48ca-ad4a-cdde47c189d4">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://mysql-bddclients.securitoo.com:3306/topaze?user=gmasy&amp;password=drftgyh8</con:connectionString>
+          <con:query>select * from contrat 
+where reference = "${Contrat Antivirus#refContrat}"</con:query>
+          
+          <con:assertion type="XPath Match" name="Date Validation is not null"><con:configuration><path>exists(//ResultSet/Row/CONTRAT.DATEVALIDATION/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="DatePreparation Is Not Null"><con:configuration><path>exists(//Row/CONTRAT.DATEPREPARATION/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Id Client = 00003870"><con:configuration><path>//ResultSet/Row/CONTRAT.IDCLIENT/text()</path><content>00003870</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Politique Validation is not null"><con:configuration><path>exists(//ResultSet/Row/CONTRAT.POLITIQUEVALIDATIONID/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:properties/>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="jdbc" name="EC Valide" id="edf911f5-6f13-4053-b8a4-cd106caff843">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://mysql-bddclients.securitoo.com:3306/topaze?user=gmasy&amp;password=drftgyh8</con:connectionString>
+          <con:query>select * from elementcontractuel
+where contratParent = 
+  (select id from contrat
+   where reference = "${Contrat Antivirus#refContrat}"
+   )</con:query>
+          
+          <con:assertion type="XQuery Match" name="Date Validation is not null"><con:configuration><path>&lt;Results> 
+{ 
+for $x in //Row 
+order by $x/ELEMENTCONTRACTUEL.NUMEC
+return &lt;result>{exists($x/ELEMENTCONTRACTUEL.DATEVALIDATION/text())}&lt;/result> 
+}
+&lt;/Results></path><content>&lt;Results>
+  &lt;result>true&lt;/result>
+&lt;/Results></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Id Adr Livraison"><con:configuration><path>&lt;Results> 
+{ 
+for $x in //Row 
+order by $x/ELEMENTCONTRACTUEL.NUMEC
+return &lt;result>{$x/ELEMENTCONTRACTUEL.IDADRLIVRAISON/text()}&lt;/result> 
+}
+&lt;/Results></path><content>&lt;Results>
+  &lt;result>adrliv1&lt;/result>
+&lt;/Results></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Id Adr Facturation"><con:configuration><path>&lt;Results> 
+{ 
+for $x in //Row 
+order by $x/ELEMENTCONTRACTUEL.NUMEC
+return &lt;result>{$x/ELEMENTCONTRACTUEL.IDADRFACTURATION/text()}&lt;/result> 
+}
+&lt;/Results></path><content>&lt;Results>
+  &lt;result>685&lt;/result>
+&lt;/Results></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Remboursable"><con:configuration><path>&lt;Results> 
+{ 
+for $x in //Row 
+order by $x/ELEMENTCONTRACTUEL.NUMEC
+return &lt;result>{$x/ELEMENTCONTRACTUEL.REMBOURSABLE/text()}&lt;/result> 
+}
+&lt;/Results></path><content>&lt;Results>
+  &lt;result>1&lt;/result>
+&lt;/Results></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:properties/>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="jdbc" name="Tracing - Préparation &amp; Validation" id="fc2bd969-64b4-4cd0-b033-e9a26e287d8f">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://mysql-bddclients.securitoo.com:3306/topaze?user=gmasy&amp;password=drftgyh8</con:connectionString>
+          <con:query>select * 
+from tracage
+where referenceContrat = '${Contrat Antivirus#RefContrat}'</con:query>
+          
+          <con:assertion type="Simple Contains" name="Préparation d’un contrat"><con:configuration><token>Contrat ${Contrat Antivirus#RefContrat}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contrat xxx préparé"><con:configuration><token>Contrat ${Contrat Antivirus#RefContrat} préparé</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Validation du contrat"><con:configuration><token>Validation du contrat ${Contrat Antivirus#RefContrat}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contrat xxx validé"><con:configuration><token>Contrat ${Contrat Antivirus#RefContrat} validé</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="delay" name="Wait for beginning Livraison" id="f609d92b-0465-43db-81fb-cd54244936b4">
+        <con:settings/>
+        <con:config>
+          <delay>500</delay>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="jdbc" name="Bon de Livraison - exists" id="44aeb308-489e-42b2-884d-457f09881cef">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://mysql-bddclients.securitoo.com:3306/topaze?user=gmasy&amp;password=drftgyh8</con:connectionString>
+          <con:query>select * from bonpreparation 
+where reference = "${Contrat Antivirus#refContrat}"</con:query>
+          <con:properties/>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="goto" name="Go Beginning Livraison" id="85e6c6bc-ff5b-4e4d-aa2e-bb7ce512beaa">
+        <con:settings/>
+        <con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:condition>
+            <con:name>Wait Facturation</con:name>
+            <con:type>XPATH</con:type>
+            <con:expression>not(//Results/ResultSet/Row/BONPREPARATION.DATEINITIATION/text())</con:expression>
+            <con:targetStep>Wait for beginning Livraison</con:targetStep>
+          </con:condition>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="jdbc" name="Bon de Livraison - Initié" id="1e730fc9-10b8-4d51-b72e-eab540d2e222">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://mysql-bddclients.securitoo.com:3306/topaze?user=gmasy&amp;password=drftgyh8</con:connectionString>
+          <con:query>select * from bonpreparation 
+where reference = "${Contrat Antivirus#refContrat}"</con:query>
+          <con:assertion type="XPath Match" name="TypeBonPreparation = Livraison"><con:configuration><path>//ResultSet/Row/BONPREPARATION.TYPEBONPREPARATION/text()</path><content>LIVRAISON</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="IdClient"><con:configuration><path>//ResultSet/Row/BONPREPARATION.IDCLIENT/text()</path><content>00003870</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:properties/>
+        </con:config>
+      </con:testStep>
+      
+      <con:testStep type="jdbc" name="Elements de Livraison - Initié" id="22669a0c-0088-481e-b5f7-81811fa2935b">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://mysql-bddclients.securitoo.com:3306/topaze?user=gmasy&amp;password=drftgyh8</con:connectionString>
+          <con:query>select * from elementlivraison 
+where bonPreparationParent = 
+  (select id 
+     from bonpreparation 
+    where reference = "${Contrat Antivirus#refContrat}")</con:query>
+          
+          
+          
+          <con:assertion type="XPath Match" name="EL Initié"><con:configuration><path>exists(//ResultSet/Row/ELEMENTLIVRAISON.DATEINITIATION/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="NumEC"><con:configuration><path>//ResultSet/Row/ELEMENTLIVRAISON.NUMEC/text()</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Reference"><con:configuration><path>//ResultSet/Row/ELEMENTLIVRAISON.REFERENCE/text()</path><content>${Contrat Antivirus#RefContrat}-1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="AncienCodes Null"><con:configuration><path>not(//ResultSet/Row/ELEMENTLIVRAISON.ANCIENCODECOLIS/text())
+and
+not(//ResultSet/Row/ELEMENTLIVRAISON.ANCIENRETAILERPACKAGERID/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="TypeBonPreparation = Livraison"><con:configuration><path>//ResultSet/Row/ELEMENTLIVRAISON.TYPEBONPREPARATION/text()</path><content>LIVRAISON</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Acteur = Pkger"><con:configuration><path>//ResultSet/Row/ELEMENTLIVRAISON.ACTEUR/text()</path><content>PACKAGER</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="TypeElmnt = Service"><con:configuration><path>//ResultSet/Row/ELEMENTLIVRAISON.ACTEUR/text()</path><content>PACKAGER</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="ReferenceProduit = Antivirus"><con:configuration><path>//ResultSet/Row/ELEMENTLIVRAISON.REFERENCEPRODUIT/text()</path><content>avfw.essentiel</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:properties/>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="delay" name="Wait for end Livraison" id="85fce5d1-0b2f-4402-a398-e7bcce03f79f">
+        <con:settings/>
+        <con:config>
+          <delay>500</delay>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="jdbc" name="Tracing - Initiation" id="f8547e17-9e75-4397-8ec0-0477c92b2a44" disabled="true">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://mysql-bddclients.securitoo.com:3306/topaze?user=gmasy&amp;password=drftgyh8</con:connectionString>
+          <con:query>select * 
+from tracage
+where referenceContrat = '${Contrat Antivirus#RefContrat}'</con:query>
+          
+          <con:assertion type="Simple Contains" name="Initiation du BP"><con:configuration><token>Livraison du contrat ${Contrat Antivirus#RefContrat} – Préparation de la livraison</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Initiation de l'EL - antivirus"><con:configuration><token>Préparation de la livraison du produit avfw.essentiel</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="jdbc" name="Bon de Livraison - Témoin" id="8f5ff33c-d158-4bf1-9479-8f1d35c0fa5e">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://mysql-bddclients.securitoo.com:3306/topaze?user=gmasy&amp;password=drftgyh8</con:connectionString>
+          <con:query>select * from bonpreparation 
+where reference = "${Contrat Antivirus#refContrat}"</con:query>
+          <con:assertion type="XPath Match" name="Date Initiation">
+            <con:configuration><path>exists(//Row/BONPREPARATION.DATEINITIATION/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration>
+          </con:assertion>
+          
+          <con:assertion type="XPath Match" name="Aucune Erreur de Livraison">
+            <con:configuration><path>not(//ResultSet/Row/BONPREPARATION.CAUSENONLIVRAISON/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration>
+          </con:assertion>
+          <con:properties/>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="goto" name="Go End Livraison" id="ce1626a8-d1ce-43e2-b2b2-5a01e8a7850c">
+        <con:settings/>
+        <con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:condition>
+            <con:name>Wait Facturation</con:name>
+            <con:type>XPATH</con:type>
+            <con:expression>not(//ResultSet/Row/BONPREPARATION.DATELIVRAISONTERMINE/text()) 
+and
+not(//ResultSet/Row/BONPREPARATION.CAUSENONLIVRAISON/text())</con:expression>
+            <con:targetStep>Wait for end Livraison</con:targetStep>
+          </con:condition>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="jdbc" name="Elements de Livraison - Livré" id="38623b95-5f3e-4e0d-aa34-ee13d9815d09">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://mysql-bddclients.securitoo.com:3306/topaze?user=gmasy&amp;password=drftgyh8</con:connectionString>
+          <con:query>select * from elementlivraison 
+where bonPreparationParent = 
+  (select id 
+     from bonpreparation 
+    where reference = "${Contrat Antivirus#refContrat}")</con:query>
+          
+          
+          
+          <con:assertion type="XPath Match" name="EL Livré"><con:configuration><path>not(//ResultSet/Row/ELEMENTLIVRAISON.CAUSENONLIVRAISON/text())
+and
+exists(//ResultSet/Row/ELEMENTLIVRAISON.DATELIVRAISONTERMINE/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="NumEC"><con:configuration><path>//ResultSet/Row/ELEMENTLIVRAISON.NUMEC/text()</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Reference"><con:configuration><path>//ResultSet/Row/ELEMENTLIVRAISON.REFERENCE/text()</path><content>${Contrat Antivirus#RefContrat}-1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="AncienCodes Null"><con:configuration><path>not(//ResultSet/Row/ELEMENTLIVRAISON.ANCIENCODECOLIS/text())
+and
+not(//ResultSet/Row/ELEMENTLIVRAISON.ANCIENRETAILERPACKAGERID/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Code Produit Not Null"><con:configuration><path>exists(//ResultSet/Row/ELEMENTLIVRAISON.RETAILERPACKAGERID/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Code Colis Null"><con:configuration><path>not(//ResultSet/Row/ELEMENTLIVRAISON.CODECOLIS/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="TypeBonPreparation = Livraison"><con:configuration><path>//ResultSet/Row/ELEMENTLIVRAISON.TYPEBONPREPARATION/text()</path><content>LIVRAISON</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Acteur = Pkger"><con:configuration><path>//ResultSet/Row/ELEMENTLIVRAISON.ACTEUR/text()</path><content>PACKAGER</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="ReferenceProduit = Antivirus"><con:configuration><path>//ResultSet/Row/ELEMENTLIVRAISON.REFERENCEPRODUIT/text()</path><content>avfw.essentiel</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:properties/>
+        </con:config>
+      </con:testStep><con:testStep type="jdbc" name="Bon de Livraison - Livré" id="5ca40fb7-614d-4309-a966-5d2d3af722b4">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://mysql-bddclients.securitoo.com:3306/topaze?user=gmasy&amp;password=drftgyh8</con:connectionString>
+          <con:query>select * from bonpreparation 
+where reference = "${Contrat Antivirus#refContrat}"</con:query>
+          <con:assertion type="XPath Match" name="DateLivraisonTermine Not Null"><con:configuration><path>exists(//ResultSet/Row/BONPREPARATION.DATELIVRAISONTERMINE/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="CauseNonLivraison Null"><con:configuration><path>not(//ResultSet/Row/BONPREPARATION.CAUSENONLIVRAISON/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="IdClient"><con:configuration><path>//ResultSet/Row/BONPREPARATION.IDCLIENT</path><content>00003870</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="TypeBonPreparation = Livraison"><con:configuration><path>//ResultSet/Row/BONPREPARATION.TYPEBONPREPARATION</path><content>LIVRAISON</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Dates Workflow"><con:configuration><path>exists(//ResultSet/Row/BONPREPARATION.DATEINITIATION/text())
+and
+exists(//ResultSet/Row/BONPREPARATION.DATEDEBUTPREPARATION/text())
+and
+exists(//ResultSet/Row/BONPREPARATION.DATEPREPARATION/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="DateRetourTermine Null"><con:configuration><path>exists(//ResultSet/Row/BONPREPARATION.DATERETOURTERMINE/text())</path><content>false</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:properties/>
+        </con:config>
+      </con:testStep><con:testStep type="jdbc" name="Tracing - Livraison" id="87e9b405-e534-49ea-ac59-7542cf82a9b1" disabled="true">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://mysql-bddclients.securitoo.com:3306/topaze?user=gmasy&amp;password=drftgyh8</con:connectionString>
+          <con:query>select * 
+from tracage
+where referenceContrat = '${Contrat Antivirus#RefContrat}'</con:query>
+          
+          <con:assertion type="Simple Contains" name="Préparation du contrat"><con:configuration><token>Contrat ${Contrat Antivirus#RefContrat} validé</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Préparation de l'EL antivirus"><con:configuration><token>Contrat ${Contrat Antivirus#RefContrat} validé</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Livraison du contrat"><con:configuration><token>Livraison du contrat ${Contrat Antivirus#RefContrat} – Fin de livraison</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Livraison de l'EL antivirus"><con:configuration><token>Livraison du contrat ${Contrat Antivirus#RefContrat} – Fin de livraison du produit avfwpro-confort-s</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/>
+        </con:config>
+      </con:testStep><con:testStep type="transfer" name="Transfert Date Livraison" id="ad0bf7ca-361c-4204-adf3-be413d74a57c" disabled="true">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false">
+            <con:name>DateLivraison</con:name>
+            <con:sourceType>ResponseAsXml</con:sourceType>
+            <con:sourceStep>Bon de Livraison - Témoin</con:sourceStep>
+            <con:sourcePath>//Results/ResultSet/Row/BONPREPARATION.DATELIVRAISONTERMINE/text()</con:sourcePath>
+            <con:targetType>DateLivraison</con:targetType>
+            <con:targetStep>InfosFacture</con:targetStep>
+          </con:transfers>
+        <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>ReferenceContrat</con:name><con:sourceType>RefContrat</con:sourceType><con:sourceStep>Contrat Antivirus</con:sourceStep><con:sourcePath/><con:targetType>RefContrat</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>ReferenceCommande</con:name><con:sourceType>RefCommande</con:sourceType><con:sourceStep>Contrat Antivirus</con:sourceStep><con:targetType>RefCommande</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers></con:config>
+      </con:testStep><con:testStep type="properties" name="InfosFacture" id="8a0125c7-c0af-4221-9f28-203d851084cf" disabled="true">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>DateLivraison</con:name>
+              <con:value>2014-11-06 16:13:30.0</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep><con:testStep type="delay" name="Wait for end Facturation" id="ff765843-1045-42e8-a6c6-61e2bad91ca8" disabled="true">
+        <con:settings/>
+        <con:config>
+          <delay>500</delay>
+        </con:config>
+      </con:testStep><con:testStep type="jdbc" name="Facturation-exists" id="e83f58a0-546d-4793-baba-e38a49780366" disabled="true">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://10.100.105.41:3306/test_saphir?user=test&amp;password=test</con:connectionString>
+          <con:query>select * from movement 
+where 
+--      accountId = '00003870'
+--  and productId = 'avfwpro-confort-s'
+--  and minute(timediff(now(), create_date)) &lt; 1
+  /*and*/ id IN (
+  	select movement_idFK 
+  	  from movement_appendix_item 
+  	 where productReferenceId = '${Contrat Antivirus#RefContrat}'
+  )
+;</con:query>
+          <con:properties/>
+        </con:config>
+      </con:testStep><con:testStep type="goto" name="Go Facturation" id="32bb49b9-1277-4020-86f8-441db8af9427" disabled="true">
+        <con:settings/>
+        <con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:condition>
+            <con:name>Wait Facturation</con:name>
+            <con:type>XPATH</con:type>
+            <con:expression>not(//Results/ResultSet/Row/MOVEMENT.ID/text())</con:expression>
+            <con:targetStep>Wait for end Facturation</con:targetStep>
+          </con:condition>
+        </con:config>
+      </con:testStep><con:testStep type="groovy" name="Calcul Periodes" id="e76884ad-99f9-4986-94d2-1c70cadb34fb" disabled="true"><con:settings/><con:config><script>def cal = Calendar.instance
+
+testRunner.testCase.setPropertyValue("dateDebut", String.format('%tF', cal))
+log.info testRunner.testCase.getPropertyValue("dateDebut")
+
+cal.roll(Calendar.MONTH, 1)
+
+testRunner.testCase.setPropertyValue("dateFin", String.format('%tF', cal))
+log.info testRunner.testCase.getPropertyValue("dateFin")</script></con:config></con:testStep><con:testStep type="jdbc" name="Tracing - Facturation" id="bdacba88-7474-41c7-a957-28cca4739b4a" disabled="true">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://mysql-bddclients.securitoo.com:3306/topaze?user=gmasy&amp;password=drftgyh8</con:connectionString>
+          <con:query>select * 
+from tracage
+where referenceContrat = '${Contrat Antivirus#RefContrat}'</con:query>
+          
+          <con:assertion type="Simple Contains" name="Facturation des frais de création"><con:configuration><token>Facturation des frais de création du contrat ${Contrat Antivirus#RefContrat}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Facturation récurrente"><con:configuration><token>Facturation récurrente pour la période du ${#TestCase#DateDebut} au ${#TestCase#DateFin} du contrat ${Contrat Antivirus#RefContrat}</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/>
+        </con:config>
+      </con:testStep><con:testStep type="jdbc" name="Facturation-valid" id="d7f4dff4-5a3a-469c-bd99-d76abe21f861" disabled="true">
+        <con:settings/>
+        <con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:driver>com.mysql.jdbc.Driver</con:driver>
+          <con:connectionString>jdbc:mysql://10.100.105.41:3306/test_saphir?user=test&amp;password=test</con:connectionString>
+          <con:query>select * from movement 
+where accountId = '00003870'
+  and minute(timediff(now(), create_date)) &lt; 1
+  and id IN (
+  	select movement_idFK 
+  	  from movement_appendix_item 
+  	 where productReferenceId = '${Contrat Antivirus#RefContrat}'
+  )
+;</con:query>
+          
+          
+          
+          
+          
+          <con:assertion type="XPath Match" name="Bill Type = Monthly"><con:configuration><path>//ResultSet/Row/MOVEMENT.BILL_TYPE/text()</path><content>MONTHLY</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Billing Group Null"><con:configuration><path>not(//ResultSet/Row/MOVEMENT.BILLINGGROUP/text())</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="CanGrouped = True"><con:configuration><path>//ResultSet/Row/MOVEMENT.CANGROUPED/text()</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Payment Infos"><con:configuration><path><![CDATA[<Results>
+{
+  for $x in //Row
+  return <r>
+    <payementType>{$x/MOVEMENT.PAYMENT_TYPE/text()}</payementType>
+    <payementRef>{$x/MOVEMENT.RUM/text()}</payementRef>
+  </r>
+}
+</Results>]]></path><content><![CDATA[<Results>
+  <r>
+    <payementType>SEPA</payementType>
+    <payementRef>R0000012</payementRef>
+  </r>
+</Results>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XPath Match" name="TransactionType = Debit"><con:configuration><path>//ResultSet/Row/MOVEMENT.TRANSACTIONTYPE/text()</path><content>DEBIT</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Compta Infos"><con:configuration><path><![CDATA[<Results>
+{
+  for $x in //Row
+  return <r>
+    <vat>{$x/MOVEMENT.VAT_TYPE/text()}</vat>
+    <curr>{$x/MOVEMENT.CURRENCY/text()}</curr>
+  </r>
+}
+</Results>]]></path><content><![CDATA[<Results>
+  <r>
+    <vat>R</vat>
+    <curr>EUR</curr>
+  </r>
+</Results>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XPath Match" name="Amount = 5"><con:configuration><path>//ResultSet/Row/MOVEMENT.AMOUNT/text()</path><content>5.000000</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="ProductLabel" disabled="true"><con:configuration><path>//ResultSet/Row/MOVEMENT.PRODUCTLABEL/text()</path><content> Abonnement Antivirus Securitoo du ${=new java.text.SimpleDateFormat("yyyy-MM-dd").format(new Date())} au ${=Calendar.instance.get(Calendar.YEAR)+"-"+(int)(Calendar.instance.get(Calendar.MONTH)+2)+"-"+Calendar.instance.get(Calendar.DATE)} (Dossier Produit : ${Contrat Antivirus#RefContrat})</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Date Start"><con:configuration><path>//ResultSet/Row/MOVEMENT.STARTFROM/text()</path><content>${#TestCase#DateDebut}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Periode - Date End"><con:configuration><path>//ResultSet/Row/MOVEMENT.ENDTO/text()</path><content>${#TestCase#DateFin}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="ProductId = avfwpro-confort-s"><con:configuration><path>//ResultSet/Row/MOVEMENT.PRODUCTID/text()</path><content>avfwpro-confort-s</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:properties/>
+        </con:config>
+      </con:testStep><con:loadTest name="Test Create" id="e50ecd87-19e2-4df2-9737-be244e8c3365">
+        <con:settings/>
+        <con:threadCount>50</con:threadCount>
+        <con:startDelay>0</con:startDelay>
+        <con:sampleInterval>250</con:sampleInterval>
+        <con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed>
+        <con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange>
+        <con:historyLimit>-1</con:historyLimit>
+        <con:testLimit>60</con:testLimit>
+        <con:limitType>TIME</con:limitType>
+        <con:loadStrategy>
+          <con:type>Simple</con:type>
+        </con:loadStrategy>
+        <con:assertion type="Step Status" name="Step Status"/>
+        <con:maxAssertionErrors>100</con:maxAssertionErrors>
+        <con:cancelExcessiveThreads>true</con:cancelExcessiveThreads>
+        <con:strategyInterval>500</con:strategyInterval>
+      </con:loadTest>
+      <con:properties>
+        <con:property>
+          <con:name>RefCommande</con:name>
+          <con:value>42358292-6dfa-4882-a652-a39843ee4df9</con:value>
+        </con:property>
+        <con:property>
+          <con:name>RefContrat</con:name>
+          <con:value>fb5c1153</con:value>
+        </con:property>
+      <con:property><con:name>testDate</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property><con:property><con:name>testDates</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property><con:property><con:name>dateDebut</con:name><con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2014-10-15</con:value></con:property><con:property><con:name>dateFin</con:name><con:value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">2014-11-15</con:value></con:property></con:properties>
+    </con:testCase><con:properties/></con:testSuite><con:testSuite name="Usefull Methods - Antivirus" id="4a709bd8-bd87-403e-bec9-529925ce121a">
+    <con:settings/>
+    <con:runType>SEQUENTIAL</con:runType>
+    
+    
+    <con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Créer Contrat avfw.essentiel" searchProperties="true" id="cbe5ee85-876a-408f-aef7-a6c8d4207df7">
+      <con:description>TestCase generated for REST Resource [Validation] located at
+      [/contrat-core/contrat/{refContrat}/valider]</con:description>
+      <con:settings/>
+      <con:testStep type="groovy" name="SetRefCommande" id="c15ccfef-a244-44dc-b93f-8f794a5eca8f">
+        <con:settings/>
+        <con:config><script>import static java.util.UUID.randomUUID 
+def tc = context.testCase 
+uuid = randomUUID().toString()
+testRunner.testCase.setPropertyValue( "RefCommande", uuid ) 
+log.info testRunner.testCase.getPropertyValue("RefCommande")</script></con:config>
+      </con:testStep>
+      
+      <con:testStep type="restrequest" name="Préparer Contrat"><con:settings/><con:config service="http://si2-srv.si-core.nordnet.fr:8080" resourcePath="/contrat-core/contrat/preparer" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Préparer Contrat" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+  "user": "test",
+  "produits": [
+    {
+      "numEC" : 1,
+      "reference": "avfw.essentiel",
+      "numeroCommande": "12345",
+      "label": "Antivirus Securitoo",
+      "typeProduit": "SERVICE",
+      "prix": {
+        "periodicite": 1,
+        "typeTVA": "R",
+        "montant": 4.17,
+        "modePaiement": "SEPA",
+        "modeFacturation": "DATE_ANNIVERSAIRE"
+      }
+    }
+  ]
+}</con:request><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="XPath Match" name="XPath Match"><con:configuration/></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="Move Infos Contrat" id="c6607288-5f9d-49e1-afcb-9ae7c1165015">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false">
+            <con:name>Ref Contrat Test Case</con:name>
+            <con:sourceType>ResponseAsXml</con:sourceType>
+            <con:sourceStep xsi:nil="true"/>
+            <con:sourcePath>declare namespace ns1='http://si2-srv.si-core.nordnet.fr/contrat-core/contrat/preparer';
+//ns1:referenceContrat/text()</con:sourcePath>
+            <con:targetType>RefContrat</con:targetType>
+            <con:targetStep>#TestCase#</con:targetStep>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Valider"><con:settings/><con:config service="http://si2-srv.si-core.nordnet.fr:8080" resourcePath="/contrat-core/contrat/{refContrat}/valider" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Valider" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+  "user": "SoapUITest",
+  "idClient": "00131",
+  "idAdrFacturation": "adrFact1",
+  "paiementInfos": [
+    {
+      "numEC": 1,
+      "referenceProduit": "avfw.essentiel",
+      "idAdrLivraison": "adrLiv1",
+      "referenceModePaiement": "SEPA"
+    }
+  ],
+  "politiqueValidation": {
+    "fraisCreation": true,
+    "checkIsPackagerCreationPossible": true
+  }
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refContrat" value="${#TestCase#RefContrat}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties>
+        <con:property>
+          <con:name>RefCommande</con:name>
+          <con:value>86236855-c071-42cf-8f7c-5c8cde3f9026</con:value>
+        </con:property>
+        <con:property>
+          <con:name>RefContrat</con:name>
+          <con:value>00000005</con:value>
+        </con:property>
+      </con:properties>
+    </con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Créer Contrat avfw.prestige" searchProperties="true" id="8c5a4d76-7c52-45f6-8c74-b91ca42a8c2e">
+      <con:description>TestCase generated for REST Resource [Validation] located at
+      [/contrat-core/contrat/{refContrat}/valider]</con:description>
+      <con:settings/>
+      <con:testStep type="groovy" name="SetRefCommande">
+        <con:settings/>
+        <con:config><script>import static java.util.UUID.randomUUID 
+def tc = context.testCase 
+uuid = randomUUID().toString()
+testRunner.testCase.setPropertyValue( "RefCommande", uuid ) 
+log.info testRunner.testCase.getPropertyValue("RefCommande")</script></con:config>
+      </con:testStep>
+      
+      <con:testStep type="restrequest" name="Préparer Contrat"><con:settings/><con:config service="http://si2-srv.si-core.nordnet.fr:8080" resourcePath="/contrat-core/contrat/preparer" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Préparer Contrat" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+  "user": "test",
+  "produits": [
+    {
+      "numEC" : 1,
+      "reference": "avfw.confort",
+      "numeroCommande": "12345",
+      "label": "Antivirus Securitoo",
+      "typeProduit": "SERVICE",
+      "prix": {
+        "periodicite": 1,
+        "typeTVA": "R",
+        "montant": 4.17,
+        "modePaiement": "SEPA",
+        "modeFacturation": "DATE_ANNIVERSAIRE"
+      }
+    }
+  ]
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="Move Infos Contrat">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false">
+            <con:name>Ref Contrat Test Case</con:name>
+            <con:sourceType>ResponseAsXml</con:sourceType>
+            <con:sourceStep xsi:nil="true"/>
+            <con:sourcePath>declare namespace ns1='http://si2-srv.si-core.nordnet.fr/contrat-core/contrat/preparer';
+//ns1:referenceContrat/text()</con:sourcePath>
+            <con:targetType>RefContrat</con:targetType>
+            <con:targetStep>#TestCase#</con:targetStep>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Valider"><con:settings/><con:config service="http://si2-srv.si-core.nordnet.fr:8080" resourcePath="/contrat-core/contrat/{refContrat}/valider" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Valider" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+  "user": "SoapUITest",
+  "idClient": "00131",
+  "idAdrFacturation": "adrFact1",
+  "paiementInfos": [
+    {
+      "numEC": 1,
+      "referenceProduit": "avfw.prestige",
+      "idAdrLivraison": "adrLiv1",
+      "referenceModePaiement": "SEPA"
+    }
+  ],
+  "politiqueValidation": {
+    "fraisCreation": true,
+    "checkIsPackagerCreationPossible": true
+  }
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refContrat" value="${#TestCase#RefContrat}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties>
+        <con:property>
+          <con:name>RefCommande</con:name>
+          <con:value>2e04ae40-d735-418e-a86d-26557b85b017</con:value>
+        </con:property>
+        <con:property>
+          <con:name>RefContrat</con:name>
+          <con:value>00000006</con:value>
+        </con:property>
+      </con:properties>
+    </con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Créer Contrat avfw.confort" searchProperties="true" id="6480ea2c-6e1a-4a57-8af4-1c256243db6e">
+      <con:description>TestCase generated for REST Resource [Validation] located at
+      [/contrat-core/contrat/{refContrat}/valider]</con:description>
+      <con:settings/>
+      <con:testStep type="groovy" name="SetRefCommande">
+        <con:settings/>
+        <con:config><script>import static java.util.UUID.randomUUID 
+def tc = context.testCase 
+uuid = randomUUID().toString()
+testRunner.testCase.setPropertyValue( "RefCommande", uuid ) 
+log.info testRunner.testCase.getPropertyValue("RefCommande")</script></con:config>
+      </con:testStep>
+      
+      <con:testStep type="restrequest" name="Préparer Contrat"><con:settings/><con:config service="http://si2-srv.si-core.nordnet.fr:8080" resourcePath="/contrat-core/contrat/preparer" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Préparer Contrat" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+  "user": "test",
+  "produits": [
+    {
+      "numEC" : 1,
+      "reference": "avfw.confort",
+      "numeroCommande": "12345",
+      "label": "Antivirus Securitoo",
+      "typeProduit": "SERVICE",
+      "prix": {
+        "periodicite": 1,
+        "typeTVA": "R",
+        "montant": 4.17,
+        "modePaiement": "SEPA",
+        "modeFacturation": "DATE_ANNIVERSAIRE"
+      }
+    }
+  ]
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="Move Infos Contrat">
+        <con:settings/>
+        <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false">
+            <con:name>Ref Contrat Test Case</con:name>
+            <con:sourceType>ResponseAsXml</con:sourceType>
+            <con:sourceStep xsi:nil="true"/>
+            <con:sourcePath>declare namespace ns1='http://si2-srv.si-core.nordnet.fr/contrat-core/contrat/preparer';
+//ns1:referenceContrat/text()</con:sourcePath>
+            <con:targetType>RefContrat</con:targetType>
+            <con:targetStep>#TestCase#</con:targetStep>
+          </con:transfers>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="Valider"><con:settings/><con:config service="http://si2-srv.si-core.nordnet.fr:8080" resourcePath="/contrat-core/contrat/{refContrat}/valider" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Valider" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://si2-srv.si-core.nordnet.fr:8080</con:endpoint><con:request>{
+  "user": "SoapUITest",
+  "idClient": "00131",
+  "idAdrFacturation": "adrFact1",
+  "paiementInfos": [
+    {
+      "numEC": 1,
+      "referenceProduit": "avfw.confort",
+      "idAdrLivraison": "adrLiv1",
+      "referenceModePaiement": "SEPA"
+    }
+  ],
+  "politiqueValidation": {
+    "fraisCreation": true,
+    "checkIsPackagerCreationPossible": true
+  }
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refContrat" value="${#TestCase#RefContrat}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties>
+        <con:property>
+          <con:name>RefCommande</con:name>
+          <con:value>e157a6a6-fe23-4f0f-aa7f-fbcdec114dac</con:value>
+        </con:property>
+        <con:property>
+          <con:name>RefContrat</con:name>
+          <con:value>00000007</con:value>
+        </con:property>
+      </con:properties>
+    </con:testCase><con:properties/>
+  </con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

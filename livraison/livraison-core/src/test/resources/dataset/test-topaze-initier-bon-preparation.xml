@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+<bonpreparation />
+<bonpreparation id="1" reference="REF_CGB" datePreparation="[now]" idClient="ID_CLIENT" typeBonPreparation="LIVRAISON" />
+</dataset>

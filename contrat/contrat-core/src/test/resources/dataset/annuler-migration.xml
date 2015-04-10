@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+
+<politiquemigration id="1" user="test" fraisCreation="13"  fraisMigration="12" fraisResiliation="12" reductionAncienne="1" remboursement="1" penalite="1" dateAction="[now+10years]"/>
+
+<avenant id="1" commentaire="test avenant" dateModification="[now+10years]" referenceContrat="REF_GB_ANNULL" typeAvenant="MIGRATION"   politiqueMigrationId="1"/>
+
+<contrat id="1" reference="REF_GB_ANNULL" idClient="gggg" titre="Contrat Pour Test" datePreparation="[now]" dateValidation="[now]" dateDebutFacturation="[now]" />
+
+<elementcontractuel id="2" numeroCommande="1" numEC="13" modeFacturation="DATE_ANNIVERSAIRE"  idAdrFacturation="id-fact" typeProduit="SERVICE" referenceProduit="avfwpro-confort-s" titre="Contrat ABONNEMENT pour le produit : avfwpro-confort-s" datePreparation="[now]" dateValidation="[now]"  dateDebutFacturation="[now]" contratParent="1" montant="5" modePaiement="SEPA" typeTVA="R" periodicite="1" duree="24" engagement="12" dateDerniereFacture="[now+10days]" dateFinContrat="[now+10years]"  />
+
+<modification id="1" avenantId="1" numEC="13" />
+
+</dataset>

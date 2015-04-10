@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+
+<politiquevalidation id="1000" fraisCreation="false" />
+
+<contrat id="1" politiqueValidationId="1000" reference="REF_GB_cede" idClient="idCL" titre="Contrat Pour Test" datePreparation="[now]" dateValidation="[now]"  dateDebutFacturation="[now]" />
+
+<elementcontractuel id="1" numeroCommande="1" modePaiement="CB" periodicite="2" modeFacturation="PREMIER_MOIS" idAdrFacturation="adrFact" idAdrLivraison="adrLiv"  referenceProduit="PROD-01" titre="Contrat ABONNEMENT" typeProduit="BIEN" numEC="1" datePreparation="[now]" dateDebutFacturation="[now]" contratParent="1" referenceModePaiement="RUM" montant="22" typeTVA="S" dateFinDuree="[now+48months]" duree="48"/>
+
+<fraiscontrat id="1" titre="Frais de dossier" montant="20" typeFrais="CREATION"/>
+
+<elementcontractuelfraiscontrat elementcontractuel_id="1" frais_id="1" />
+
+</dataset>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="NetConso-PreProd" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="NetConsoWSImplServiceSoapBinding" type="wsdl" bindingName="{http://www.nordnet.com/netconso/schemas}NetConsoWSImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://10.100.119.12:8080/netConso-ws-0.0.1-SNAPSHOT/services/netConso?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:endpoints><con:endpoint>http://10.100.119.12:8080/netConso-ws-0.0.1-SNAPSHOT/services/netConso</con:endpoint></con:endpoints><con:operation isOneWay="false" action="addConsumption" name="addConsumption" bindingOperationName="addConsumption" type="Request-Response" outputName="addConsumptionResponse" inputName="addConsumption" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.100.119.12:8080/netConso-ws-0.0.1-SNAPSHOT/services/netConso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netconso/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:addConsumption>
+         <!--Optional:-->
+         <addConsumptionRequest>
+            <consumption>
+               <consumptionDate>?</consumptionDate>
+               <type>?</type>
+               <typeSystem>?</typeSystem>
+               <amount>?</amount>
+               <!--Optional:-->
+               <label>?</label>
+               <!--Optional:-->
+               <billing>?</billing>
+               <!--Optional:-->
+               <refCustomer>?</refCustomer>
+               <refSystem>?</refSystem>
+               <!--Optional:-->
+               <complConsumptions>
+                  <!--1 or more repetitions:-->
+                  <complConsumption>
+                     <!--Optional:-->
+                     <valueComplement>?</valueComplement>
+                     <!--Optional:-->
+                     <typeComplement>?</typeComplement>
+                  </complConsumption>
+               </complConsumptions>
+            </consumption>
+         </addConsumptionRequest>
+      </sch:addConsumption>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="addConsumption"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getConsumption" name="getConsumption" bindingOperationName="getConsumption" type="Request-Response" outputName="getConsumptionResponse" inputName="getConsumption" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="By RefSystem (=Num Tel)"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.100.119.12:8080/netConso-ws-0.0.1-SNAPSHOT/services/netConso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netconso/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+            <sch:getConsumption>
+         <!--Optional:-->
+         <getConsumptionRequest>
+            <consumption>               
+               <type>VOIP</type>               
+               <label>VOIP</label>               
+               <refSystem>33988182143</refSystem>               
+            </consumption>
+            <startDate>2014-08-10</startDate>
+            <endDate>2014-08-12</endDate>
+         </getConsumptionRequest>
+      </sch:getConsumption>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getConsumption"/><con:wsrmConfig version="1.2"/></con:call><con:call name="By Customer Keyo"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.100.119.12:8080/netConso-ws-0.0.1-SNAPSHOT/services/netConso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netconso/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:getConsumption>
+         <getConsumptionRequest>
+            <consumption>
+               <type>VOIP</type>
+               <label>VOIP</label>
+               <refCustomer>382138</refCustomer>
+            </consumption>
+            <startDate>2014-07-01</startDate>
+            <endDate>2014-08-01</endDate>
+         </getConsumptionRequest>
+      </sch:getConsumption>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getConsumption"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getLastConsumption" name="getLastConsumption" bindingOperationName="getLastConsumption" type="Request-Response" outputName="getLastConsumptionResponse" inputName="getLastConsumption" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.100.119.12:8080/netConso-ws-0.0.1-SNAPSHOT/services/netConso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netconso/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:getLastConsumption>
+         <!--Optional:-->
+         <getLastConsumptionRequest>
+            <type>VOIP</type>
+            <refSys>33988182143</refSys>
+         </getLastConsumptionRequest>
+      </sch:getLastConsumption>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getLastConsumption"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="modifyConsumptionRequest" name="modifyConsumption" bindingOperationName="modifyConsumption" type="Request-Response" outputName="modifyConsumptionResponse" inputName="modifyConsumption" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.100.119.12:8080/netConso-ws-0.0.1-SNAPSHOT/services/netConso</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netconso/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:modifyConsumption>
+         <!--Optional:-->
+         <modifyConsumptionRequest>
+            <consumption>
+               <consumptionDate>?</consumptionDate>
+               <type>?</type>
+               <amount>?</amount>
+               <!--Optional:-->
+               <label>?</label>
+               <!--Optional:-->
+               <billing>?</billing>
+               <!--Optional:-->
+               <refCustomer>?</refCustomer>
+               <refSystem>?</refSystem>
+               <!--Optional:-->
+               <complConsumptions>
+                  <!--1 or more repetitions:-->
+                  <complConsumption>
+                     <!--Optional:-->
+                     <valueComplement>?</valueComplement>
+                     <!--Optional:-->
+                     <typeComplement>?</typeComplement>
+                  </complConsumption>
+               </complConsumptions>
+            </consumption>
+         </modifyConsumptionRequest>
+      </sch:modifyConsumption>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="modifyConsumptionRequest"/></con:call></con:operation></con:interface><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="COMPLEMENT" username="gmasy" password="3889aeb358f4d906db91ee94ea8fb693" wssType="PasswordText">http://10.100.119.12:8080/netConso-ws-0.0.1-SNAPSHOT/services/netConso</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -1,0 +1,21 @@
+<ps:productProperties xmlns:ps="http://www.nordnet.com/packsite"
+nnbo_offerName="site.confort">
+	<ps:handleInformations>
+		<ps:email>Client.Email</ps:email>
+		<ps:lastname>Client.Last_Name</ps:lastname>
+		<ps:firstName>Client.First_Name</ps:firstName>
+		<ps:civility>Client.Civility</ps:civility>
+		<ps:address>
+			<ps:address1>Client.Address1</ps:address1>
+			<ps:address2>Client.Address2</ps:address2>
+			<ps:address3></ps:address3>
+			<ps:zipCode>Client.Zip</ps:zipCode>
+			<ps:city>Client.City</ps:city>
+			<ps:country>Client.Country</ps:country>
+		</ps:address>
+		<ps:phone>Client.Phone</ps:phone>
+		<ps:fax>Client.Fax</ps:fax>
+		<ps:company>Client.Company</ps:company>
+		<ps:status>Client.ProfileType</ps:status>
+	</ps:handleInformations>
+</ps:productProperties>

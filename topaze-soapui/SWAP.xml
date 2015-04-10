@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="SWAP" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="SwapWSImplServiceSoapBinding" type="wsdl" bindingName="{http://www.nordnet.com/swap/schemas}SwapWSImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://tomcat7-2c1.tomcat.dev.nordnet.fr:8080/swap-ws-1.0.x/services/swap?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://tomcat7-2c1.tomcat.dev.nordnet.fr:8080/swap-ws-1.0.x/services/swap?wsdl"><con:part><con:url>http://tomcat7-2c1.tomcat.dev.nordnet.fr:8080/swap-ws-1.0.x/services/swap?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SwapWSImplService" targetNamespace="http://www.nordnet.com/swap/schemas" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.nordnet.com/swap/schemas" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.nordnet.com/swap/types" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.nordnet.com/swap/types">
+      <xs:complexType name="TSwapDemand">
+        <xs:sequence>
+          <xs:element name="demandKey" type="xs:string"/>
+          <xs:element name="clientId" type="xs:string"/>
+          <xs:element name="contractReference" type="xs:string"/>
+          <xs:element name="status" type="xs:string"/>
+          <xs:element name="returnInfos" type="tns:TReturnInfos"/>
+          <xs:element name="shippingInfos" type="tns:TShippingInfos"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TReturnInfos">
+        <xs:sequence>
+          <xs:element name="creationDate" type="xs:dateTime"/>
+          <xs:element name="returnCause" type="xs:string"/>
+          <xs:element minOccurs="0" name="returnTicketKey" type="xs:string"/>
+          <xs:element name="status" type="xs:string"/>
+          <xs:element name="equipments" type="tns:TReturnEquipmentDemand"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TReturnEquipmentDemand">
+        <xs:sequence>
+          <xs:element name="returnCause" type="xs:string"/>
+          <xs:element name="address" type="tns:TAddress"/>
+          <xs:element name="equipments" type="tns:TArrayOfTReturnEquipment"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TAddress">
+        <xs:sequence>
+          <xs:element name="civility" type="tns:CivilityType"/>
+          <xs:element name="lastName" type="xs:string"/>
+          <xs:element name="firstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="company" type="xs:string"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="phoneNumber" type="xs:string"/>
+          <xs:element name="address1" type="xs:string"/>
+          <xs:element minOccurs="0" name="address2" type="xs:string"/>
+          <xs:element name="zipCode" type="xs:string"/>
+          <xs:element name="city" type="xs:string"/>
+          <xs:element name="country" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayOfTReturnEquipment">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="item" type="tns:TReturnEquipment"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TReturnEquipment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="equipmentRef" type="xs:string"/>
+          <xs:element minOccurs="0" name="serialNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TShippingInfos">
+        <xs:sequence>
+          <xs:element name="creationDate" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="shippingDemandId" type="xs:string"/>
+          <xs:element name="status" type="xs:string"/>
+          <xs:element name="equipments" type="tns:TShippingEquipmentDemand"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TShippingEquipmentDemand">
+        <xs:sequence>
+          <xs:element name="address" type="tns:TAddress"/>
+          <xs:element name="equipments" type="tns:TArrayOfShippingEquipment"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayOfShippingEquipment">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="equipment" type="tns:TShippingEquipment"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TShippingEquipment">
+        <xs:sequence>
+          <xs:element name="EquipmentRef" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UserInfos">
+        <xs:sequence>
+          <xs:element name="userName" type="xs:string"/>
+          <xs:element name="ip" type="xs:string"/>
+          <xs:element name="httpUserAgent" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createSwapDemandResponse">
+        <xs:sequence>
+          <xs:element name="swapDemandKey" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createSwapDemandRequest">
+        <xs:sequence>
+          <xs:element name="userInfos" type="tns:UserInfos"/>
+          <xs:element name="clientId" type="xs:string"/>
+          <xs:element name="returnEquipment" type="tns:TReturnEquipmentDemand"/>
+          <xs:element name="shippingEquipment" type="tns:TShippingEquipmentDemand"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="CivilityType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="M"/>
+          <xs:enumeration value="Mme"/>
+          <xs:enumeration value="Mlle"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://responses.types.ws.common.nordnet.com" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="Error">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="code" type="xs:string"/>
+          <xs:element minOccurs="0" name="description" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.nordnet.com/swap/schemas" xmlns:ns1="http://www.nordnet.com/swap/types" xmlns:ns0="http://responses.types.ws.common.nordnet.com">
+      <xsd:import namespace="http://responses.types.ws.common.nordnet.com"/>
+      <xsd:import namespace="http://www.nordnet.com/swap/types"/>
+      <xsd:element name="SwapException" type="tns:SwapException"/>
+      <xsd:complexType name="SwapException">
+        <xsd:sequence>
+          <xsd:element name="error" nillable="true" type="ns0:Error"/>
+          <xsd:element minOccurs="0" name="message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="demandKey" nillable="true" type="xsd:string"/>
+      <xsd:element name="getDemandByKeyResponse" nillable="true" type="ns1:TSwapDemand"/>
+      <xsd:element name="userInfos" nillable="true" type="ns1:UserInfos"/>
+      <xsd:element name="clientId" nillable="true" type="xsd:string"/>
+      <xsd:element name="contractReference" nillable="true" type="xsd:string"/>
+      <xsd:element name="returnEquipment" nillable="true" type="ns1:TReturnEquipmentDemand"/>
+      <xsd:element name="shippingEquipment" nillable="true" type="ns1:TShippingEquipmentDemand"/>
+      <xsd:element name="compteSage" nillable="true" type="xsd:string"/>
+      <xsd:element name="SwapDemandResponse" nillable="true" type="ns1:createSwapDemandResponse"/>
+      <xsd:element name="arrayOfShippingEquipment" nillable="true" type="ns1:TArrayOfShippingEquipment"/>
+      <xsd:element name="listReferencesToSwapResponse" nillable="true" type="ns1:TArrayOfShippingEquipment"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getDemandByKey">
+    <wsdl:part element="tns:demandKey" name="demandKey"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createSwapDemandResponse">
+    <wsdl:part element="tns:SwapDemandResponse" name="createSwapDemandResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listReferencesToSwapResponse">
+    <wsdl:part element="tns:listReferencesToSwapResponse" name="listReferencesToSwapResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createSwapDemand">
+    <wsdl:part element="tns:userInfos" name="userInfos"></wsdl:part>
+    <wsdl:part element="tns:clientId" name="clientId"></wsdl:part>
+    <wsdl:part element="tns:contractReference" name="contractReference"></wsdl:part>
+    <wsdl:part element="tns:returnEquipment" name="returnEquipment"></wsdl:part>
+    <wsdl:part element="tns:shippingEquipment" name="shippingEquipment"></wsdl:part>
+    <wsdl:part element="tns:compteSage" name="compteSage"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDemandByKeyResponse">
+    <wsdl:part element="tns:getDemandByKeyResponse" name="getDemandBeyKeyResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listReferencesToSwap">
+    <wsdl:part element="tns:arrayOfShippingEquipment" name="arrayOfShippingEquipment"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SwapException">
+    <wsdl:part element="tns:SwapException" name="SwapException"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="swap">
+    <wsdl:operation name="getDemandByKey">
+      <wsdl:input message="tns:getDemandByKey" name="getDemandByKey"></wsdl:input>
+      <wsdl:output message="tns:getDemandByKeyResponse" name="getDemandByKeyResponse"></wsdl:output>
+      <wsdl:fault message="tns:SwapException" name="SwapException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createSwapDemand">
+      <wsdl:input message="tns:createSwapDemand" name="createSwapDemand"></wsdl:input>
+      <wsdl:output message="tns:createSwapDemandResponse" name="createSwapDemandResponse"></wsdl:output>
+      <wsdl:fault message="tns:SwapException" name="SwapException"></wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listReferencesToSwap">
+      <wsdl:input message="tns:listReferencesToSwap" name="listReferencesToSwap"></wsdl:input>
+      <wsdl:output message="tns:listReferencesToSwapResponse" name="listReferencesToSwapResponse"></wsdl:output>
+      <wsdl:fault message="tns:SwapException" name="SwapException"></wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SwapWSImplServiceSoapBinding" type="tns:swap">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createSwapDemand">
+      <soap:operation soapAction="createSwapDemand" style="document"/>
+      <wsdl:input name="createSwapDemand">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createSwapDemandResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SwapException">
+        <soap:fault name="SwapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDemandByKey">
+      <soap:operation soapAction="getDemandByKey" style="document"/>
+      <wsdl:input name="getDemandByKey">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDemandByKeyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SwapException">
+        <soap:fault name="SwapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="listReferencesToSwap">
+      <soap:operation soapAction="listReferencesToSwap" style="document"/>
+      <wsdl:input name="listReferencesToSwap">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listReferencesToSwapResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="SwapException">
+        <soap:fault name="SwapException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SwapWSImplService">
+    <wsdl:port binding="tns:SwapWSImplServiceSoapBinding" name="swapPort">
+      <soap:address location="http://tomcat7-2c1.tomcat.dev.nordnet.fr:8080/swap-ws-1.0.x/services/swap"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://tomcat7-2c1.tomcat.dev.nordnet.fr:8080/swap-ws-1.0.x/services/swap</con:endpoint></con:endpoints><con:operation isOneWay="false" action="createSwapDemand" name="createSwapDemand" bindingOperationName="createSwapDemand" type="Request-Response" outputName="createSwapDemandResponse" inputName="createSwapDemand" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-2c1.tomcat.dev.nordnet.fr:8080/swap-ws-1.0.x/services/swap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/swap/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:userInfos>
+         <userName>?</userName>
+         <ip>?</ip>
+         <httpUserAgent>?</httpUserAgent>
+      </sch:userInfos>
+      <sch:clientId>?</sch:clientId>
+      <sch:contractReference>?</sch:contractReference>
+      <sch:returnEquipment>
+         <returnCause>?</returnCause>
+         <address>
+            <civility>?</civility>
+            <lastName>?</lastName>
+            <firstName>?</firstName>
+            <!--Optional:-->
+            <company>?</company>
+            <!--Optional:-->
+            <email>?</email>
+            <!--Optional:-->
+            <phoneNumber>?</phoneNumber>
+            <address1>?</address1>
+            <!--Optional:-->
+            <address2>?</address2>
+            <zipCode>?</zipCode>
+            <city>?</city>
+            <country>?</country>
+         </address>
+         <equipments>
+            <!--Zero or more repetitions:-->
+            <item>
+               <!--Optional:-->
+               <equipmentRef>?</equipmentRef>
+               <!--Optional:-->
+               <serialNumber>?</serialNumber>
+            </item>
+         </equipments>
+      </sch:returnEquipment>
+      <sch:shippingEquipment>
+         <address>
+            <civility>?</civility>
+            <lastName>?</lastName>
+            <firstName>?</firstName>
+            <!--Optional:-->
+            <company>?</company>
+            <!--Optional:-->
+            <email>?</email>
+            <!--Optional:-->
+            <phoneNumber>?</phoneNumber>
+            <address1>?</address1>
+            <!--Optional:-->
+            <address2>?</address2>
+            <zipCode>?</zipCode>
+            <city>?</city>
+            <country>?</country>
+         </address>
+         <equipments>
+            <!--1 or more repetitions:-->
+            <equipment>
+               <EquipmentRef>?</EquipmentRef>
+            </equipment>
+         </equipments>
+      </sch:shippingEquipment>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="createSwapDemand"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getDemandByKey" name="getDemandByKey" bindingOperationName="getDemandByKey" type="Request-Response" outputName="getDemandByKeyResponse" inputName="getDemandByKey" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-2c1.tomcat.dev.nordnet.fr:8080/swap-ws-1.0.x/services/swap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/swap/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:demandKey>?</sch:demandKey>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getDemandByKey"/></con:call></con:operation><con:operation isOneWay="false" action="listReferencesToSwap" name="listReferencesToSwap" bindingOperationName="listReferencesToSwap" type="Request-Response" outputName="listReferencesToSwapResponse" inputName="listReferencesToSwap" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-2c1.tomcat.dev.nordnet.fr:8080/swap-ws-1.0.x/services/swap</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/swap/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:arrayOfShippingEquipment>
+         <!--1 or more repetitions:-->
+         <equipment>
+            <EquipmentRef>?</EquipmentRef>
+         </equipment>
+      </sch:arrayOfShippingEquipment>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="listReferencesToSwap"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

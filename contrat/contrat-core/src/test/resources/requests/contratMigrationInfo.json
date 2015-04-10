@@ -1,0 +1,33 @@
+{
+  "user": "test",
+  "politiqueMigration": {
+    "fraisMigration": null,
+    "fraisResiliation": true,
+    "remboursement": true,
+    "fraisCreation": true,
+    "penalite": true,
+    "reductionAncienne": true
+  },
+  "produitsMigration": [
+    {
+      "numEC": 1,
+      "referenceGammeSource": "securite",
+      "referenceProduitSource": "avfwpro-confort-s",
+      "referenceGammeDestination": "securite",
+      "referenceProduitDestination": "avfw.confort.xl",
+      "label": "Abonnement Antivirus 6postes",
+      "numeroCommande": "Order_migration_avfw_xl",
+      "typeProduit": "SERVICE",
+      "remboursable": true,
+      "prix": {
+        "duree" : "12",
+        "periodicite": 2,
+        "montant": "10",
+        "typeTVA": "R",
+        "modeFacturation": "DATE_ANNIVERSAIRE"
+      },
+      "referenceDePaiement": "R0000012",
+      "modePaiement": "SEPA"
+    }
+  ]
+}

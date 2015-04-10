@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+<produit id="1" label="PRODUIT_TST" outilsLivraison="PACKAGER" reference="REF_PRODUIT_S_REC"  typeProduit="SERVICE" typeTVA="S"  />
+<produit id="2" label="PRODUIT_TST" outilsLivraison="NETDELIVERY" reference="REF_PRODUIT_S_OC"  typeProduit="SERVICE" typeTVA="S" />
+<produit id="3" label="PRODUIT_TST" outilsLivraison="NETDELIVERY" reference="REF_PRODUIT_S_TFSF"  typeProduit="SERVICE" typeTVA="S" />
+<produit id="4" label="PRODUIT_TST" outilsLivraison="NETDELIVERY" reference="REF_PRODUIT_B_REC"  typeProduit="BIEN" typeTVA="S" />
+<produit id="5" label="PRODUIT_TST" outilsLivraison="NETDELIVERY" reference="REF_PRODUIT_B_OS"  typeProduit="BIEN" typeTVA="S" />
+<produit id="6" label="PRODUIT_TST" outilsLivraison="PACKAGER" reference="REF_PRODUIT_B_TFSF"  typeProduit="SERVICE" typeTVA="S" />
+<produit id="7" label="PRODUIT_TST" outilsLivraison="PACKAGER" reference="REF_PRODUIT_TEMPLATE"  typeProduit="SERVICE" typeTVA="S" xmlTemplatePath="test" xsdTemplatePath="test" />
+<produit id="8" label="PRODUIT_TST" outilsLivraison="PACKAGER" reference="REF_PRODUIT_TEMPLATE_N"  typeProduit="SERVICE" typeTVA="S" xmlTemplatePath="testXML" xsdTemplatePath="testXSD" />
+<fraisproduit id="1" montant="1000" produitId="1"/>
+<prix id="1" engagement="3" montant="1000" typePrix="ONE_SHOT" produitId="1"/>
+</dataset>

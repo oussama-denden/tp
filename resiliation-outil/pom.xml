@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.nordnet.topaze</groupId>
+		<artifactId>topaze</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>resiliation-outil</artifactId>
+
+	<packaging>war</packaging>
+	<name>resiliation-outil</name>
+
+	<dependencies>
+		<!-- Java Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Local -->
+		<dependency>
+			<groupId>com.nordnet.topaze</groupId>
+			<artifactId>topaze-exception</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- client nordNet -->
+		<dependency>
+			<groupId>com.nordnet.common</groupId>
+			<artifactId>alert.ws.client</artifactId>
+			<version>1.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>saphir</groupId>
+			<artifactId>saphir-client</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<finalName>resiliation-outil</finalName>
+		<!-- Setting main resources folder -->
+		<resources>
+			<!-- filtering persistence.xml -->
+			<resource>
+				<directory>src/main/resources/</directory>
+				<excludes>
+					<exclude>META-INF/spring/applicationContext.xml</exclude>
+				</excludes>
+				<filtering>true</filtering>
+			</resource>
+
+			<resource>
+				<directory>src/main/config/dev/</directory>
+				<targetPath>${project.build.outputDirectory}/META-INF/spring/</targetPath>
+
+			</resource>
+			<resource>
+				<directory>src/main/config/prod/</directory>
+				<targetPath>${project.build.outputDirectory}/META-INF/spring/</targetPath>
+
+			</resource>
+			<resource>
+				<directory>src/main/config/qualif/</directory>
+				<targetPath>${project.build.outputDirectory}/META-INF/spring/</targetPath>
+
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<!-- <webResources> <resource> <filtering>true</filtering> <directory>${basedir}/WebContent</directory> 
+						<includes> <include>**/web.xml</include> </includes> </resource> </webResources> -->
+					<warSourceDirectory>${basedir}/WebContent</warSourceDirectory>
+					<!-- <webXml>${basedir}/WebContent/WEB-INF/web.xml</webXml> -->
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>${version.java}</source>
+					<target>${version.java}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12</version>
+				<configuration>
+					<printSummary>false</printSummary>
+					<skipTests>false</skipTests>
+					<testFailureIgnore>false</testFailureIgnore>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.nordnet.topaze</groupId>
+		<artifactId>topaze</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>topaze-contrat</artifactId>
+
+	<packaging>pom</packaging>
+	<name>topaze-contrat</name>
+	<modules>
+		<module>contrat-core</module>
+		<module>contrat-outil</module>
+	</modules>
+
+	<dependencies>
+		<!-- Local -->
+		<dependency>
+			<groupId>com.nordnet.topaze</groupId>
+			<artifactId>topaze-exception</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.nordnet.topaze</groupId>
+			<artifactId>client-rest</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+	</dependencies>
+</project>

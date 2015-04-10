@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Opale-test-case" soapui-version="5.0.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="Opale test"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8080" type="rest" id="72b573c8-9ee8-4fde-be94-80a7c3b7820a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://localhost:8080</con:endpoint></con:endpoints><con:resource name="CreateDraft" path="/opale-api/draft/draft" id="1b62e9b4-23b9-4d80-b527-16078e736ec6"><con:settings/><con:parameters/><con:method name="Method 1" method="POST" id="0982ad92-4af9-459c-875f-7e8e1451a23d"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:draf="http://localhost/opale-api/draft/draft">draf:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>400</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" mediaType="application/json" postQueryString="false" id="53386b2d-deda-4e1b-83b2-b988fbb0da08"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  },
+  "user": "akram"
+}</con:request><con:originalUri>http://localhost/opale-api/draft/draft</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="annuler" path="/opale-api/draft/{refDraft}" id="1ddeea02-884f-4ab2-9495-f68f8e4cc0b1"><con:settings/><con:parameters><con:parameter><con:name>refDraft</con:name><con:value>refDraft</con:value><con:style>TEMPLATE</con:style><con:default>refDraft</con:default></con:parameter></con:parameters><con:method name="Method 1" method="DELETE" id="1494fe67-18f2-4f9a-be27-a55a6deb80b0"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>404 405</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:anu="http://localhost/opale-api/00000016/anuuler">anu:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" mediaType="application/json" postQueryString="false" id="802ec5e7-f8dc-4eef-a405-6bdeef89650d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8080</con:endpoint><con:request/><con:originalUri>http://localhost/opale-api/00000016/anuuler</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="associerClient" path="/opale-api/draft/{refDraft}/associerClient" id="c79982bf-cc48-40e5-8b96-fa91bde5ab3e"><con:settings/><con:parameters><con:parameter><con:name>refDraft</con:name><con:value>refDraft</con:value><con:style>TEMPLATE</con:style><con:default>refDraft</con:default></con:parameter></con:parameters><con:method name="Method 1" method="POST" id="eb81fe3a-e670-4355-aafc-b41e4ea8cb89"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>404 405</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:ass="http://localhost/opale-api/draft/refDraft/associerClient">ass:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" mediaType="application/json" postQueryString="false" id="658c2ffb-f2d4-4f70-ba33-c2a28fb2561b"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "souscripteur": {
+    "clientId": "id-souscri",
+    "adresseId": "adr-souscri"
+  },
+  "livraison":{
+    "clientId": "id-livraison",
+    "adresseId": "adr-livraison"
+  },
+  "facturation":{
+    "clientId": "id-facturation",
+    "adresseId": "adr-facturation"
+  },
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  },
+    "user": "SOAP-test"
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="ligne" path="/opale-api/draft/{refDraft}/lignes" id="4d22bf34-5e52-476f-90a3-6948123fc434"><con:settings/><con:parameters><con:parameter><con:name>refDraft</con:name><con:value>refDraft</con:value><con:style>TEMPLATE</con:style><con:default>refDraft</con:default></con:parameter></con:parameters><con:method name="Method 1" method="POST" id="84e2bd69-2ef3-4821-88a3-adf1c9db03e7"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:lig="http://localhost/opale-api/draft/00000001/ligne">lig:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>405 404</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Request 1" mediaType="application/json" postQueryString="false" id="515445cf-0049-421b-8e74-a6e275930c43"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "offre": {
+    "modePaiement": "CB",
+    "referenceTarif": "mensuel_jet10_base",
+    "referenceOffre": "jet_surf10",
+    "modeFacturation": "PREMIER_MOIS",
+    "details": [
+      {
+        "reference": "kitsat",
+        "referenceSelection": "kitsat",
+        "referenceTarif": "achat_kit_mensuel",
+        "modePaiement": "CB",
+        "configurationJson": "",
+        "referenceChoix" :"referenceChoix",
+        "dependDe": ""
+      },
+      {
+        "reference": "jet",
+        "referenceSelection": "jet",
+        "referenceTarif": "achat_kit_mensuel",
+        "modePaiement": "CB",
+        "configurationJson": "",
+        "referenceChoix" :"referenceChoix",
+        "dependDe": "kitsat"
+      }
+    ]
+  },
+  "auteur": {
+    "code": "string",
+    "qui": "string",
+    "ip": {
+      "ip": "string",
+      "ts": 0.1
+    },
+    "canal": "string"
+  },
+  "user": "string"
+}</con:request><con:originalUri>http://localhost/opale-api/draft//ligne</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refDraft" value="${CommandInfo#refDraft}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource><con:resource name="transformerEnCommande" path="/opale-api/draft/{refDraft}/transformerEnCommande" id="ca45c160-2aeb-46fb-869c-caed6bf70bd0"><con:settings/><con:parameters><con:parameter><con:name>refDraft</con:name><con:value>refDraft</con:value><con:style>TEMPLATE</con:style><con:default>refDraft</con:default></con:parameter></con:parameters><con:method name="Method 1" method="POST" id="4a6b33e5-6f86-4ac5-af1a-a95aabc91c14"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>405 500</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" mediaType="application/json" postQueryString="false" id="f3194b1e-f408-44eb-b2be-f7524afeeb05"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "trameCatalogue": {
+  "frais": [
+    {
+      "reference": "std_cloture",
+      "typeFrais": "RESILIATION",
+      "montant": "50",
+      "label": "Frais de cloture de dossier"
+    },
+    {
+      "reference": "engagement_kitsat",
+      "typeFrais": "CREATION",
+      "montant": "50",
+      "label": "Frais de dossier"
+    }
+  ],
+  "tarifs": [
+    {
+      "reference": "mensuel_jet10_base",
+      "engagement": "0",
+      "prix": "34.9",
+      "frais": [
+        "std_cloture"
+      ],
+      "periode": "1"
+    },
+    {
+      "reference": "annuel_jet10_base",
+      "engagement": "12",
+      "prix": "34.9",
+      "frais": [
+        "std_cloture"
+      ],
+      "periode": "12"
+    }
+  ],
+  "offres": [
+    {
+      "reference": "jet_surf10",
+      "gamme": "jet",
+      "famille": "sat",
+      "modeFacturation": "PREMIER_MOIS",
+      "tarifs": [
+        "annuel_jet10_base","mensuel_jet10_base"
+      ],
+      "tranches": [
+        "A"
+      ],
+      "details": [
+        {
+          "referenceSelection": "kitsat",
+          "label": "Trafic",
+          "type": "ONLY_ONE",
+          "nature": "BIEN",
+          "choices": [
+            {
+              "reference": "trafic10g",
+              "label": "Trafic 10 Gigas (Inclus)",
+              "tarifs": [
+                "annuel_jet10_base"
+              ]
+            }
+          ]
+        },
+         {
+          "referenceSelection": "jet",
+          "label": "Trafic",
+          "type": "ONLY_ONE",
+           "nature": "BIEN",
+          "choices": [
+            {
+              "reference": "trafic10g",
+              "label": "Trafic 10 Gigas (Inclus)",
+              "tarifs": [
+                "annuel_jet10_base"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},
+  "clientInfo": {
+     "souscripteur": {
+    "clientId": "id-souscri",
+    "adresseId": "adr-souscri"
+  },
+  "livraison":{
+    "clientId": "id-livraison",
+    "adresseId": "adr-livraison"
+  },
+  "facturation":{
+    "clientId": "id-facturation",
+    "adresseId": "adr-facturation"
+  }
+  }
+}</con:request><con:originalUri>http://localhost/opale-api/draft/00000008/transformerEnCommande</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refDraft" value="${CommandInfo#refDraft}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource><con:resource name="{refCommand}" path="/opale-api/commande/{refCommand}"><con:settings/><con:parameters><con:parameter><con:name>refCommand</con:name><con:value>refCommand</con:value><con:style>TEMPLATE</con:style><con:default>refCommand</con:default></con:parameter></con:parameters><con:method name="Method 1" method="GET"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>404 400 405</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:com="http://localhost/opale-api/commande/">com:Response</con:element></con:representation><con:request name="Request 1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "trameCatalogue": {
+  "frais": [
+    {
+      "reference": "std_cloture",
+      "typeFrais": "RESILIATION",
+      "montant": "50",
+      "label": "Frais de cloture de dossier"
+    },
+    {
+      "reference": "engagement_kitsat",
+      "typeFrais": "CREATION",
+      "montant": "50",
+      "label": "Frais de dossier"
+    }
+  ],
+  "tarifs": [
+    {
+      "reference": "mensuel_jet10_base",
+      "engagement": "0",
+      "prix": "34.9",
+      "frais": [
+        "std_cloture"
+      ],
+      "periode": "1"
+    },
+    {
+      "reference": "annuel_jet10_base",
+      "engagement": "12",
+      "prix": "34.9",
+      "frais": [
+        "std_cloture"
+      ],
+      "periode": "12"
+    }
+  ],
+  "offres": [
+    {
+      "reference": "jet_surf10",
+      "gamme": "jet",
+      "famille": "sat",
+      "modeFacturation": "PREMIER_MOIS",
+      "tarifs": [
+        "annuel_jet10_base","mensuel_jet10_base"
+      ],
+      "tranches": [
+        "A"
+      ],
+      "details": [
+        {
+          "referenceSelection": "kitsat",
+          "label": "Trafic",
+          "type": "ONLY_ONE",
+          "nature": "BIEN",
+          "choices": [
+            {
+              "reference": "trafic10g",
+              "label": "Trafic 10 Gigas (Inclus)",
+              "tarifs": [
+                "annuel_jet10_base"
+              ]
+            }
+          ]
+        },
+         {
+          "referenceSelection": "jet",
+          "label": "Trafic",
+          "type": "ONLY_ONE",
+           "nature": "BIEN",
+          "choices": [
+            {
+              "reference": "trafic10g",
+              "label": "Trafic 10 Gigas (Inclus)",
+              "tarifs": [
+                "annuel_jet10_base"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},
+  "clientInfo": {
+     "souscripteur": {
+    "clientId": "id-souscri",
+    "adresseId": "adr-souscri"
+  },
+  "livraison":{
+    "clientId": "id-livraison",
+    "adresseId": "adr-livraison"
+  },
+  "facturation":{
+    "clientId": "id-facturation",
+    "adresseId": "adr-facturation"
+  }
+  }
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refCommand" value="${CommandInfo#refCommande}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource><con:resource name="paiement" path="/opale-api/commande/{refCommand}/paiement"><con:settings/><con:parameters><con:parameter><con:name>refCommand</con:name><con:value>refCommand</con:value><con:style>TEMPLATE</con:style><con:default>refCommand</con:default></con:parameter></con:parameters><con:method name="Method 1" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:pai="http://localhost/00000001/paiement">pai:Response</con:element></con:representation><con:request name="Request 1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "infoPaiement": "info paiement",
+  "modePaiement": "CHEQUE",
+  "montant": "10"
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="payer}" path="/opale-api/commande/{refCommand}/paiement/{refPaiement}/payer"><con:settings/><con:parameters><con:parameter><con:name>refPaiement</con:name><con:value>refPaiement</con:value><con:style>TEMPLATE</con:style><con:default>refPaiement</con:default></con:parameter><con:parameter><con:name>refCommand</con:name><con:style>TEMPLATE</con:style></con:parameter></con:parameters><con:method name="Method 1" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>404 400</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:loc="http://localhost/">loc:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "infoPaiement": "info paiement",
+  "modePaiement": "CB",
+  "montant": "5"
+}</con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refCommand" value="refCommand" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>refPaiement</con:entry><con:entry>refCommand</con:entry></con:parameterOrder></con:request></con:method></con:resource><con:resource name="paiement comptant direct" path="/opale-api/commande/{refCommande}/paiement/comptant"><con:settings/><con:parameters><con:parameter><con:name>refCommande</con:name><con:value>refCommande</con:value><con:style>TEMPLATE</con:style><con:default>refCommande</con:default></con:parameter></con:parameters><con:method name="Method 1" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>404 500</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:pai="http://localhost/opale-api/commande/refCommande/paiementDirect">pai:Response</con:element></con:representation><con:request name="Request 1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "infoPaiement": "info paiement",
+  "modePaiement": "CHEQUE",
+  "montant": "10"
+}</con:request><con:originalUri>http://localhost/opale-api/commande/refCommande/paiementDirect</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite name="Opale test" id="0e4cdc82-7cb2-4be6-9de9-f227e6168435"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="annulerDraft" searchProperties="true" id="73ba5ada-69de-49ae-8c5c-fef766de5d01"><con:settings/><con:testStep type="properties" name="DraftInfo" id="6df5c435-1a3d-43bc-97f1-e2c3e3a89bfc"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>refDraft</con:name><con:value>00000006</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="CreateDraft" id="23950d14-2ec9-40d0-ab9d-575e53e3cdcb"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/draft" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CreateDraft" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  },
+  "user": "akram"
+}</con:request><con:originalUri>http://localhost/opale-api/draft/draft</con:originalUri><con:assertion type="XPath Match" name="XPath Match" id="9d980bb9-e1da-4b6b-9a76-844cd74f329b"><con:configuration><path>declare namespace nsa='http://localhost/opale-api/draft/draft';
+exists(//nsa:Response/nsa:reference)</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="Move draft reference" id="66abc59a-8ae3-4d53-a609-7165bc9f6368"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>refDraft</con:name><con:sourceType>ResponseAsXml</con:sourceType><con:sourceStep>CreateDraft</con:sourceStep><con:sourcePath>declare namespace nsa='http://localhost/opale-api/draft/draft';
+//nsa:reference</con:sourcePath><con:targetType>refDraft</con:targetType><con:targetStep>DraftInfo</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="jdbc" name="draft valid" id="f7d5367f-e90c-4963-882e-4ab83baa8b89"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/opale_test?user=test&amp;password=test</con:connectionString><con:query>select * from draft 
+where reference = "${DraftInfo#refDraft}"</con:query><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>&lt;DRAFT.ID></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration><path>&lt;Result> { for $i in //Row return $i/DRAFT.REFERENCE/string() } &lt;/Result></path><content>${DraftInfo#refDraft}</content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="restrequest" name="annulerDraft" id="46edc159-8cc7-4f2f-afd7-c430bdef3de4"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/{refDraft}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="annulerDraft" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request/><con:originalUri>http://localhost/opale-api/draft/00000016/annuler</con:originalUri><con:assertion type="GroovyScriptAssertion" name="response must be null" id="6f792fd3-3bae-4336-a776-3a3b72cbd257"><con:configuration><scriptText>assert messageExchange.hasResponse() == false</scriptText></con:configuration></con:assertion><con:assertion type="Invalid HTTP Status Codes" name="code HTTP must be different then 500" id="49c41412-2e96-4540-a899-d15c174afd84"><con:configuration><codes>500</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refDraft" value="${DraftInfo#refDraft}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="jdbc" name="DraftAnnuler" id="1104ca60-5188-4767-9914-52734c6a911a"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/opale_test?user=test&amp;password=test</con:connectionString><con:query>select * from draft 
+where reference = "${DraftInfo#refDraft}"</con:query><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>&lt;DRAFT.DATEANNULATION></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="restrequest" name="AnnulerDraftNouvelleFois" id="b1cdb66e-ecb9-436b-a56f-d862aac9e19e"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/{refDraft}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="AnnulerDraftNouvelleFois" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request/><con:originalUri>http://localhost/opale-api/draft/00000019/annuler</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refDraft" value="${DraftInfo#refDraft}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CreateDraftForGeneralUser" searchProperties="true" id="dc9d1e5d-c524-41ce-992e-9dcc836c1939"><con:settings/><con:testStep type="properties" name="DraftInfo"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>refDraft</con:name><con:value>00000009</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="properties" name="CommandInfo"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>refCommand</con:name><con:value/></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="CreateDraft"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/draft" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CreateDraft" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  },
+  "user": "akram"
+}</con:request><con:originalUri>http://localhost/opale-api/draft/draft</con:originalUri><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>declare namespace nsa='http://localhost/opale-api/draft/draft';
+exists(//nsa:Response/nsa:reference)</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="Move reference Draft"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>refDraft</con:name><con:sourceType>ResponseAsXml</con:sourceType><con:sourceStep>CreateDraft</con:sourceStep><con:sourcePath>declare namespace nsa='http://localhost/opale-api/draft/draft';
+//nsa:reference</con:sourcePath><con:targetType>refDraft</con:targetType><con:targetStep>DraftInfo</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="jdbc" name="DraftValid"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/opale_test?user=test&amp;password=test</con:connectionString><con:query>
+select * from draft where
+reference="${DraftInfo#refDraft}";</con:query><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>&lt;DRAFT.ID></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>//ResultSet/Row[1]/DRAFT.REFERENCE/text()</path><content>${DraftInfo#refDraft}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="restrequest" name="AssocierClient"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/{refDraft}/associerClient" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="AssocierClient" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "souscripteur": {
+    "clientId": "id-souscri",
+    "adresseId": "adr-souscri"
+  },
+  "livraison":{
+    "clientId": "id-livraison",
+    "adresseId": "adr-livraison"
+  },
+  "facturation":{
+    "clientId": "id-facturation",
+    "adresseId": "adr-facturation"
+  },
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  }
+}</con:request><con:originalUri>http://localhost/opale-api/00000036/associerClient</con:originalUri><con:assertion type="GroovyScriptAssertion" name="Script Assertion"><con:configuration><scriptText>assert messageExchange.hasResponse() == false</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refDraft" value="${DraftInfo#refDraft}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="jdbc" name="ClientValid"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/opale_test?user=test&amp;password=test</con:connectionString><con:query>
+select * from draft where
+reference="${DraftInfo#refDraft}";</con:query><con:assertion type="Simple Contains" name="Client facture"><con:configuration><token>&lt;DRAFT.CLIENTAFACTURERID></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Client livraison"><con:configuration><token>&lt;DRAFT.CLIENTALIVRERID></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Client Souscription"><con:configuration><token>&lt;DRAFT.CLIENTSOUSCRIPTEURID></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="restrequest" name="AssocierClient2"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/{refDraft}/associerClient" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="AssocierClient2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "souscripteur": {
+    "clientId": "id-souscri-2-test",
+    "adresseId": "adr-souscri"
+  },
+  "livraison":{
+    "clientId": "id-livraison-2-test",
+    "adresseId": "adr-livraison"
+  },
+  "facturation":{
+    "clientId": "id-facturation-2-test",
+    "adresseId": "adr-facturation"
+  },
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  },
+    "user": "SOAP-test"
+}</con:request><con:originalUri>http://localhost/opale-api/draft/refDraft/associerClient</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refDraft" value="${DraftInfo#refDraft}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="jdbc" name="ClientChange"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/opale_test?user=test&amp;password=test</con:connectionString><con:query>
+select * from client where
+id=(select clientAfacturerId from draft
+where reference="${DraftInfo#refDraft}");</con:query><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration><path>//ResultSet/Row[1] /CLIENT.CLIENTID/string()</path><content>id-facturation</content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CreateDraftavecReferenceUnique" searchProperties="true" id="b9338ddf-2bf8-436b-90d6-57ac7f6fd420"><con:settings/><con:testStep type="properties" name="DraftInfo"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>refDraft1</con:name><con:value>00000010</con:value></con:property><con:property><con:name>refDraft2</con:name><con:value>00000011</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="CreateDraft-1"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/draft" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CreateDraft-1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  },
+  "user": "akram"
+}</con:request><con:originalUri>http://localhost/opale-api/draft/draft</con:originalUri><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>declare namespace nsa='http://localhost/opale-api/draft/draft';
+exists(//nsa:Response/nsa:reference)</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="Move draft1 reference"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>refDraft</con:name><con:sourceType>ResponseAsXml</con:sourceType><con:sourceStep>CreateDraft-1</con:sourceStep><con:sourcePath>declare namespace nsa='http://localhost/opale-api/draft/draft';
+//nsa:reference</con:sourcePath><con:targetType>refDraft1</con:targetType><con:targetStep>DraftInfo</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="CreateDraft -2"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/draft" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CreateDraft -2" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  },
+  "user": "akram"
+}</con:request><con:originalUri>http://localhost/opale-api/draft/draft</con:originalUri><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>declare namespace nsa='http://localhost/opale-api/draft/draft';
+exists(//nsa:Response/nsa:reference)</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="Move draft2 reference"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>refDraft</con:name><con:sourceType>ResponseAsXml</con:sourceType><con:sourceStep>CreateDraft -2</con:sourceStep><con:sourcePath>declare namespace nsa='http://localhost/opale-api/draft/draft';
+//nsa:reference</con:sourcePath><con:targetType>refDraft2</con:targetType><con:targetStep>DraftInfo</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="jdbc" name="DraftReferenceUnique"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/opale_test?user=test&amp;password=test</con:connectionString><con:query>
+select * from draft where
+reference="${DraftInfo#refDraft1}" OR 
+reference="${DraftInfo#refDraft2}"
+;</con:query><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration><path>&lt;Results>
+ { 
+for $i in //Row
+order by $i/DRAFT.REFERENCE
+ return &lt;result> {$i/DRAFT.REFERENCE/string()}&lt;/result>
+ }
+ &lt;/Results></path><content><![CDATA[<Results>
+  <result>${DraftInfo#refDraft1}</result>
+  <result>${DraftInfo#refDraft2}</result>
+</Results>
+]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match"><con:configuration/></con:assertion><con:assertion type="XQuery Match" name="CompareTheReference"><con:configuration><path>//ResultSet/Row[1] /DRAFT.REFERENCE/string()=//ResultSet/Row[2] /DRAFT.REFERENCE/string()</path><content>false</content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TransformerCommande" searchProperties="true" id="aa1ad16c-ff21-4c97-8bcf-11d5b7e505f0"><con:settings/><con:testStep type="properties" name="CommandInfo"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>refCommande</con:name><con:value>00000005</con:value></con:property><con:property><con:name>refDraft</con:name><con:value>00000016</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="CreateDraft"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/draft" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CreateDraft" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  },
+  "user": "akram"
+}</con:request><con:originalUri>http://localhost/opale-api/draft/draft</con:originalUri><con:assertion type="XPath Match" name="XPath Match" disabled="true"><con:configuration><path>declare namespace nsa='http://localhost/opale-api/draft/draft';
+exists(//nsa:Response/nsa:reference)</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" name="Script Assertion"><con:configuration><scriptText>import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+assert !(jsonSlurper.isEmpty())
+assert jsonSlurper.reference != null</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Transfert ref draft"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+def responseContent = testRunner.testCase.getTestStepByName("CreateDraft").getPropertyValue("response")
+def jsonSlurper = new JsonSlurper().parseText(responseContent)
+testRunner.testCase.testSteps["CommandInfo"].setPropertyValue("refDraft", jsonSlurper.reference)
+log.info jsonSlurper.reference</script></con:config></con:testStep><con:testStep type="jdbc" name="DraftValid"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/opale_test?user=test&amp;password=test</con:connectionString><con:query>
+select * from draft where
+reference="${CommandInfo#refDraft}";</con:query><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>&lt;DRAFT.ID></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>//ResultSet/Row[1]/DRAFT.REFERENCE/text()</path><content>${CommandInfo#refDraft}</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="restrequest" name="associerClient"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/{refDraft}/associerClient" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="associerClient" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "souscripteur": {
+    "clientId": "id-souscri",
+    "adresseId": "adr-souscri"
+  },
+  "livraison":{
+    "clientId": "id-livraison",
+    "adresseId": "adr-livraison"
+  },
+  "facturation":{
+    "clientId": "id-facturation",
+    "adresseId": "adr-facturation"
+  },
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  }
+}</con:request><con:originalUri>http://localhost/opale-api/draft/00000002/associerClient</con:originalUri><con:assertion type="GroovyScriptAssertion" name="Script Assertion"><con:configuration><scriptText>assert messageExchange.hasResponse() == false</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refDraft" value="${CommandInfo#refDraft}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="AjouterLigne"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/{refDraft}/lignes" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="AjouterLigne" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>[{
+  "offre": {
+    "modePaiement": "CB",
+    "referenceTarif": "mensuel_jet10_base",
+    "referenceOffre": "jet_surf10",
+    "modeFacturation": "PREMIER_MOIS",
+    "details": [
+      {
+        "reference": "kitsat",
+        "referenceSelection": "kitsat",
+        "referenceTarif": "mensuel_jet10_base",
+        "modePaiement": "CB",
+        "configurationJson": "",
+        "referenceChoix" :"trafic10g",
+        "dependDe": ""
+      },
+      {
+        "reference": "jet",
+        "referenceSelection": "jet",
+        "referenceTarif": "mensuel_jet10_base",
+        "modePaiement": "CB",
+        "configurationJson": "",
+        "referenceChoix" :"trafic10g",
+        "dependDe": "kitsat"
+      }
+    ]
+  },
+  "auteur": {
+    "code": "string",
+    "qui": "string",
+    "ip": {
+      "ip": "string",
+      "ts": 0.1
+    },
+    "canal": "string"
+  }
+}
+]</con:request><con:originalUri>http://localhost/opale-api/draft/00000002/ligne</con:originalUri><con:assertion type="GroovyScriptAssertion" name="numero existe"><con:configuration><scriptText>import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+assert !(jsonSlurper.isEmpty())
+assert jsonSlurper.numero != null</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refDraft" value="${CommandInfo#refDraft}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="TransformerenCommand"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/{refDraft}/transformerEnCommande" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="TransformerenCommand" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "trameCatalogue": {
+  "frais": [
+    {
+      "reference": "std_cloture",
+      "typeFrais": "RESILIATION",
+      "montant": "50",
+      "label": "Frais de cloture de dossier"
+    },
+    {
+      "reference": "engagement_kitsat",
+      "typeFrais": "CREATION",
+      "montant": "50",
+      "label": "Frais de dossier"
+    }
+  ],
+  "tarifs": [
+    {
+      "reference": "mensuel_jet10_base",
+      "engagement": "0",
+      "prix": "34.9",
+      "frais": [
+        "std_cloture"
+      ],
+      "frequence": "1"
+    },
+    {
+      "reference": "annuel_jet10_base",
+      "engagement": "12",
+      "prix": "34.9",
+      "frais": [
+        "std_cloture"
+      ],
+      "frequence": "12"
+    }
+  ],
+  "offres": [
+    {
+      "reference": "jet_surf10",
+      "gamme": "jet",
+      "famille": "sat",
+      "modeFacturation": "PREMIER_MOIS",
+      "tarifs": [
+        "annuel_jet10_base","mensuel_jet10_base"
+      ],
+      "tranches": [
+        "A"
+      ],
+      "details": [
+        {
+          "referenceSelection": "kitsat",
+          "label": "Trafic",
+          "type": "ONLY_ONE",
+          "nature": "BIEN",
+          "choices": [
+            {
+              "reference": "trafic10g",
+              "label": "Trafic 10 Gigas (Inclus)",
+              "tarifs": [
+                "annuel_jet10_base"
+              ]
+            }
+          ]
+        },
+         {
+          "referenceSelection": "jet",
+          "label": "Trafic",
+          "type": "ONLY_ONE",
+           "nature": "BIEN",
+          "choices": [
+            {
+              "reference": "trafic10g",
+              "label": "Trafic 10 Gigas (Inclus)",
+              "tarifs": [
+                "annuel_jet10_base"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auteur": {
+      "code": "string",
+      "qui": "string",
+      "ip": {
+        "ip": "string",
+        "ts": 0.1
+      },
+      "canal": "string"
+    }
+},
+  "clientInfo": {
+     "souscripteur": {
+    "clientId": "id-souscri",
+    "adresseId": "adr-souscri"
+  },
+  "livraison":{
+    "clientId": "id-livraison",
+    "adresseId": "adr-livraison"
+  },
+  "facturation":{
+    "clientId": "id-facturation",
+    "adresseId": "adr-facturation"
+  }
+  }
+}</con:request><con:originalUri>http://localhost/opale-api/draft/00000002/transformerEnCommande</con:originalUri><con:assertion type="Invalid HTTP Status Codes" name="Invalid HTTP Status Codes"><con:configuration><codes>500</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" name="reference existe"><con:configuration><scriptText>import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+assert !(jsonSlurper.isEmpty())
+assert jsonSlurper.reference != null</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refDraft" value="${CommandInfo#refDraft}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Transfert ref commande"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+def responseContent = testRunner.testCase.getTestStepByName("TransformerenCommand").getPropertyValue("response")
+def jsonSlurper = new JsonSlurper().parseText(responseContent)
+testRunner.testCase.testSteps["CommandInfo"].setPropertyValue("refCommande", jsonSlurper.reference)
+log.info jsonSlurper.reference
+</script></con:config></con:testStep><con:testStep type="restrequest" name="GetCommande"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/commande/{refCommand}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="GetCommande" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "trameCatalogue": {
+  "frais": [
+    {
+      "reference": "std_cloture",
+      "typeFrais": "RESILIATION",
+      "montant": "50",
+      "label": "Frais de cloture de dossier"
+    },
+    {
+      "reference": "engagement_kitsat",
+      "typeFrais": "CREATION",
+      "montant": "50",
+      "label": "Frais de dossier"
+    }
+  ],
+  "tarifs": [
+    {
+      "reference": "mensuel_jet10_base",
+      "engagement": "0",
+      "prix": "34.9",
+      "frais": [
+        "std_cloture"
+      ],
+      "periode": "1"
+    },
+    {
+      "reference": "annuel_jet10_base",
+      "engagement": "12",
+      "prix": "34.9",
+      "frais": [
+        "std_cloture"
+      ],
+      "periode": "12"
+    }
+  ],
+  "offres": [
+    {
+      "reference": "jet_surf10",
+      "gamme": "jet",
+      "famille": "sat",
+      "modeFacturation": "PREMIER_MOIS",
+      "tarifs": [
+        "annuel_jet10_base","mensuel_jet10_base"
+      ],
+      "tranches": [
+        "A"
+      ],
+      "details": [
+        {
+          "referenceSelection": "kitsat",
+          "label": "Trafic",
+          "type": "ONLY_ONE",
+          "nature": "BIEN",
+          "choices": [
+            {
+              "reference": "trafic10g",
+              "label": "Trafic 10 Gigas (Inclus)",
+              "tarifs": [
+                "annuel_jet10_base"
+              ]
+            }
+          ]
+        },
+         {
+          "referenceSelection": "jet",
+          "label": "Trafic",
+          "type": "ONLY_ONE",
+           "nature": "BIEN",
+          "choices": [
+            {
+              "reference": "trafic10g",
+              "label": "Trafic 10 Gigas (Inclus)",
+              "tarifs": [
+                "annuel_jet10_base"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+},
+  "clientInfo": {
+     "souscripteur": {
+    "clientId": "id-souscri",
+    "adresseId": "adr-souscri"
+  },
+  "livraison":{
+    "clientId": "id-livraison",
+    "adresseId": "adr-livraison"
+  },
+  "facturation":{
+    "clientId": "id-facturation",
+    "adresseId": "adr-facturation"
+  }
+  }
+}</con:request><con:originalUri>http://localhost/opale-api/commande/</con:originalUri><con:assertion type="GroovyScriptAssertion" name="Script Assertion"><con:configuration><scriptText>assert messageExchange.hasResponse() == true</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refCommand" value="${CommandInfo#refCommande}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="TransformerEnCommandInvalid"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/{refDraft}/transformerEnCommande" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="TransformerEnCommandInvalid" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "trameCatalogue": {
+  "frais": [
+    {
+      "reference": "std_cloture",
+      "typeFrais": "RESILIATION",
+      "montant": "50",
+      "label": "Frais de cloture de dossier"
+    },
+    {
+      "reference": "engagement_kitsat",
+      "typeFrais": "CREATION",
+      "montant": "50",
+      "label": "Frais de dossier"
+    }
+  ],
+  "tarifs": [
+    {
+      "reference": "mensuel_jet10_base",
+      "engagement": "0",
+      "prix": "34.9",
+      "frais": [
+        "std_cloture"
+      ],
+      "frequence": "1"
+    },
+    {
+      "reference": "annuel_jet10_base",
+      "engagement": "12",
+      "prix": "34.9",
+      "frais": [
+        "std_cloture"
+      ],
+      "frequence": "12"
+    }
+  ],
+  "offres": [
+    {
+      "reference": "jet_surf10",
+      "gamme": "jet",
+      "famille": "sat",
+      "modeFacturation": "PREMIER_MOIS",
+      "tarifs": [
+        "annuel_jet10_base","mensuel_jet10_base"
+      ],
+      "tranches": [
+        "A"
+      ],
+      "details": [
+        {
+          "referenceSelection": "kitsat",
+          "label": "Trafic",
+          "type": "ONLY_ONE",
+          "nature": "BIEN",
+          "choices": [
+            {
+              "reference": "trafic10g",
+              "label": "Trafic 10 Gigas (Inclus)",
+              "tarifs": [
+                "annuel_jet10_base"
+              ]
+            }
+          ]
+        },
+         {
+          "referenceSelection": "jet",
+          "label": "Trafic",
+          "type": "ONLY_ONE",
+           "nature": "BIEN",
+          "choices": [
+            {
+              "reference": "trafic10g",
+              "label": "Trafic 10 Gigas (Inclus)",
+              "tarifs": [
+                "annuel_jet10_base"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auteur": {
+      "code": "string",
+      "qui": "string",
+      "ip": {
+        "ip": "string",
+        "ts": 0.1
+      },
+      "canal": "string"
+    }
+},
+  "clientInfo": {
+     "souscripteur": {
+    "clientId": "id-souscri",
+    "adresseId": "adr-souscri"
+  },
+  "livraison":{
+    "clientId": "id-livraison",
+    "adresseId": "adr-livraison"
+  },
+  "facturation":{
+    "clientId": "id-facturation",
+    "adresseId": "adr-facturation"
+  }
+  }
+}</con:request><con:originalUri>http://localhost/opale-api/draft/00000002/transformerEnCommande</con:originalUri><con:assertion type="GroovyScriptAssertion" name="error code"><con:configuration><scriptText>import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+assert !(jsonSlurper.isEmpty())
+assert jsonSlurper.errorCode == "1.1.10"</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refDraft" value="${CommandInfo#refDraft}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Paiement" searchProperties="true" id="658c0b2f-1b08-4419-9842-767d2d95cbeb"><con:settings/><con:testStep type="properties" name="paiementInfo"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>refDraft</con:name><con:value>00000020</con:value></con:property><con:property><con:name>refCommand</con:name><con:value>00000007</con:value></con:property><con:property><con:name>refPaiement</con:name><con:value>00000003</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="CreateDraft"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/draft" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CreateDraft" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  },
+  "user": "akram"
+}</con:request><con:originalUri>http://localhost/opale-api/draft/draft</con:originalUri><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>declare namespace nsa='http://localhost/opale-api/draft/draft';
+exists(//nsa:Response/nsa:reference)</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Transfert ref draft"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+def responseContent = testRunner.testCase.getTestStepByName("CreateDraft").getPropertyValue("response")
+def jsonSlurper = new JsonSlurper().parseText(responseContent)
+testRunner.testCase.testSteps["paiementInfo"].setPropertyValue("refDraft", jsonSlurper.reference)
+log.info jsonSlurper.reference</script></con:config></con:testStep><con:testStep type="restrequest" name="associerClient"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/{refDraft}/associerClient" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="associerClient" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "souscripteur": {
+    "clientId": "id-souscri",
+    "adresseId": "adr-souscri"
+  },
+  "livraison":{
+    "clientId": "id-livraison",
+    "adresseId": "adr-livraison"
+  },
+  "facturation":{
+    "clientId": "id-facturation",
+    "adresseId": "adr-facturation"
+  },
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  }
+}</con:request><con:originalUri>http://localhost/opale-api/draft/00000001/associerClient</con:originalUri><con:assertion type="GroovyScriptAssertion" name="Script Assertion"><con:configuration><scriptText>assert messageExchange.hasResponse() == false</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refDraft" value="${paiementInfo#refDraft}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="AjouterLigne"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/{refDraft}/lignes" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="AjouterLigne" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>[{
+  "offre": {
+    "modePaiement": "CB",
+    "referenceTarif": "mensuel_jet10_base",
+    "referenceOffre": "jet_surf10",
+    "modeFacturation": "PREMIER_MOIS",
+    "details": [
+      {
+        "reference": "kitsat",
+        "referenceSelection": "kitsat",
+        "referenceTarif": "mensuel_jet10_base",
+        "modePaiement": "CB",
+        "configurationJson": "",
+        "referenceChoix" :"trafic10g",
+        "dependDe": ""
+      },
+      {
+        "reference": "jet",
+        "referenceSelection": "jet",
+        "referenceTarif": "mensuel_jet10_base",
+        "modePaiement": "CB",
+        "configurationJson": "",
+        "referenceChoix" :"trafic10g",
+        "dependDe": "kitsat"
+      }
+    ]
+  },
+  "auteur": {
+    "code": "string",
+    "qui": "string",
+    "ip": {
+      "ip": "string",
+      "ts": 0.1
+    },
+    "canal": "string"
+  }
+}
+]</con:request><con:originalUri>http://localhost/opale-api/draft/00000001/lignes</con:originalUri><con:assertion type="GroovyScriptAssertion" name="numero existe"><con:configuration><scriptText>import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+assert !(jsonSlurper.isEmpty())
+assert jsonSlurper.numero != null</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refDraft" value="${paiementInfo#refDraft}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="TransformerEncommande"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/draft/{refDraft}/transformerEnCommande" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="TransformerEncommande" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "trameCatalogue": {
+  "frais": [
+    {
+      "reference": "std_cloture",
+      "typeFrais": "RESILIATION",
+      "montant": "50",
+      "label": "Frais de cloture de dossier"
+    },
+    {
+      "reference": "engagement_kitsat",
+      "typeFrais": "CREATION",
+      "montant": "50",
+      "label": "Frais de dossier"
+    }
+  ],
+  "tarifs": [
+    {
+      "reference": "mensuel_jet10_base",
+      "engagement": "0",
+      "prix": "34.9",
+      "frais": [
+        "std_cloture"
+      ],
+      "frequence": "1"
+    },
+    {
+      "reference": "annuel_jet10_base",
+      "engagement": "12",
+      "prix": "34.9",
+      "frais": [
+        "std_cloture"
+      ],
+      "frequence": "12"
+    }
+  ],
+  "offres": [
+    {
+      "reference": "jet_surf10",
+      "gamme": "jet",
+      "famille": "sat",
+      "modeFacturation": "PREMIER_MOIS",
+      "tarifs": [
+        "annuel_jet10_base","mensuel_jet10_base"
+      ],
+      "tranches": [
+        "A"
+      ],
+      "details": [
+        {
+          "referenceSelection": "kitsat",
+          "label": "Trafic",
+          "type": "ONLY_ONE",
+          "nature": "BIEN",
+          "choices": [
+            {
+              "reference": "trafic10g",
+              "label": "Trafic 10 Gigas (Inclus)",
+              "tarifs": [
+                "annuel_jet10_base"
+              ]
+            }
+          ]
+        },
+         {
+          "referenceSelection": "jet",
+          "label": "Trafic",
+          "type": "ONLY_ONE",
+           "nature": "BIEN",
+          "choices": [
+            {
+              "reference": "trafic10g",
+              "label": "Trafic 10 Gigas (Inclus)",
+              "tarifs": [
+                "annuel_jet10_base"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "auteur": {
+      "code": "string",
+      "qui": "string",
+      "ip": {
+        "ip": "string",
+        "ts": 0.1
+      },
+      "canal": "string"
+    }
+},
+  "clientInfo": {
+     "souscripteur": {
+    "clientId": "id-souscri",
+    "adresseId": "adr-souscri"
+  },
+  "livraison":{
+    "clientId": "id-livraison",
+    "adresseId": "adr-livraison"
+  },
+  "facturation":{
+    "clientId": "id-facturation",
+    "adresseId": "adr-facturation"
+  }
+  }
+}</con:request><con:originalUri>http://localhost/opale-api/draft/00000001/transformerEnCommande</con:originalUri><con:assertion type="Invalid HTTP Status Codes" name="Invalid HTTP Status Codes"><con:configuration><codes>500</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" name="reference existe"><con:configuration><scriptText>import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+assert !(jsonSlurper.isEmpty())
+assert jsonSlurper.reference != null</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refDraft" value="${paiementInfo#refDraft}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Transfert ref commande"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+def responseContent = testRunner.testCase.getTestStepByName("TransformerEncommande").getPropertyValue("response")
+def jsonSlurper = new JsonSlurper().parseText(responseContent)
+testRunner.testCase.testSteps["paiementInfo"].setPropertyValue("refCommand", jsonSlurper.reference)
+log.info jsonSlurper.reference</script></con:config></con:testStep><con:testStep type="transfer" name="Move ref command" disabled="true"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>refCommand</con:name><con:sourceType>ResponseAsXml</con:sourceType><con:sourceStep>TransformerEncommande</con:sourceStep><con:sourcePath>declare namespace nsa='http://localhost/opale-api/draft/00000001/transformerEnCommande';
+//nsa:reference</con:sourcePath><con:targetType>refCommand</con:targetType><con:targetStep>paiementInfo</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="restrequest" name="CreerIntentionPaiement"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/commande/{refCommand}/paiement" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="CreerIntentionPaiement" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "infoPaiement": "info paiement",
+  "modePaiement": "CB",
+  "montant": "5",
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  }
+}</con:request><con:originalUri>http://localhost/00000001/paiement</con:originalUri><con:assertion type="GroovyScriptAssertion" name="reference existe"><con:configuration><scriptText>import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+assert !(jsonSlurper.isEmpty())
+assert jsonSlurper.reference != null</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refCommand" value="${paiementInfo#refCommand}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Transfert ref paiement"><con:settings/><con:config><script>import groovy.json.JsonSlurper
+def responseContent = testRunner.testCase.getTestStepByName("CreerIntentionPaiement").getPropertyValue("response")
+def jsonSlurper = new JsonSlurper().parseText(responseContent)
+testRunner.testCase.testSteps["paiementInfo"].setPropertyValue("refPaiement", jsonSlurper.reference)
+log.info jsonSlurper.reference</script></con:config></con:testStep><con:testStep type="jdbc" name="Creation Intention valid"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/opale_test?user=test&amp;password=test</con:connectionString><con:query>select * from paiement 
+where reference = "${paiementInfo#refPaiement}"</con:query><con:assertion type="Simple Contains" name="Contains"><con:configuration><token> &lt;PAIEMENT.MODEPAIEMENT></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XQuery Match" name="XQuery Match"><con:configuration><path>&lt;Result> { for $i in //Row return $i/PAIEMENT.MODEPAIEMENT/string() } &lt;/Result></path><content>CB</content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="restrequest" name="Payer Intention Paiement"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/commande/{refCommand}/paiement/{refPaiement}/payer" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Payer Intention Paiement" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "infoPaiement": "info paiement",
+  "modePaiement": "CB",
+  "montant": "5",
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  }
+}</con:request><con:originalUri>http://localhost/</con:originalUri><con:assertion type="GroovyScriptAssertion" name="Script Assertion"><con:configuration><scriptText>assert messageExchange.hasResponse() == false</scriptText></con:configuration></con:assertion><con:assertion type="Invalid HTTP Status Codes" name="Invalid HTTP Status Codes"><con:configuration><codes>500</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="refPaiement" value="${paiementInfo#refPaiement}"/>
+  <con:entry key="refCommand" value="${paiementInfo#refCommand}"/>
+</con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="jdbc" name="Paiement Valid"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://localhost:3306/opale_test?user=test&amp;password=test</con:connectionString><con:query>select * from paiement 
+where reference = "${paiementInfo#refPaiement}"</con:query><con:assertion type="Simple Contains" name="MONTANT exist"><con:configuration><token> &lt;PAIEMENT.MONTANT></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="MODE exits"><con:configuration><token>&lt;PAIEMENT.MODEPAIEMENT></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="restrequest" name="Paiement comptant direct"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/commande/{refCommande}/paiement/comptant" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Paiement comptant direct" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "infoPaiement": "info paiement",
+  "modePaiement": "CB",
+  "montant": "5",
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  }
+}</con:request><con:originalUri>http://localhost/opale-api/00000002/paiementDirect</con:originalUri><con:assertion type="GroovyScriptAssertion" name="reference existe"><con:configuration><scriptText>import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+assert !(jsonSlurper.isEmpty())
+assert jsonSlurper.reference != null</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refCommande" value="${paiementInfo#refCommand}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Recreer intention paiement"><con:settings/><con:config service="http://localhost:8080" methodName="Method 1" resourcePath="/opale-api/commande/{refCommand}/paiement" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Recreer intention paiement" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "infoPaiement": "info paiement",
+  "modePaiement": "CB",
+  "montant": "5",
+  "auteur": {
+    "code": "part_123456",
+    "qui": "GRC.WEL-JOHNDOE",
+    "canal": "welcome",
+    "ip": {
+      "ts": "1411654933",
+      "ip": "127.0.0.1"
+    }
+  }
+}</con:request><con:originalUri>http://localhost/opale-api/commande/00000003/paiement</con:originalUri><con:assertion type="GroovyScriptAssertion" name="reference existe"><con:configuration><scriptText>import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+assert !(jsonSlurper.isEmpty())
+assert jsonSlurper.reference != null</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refCommand" value="${paiementInfo#refCommand}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="Paiement Direct Sans Auteur"><con:settings/><con:config service="http://localhost:8080" resourcePath="/opale-api/commande/{refCommande}/paiement/comptant" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Paiement Direct Sans Auteur" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8080</con:endpoint><con:request>{
+  "infoPaiement": "info paiement",
+  "modePaiement": "CHEQUE",
+  "montant": "10"
+}</con:request><con:originalUri>http://localhost/opale-api/commande/refCommande/paiementDirect</con:originalUri><con:assertion type="GroovyScriptAssertion" name="code erreur"><con:configuration><scriptText>import groovy.json.JsonSlurper
+def ResponseMessage = messageExchange.response.responseContent
+def jsonSlurper = new JsonSlurper().parseText(ResponseMessage)
+assert !(jsonSlurper.isEmpty())
+assert jsonSlurper.errorCode == "0.1.4"</scriptText></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refCommande" value="${paiementInfo#refCommand}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

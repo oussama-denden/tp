@@ -1,0 +1,5 @@
+<equipment:productProperties xmlns:equipment="http://www.nordnet.com/equipment"
+	nnbo_offerName="equipment.test">
+	<equipment:productName>Product.Name</equipment:productName>
+	<equipment:retailerPackagerId>Product.Id_Packager</equipment:retailerPackagerId>
+</equipment:productProperties>

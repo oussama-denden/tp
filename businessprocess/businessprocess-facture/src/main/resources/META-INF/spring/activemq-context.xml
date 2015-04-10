@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd">
+        
+        <!-- Activemq connection factory -->
+    <bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<constructor-arg value="${brokerURL}" />
+    </bean>
+ 
+    <!-- ConnectionFactory Definition -->
+    <bean id="connectionFactory" class="org.springframework.jms.connection.CachingConnectionFactory">
+        <constructor-arg ref="amqConnectionFactory" />
+    </bean>
+    
+    <bean id="launchBillingListener" class="com.nordnet.topaze.businessprocess.facture.jms.LaunchBillingListener">
+    </bean>
+    
+     <bean id="returnReturnedListener" class="com.nordnet.topaze.businessprocess.facture.jms.ReturnReturnedListener">
+    </bean>
+    
+     <bean id="contractPartialResiliatedListener" class="com.nordnet.topaze.businessprocess.facture.jms.ContractPartialResiliatedListener">
+    </bean>
+    
+    <bean id="contratMigratedListener" class="com.nordnet.topaze.businessprocess.facture.jms.ContratMigratedListener">
+    </bean>
+    
+    <bean id="contratSuccessionListener" class="com.nordnet.topaze.businessprocess.facture.jms.ContratSuccessionListener">
+    </bean>
+    
+     <bean id="lunchSuccessionBillingListener" class="com.nordnet.topaze.businessprocess.facture.jms.LunchSuccessionBillingListener">
+    </bean>
+    
+     <bean id="contratMigrationLivredListener" class="com.nordnet.topaze.businessprocess.facture.jms.ContratMigrationLivredListener">
+    </bean>
+    
+     <bean id="contratMigrationReturnedListener" class="com.nordnet.topaze.businessprocess.facture.jms.ContratMigrationReturnedListener">
+    </bean>
+    
+    <bean id="lunchRenewalBillingListener" class="com.nordnet.topaze.businessprocess.facture.jms.LunchRenewalBillingListener">
+    </bean>
+
+    <jms:listener-container connection-factory="connectionFactory" >
+    	<jms:listener destination="LaunchBillingQueue" ref="launchBillingListener" method="onMessage"/>
+    	<jms:listener destination="ReturnReturnedQueue" ref="returnReturnedListener" method="onMessage"/>
+    	<jms:listener destination="ContractPartialResiliatedQueue" ref="contractPartialResiliatedListener" method="onMessage"/>
+    	<jms:listener destination="ContratMigratedBillingQueue" ref="contratMigratedListener" method="onMessage"/>
+    	<jms:listener destination="MigrationDeliveredQueue" ref="launchBillingListener" method="onMessage"/>
+    	<jms:listener destination="ContratSuccessionBillingQueue" ref="contratSuccessionListener" method="onMessage"/>
+    	<jms:listener destination="LunchSuccessionBillingQueue" ref="lunchSuccessionBillingListener" method="onMessage"/>
+    	<jms:listener destination="MigrationLivredBillingQueue" ref="contratMigrationLivredListener" method="onMessage"/>
+    	<jms:listener destination="MigrationReturnedBillingQueue" ref="contratMigrationReturnedListener" method="onMessage"/>
+    	<jms:listener destination="LunchRenewalBillingQueue" ref="lunchRenewalBillingListener" method="onMessage"/>
+    	
+    </jms:listener-container>
+</beans>

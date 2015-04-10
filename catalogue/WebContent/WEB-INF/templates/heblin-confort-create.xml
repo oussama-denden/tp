@@ -1,0 +1,23 @@
+<lwh:productProperties xmlns:lwh="http://www.nordnet.com/nordnet/linuxWebHosting/"
+nnbo_offerName="heblin.confort">
+	<lwh:ftpStatus action="disable"></lwh:ftpStatus>
+	<lwh:phpVersion>54</lwh:phpVersion>
+	<lwh:sqlOption>true</lwh:sqlOption>
+	<lwh:sqlQuota>10</lwh:sqlQuota>
+	<lwh:handle>
+		<lwh:company>Client.Company</lwh:company>
+		<lwh:civility>Client.Civility</lwh:civility>
+		<lwh:firstName>Client.First_Name</lwh:firstName>
+		<lwh:lastName>Client.Last_Name</lwh:lastName>
+		<lwh:address1>Client.Address1</lwh:address1>
+		<lwh:address2>Client.Address2</lwh:address2>
+		<lwh:address3></lwh:address3>
+		<lwh:zip>Client.Zip</lwh:zip>
+		<lwh:city>Client.City</lwh:city>
+		<lwh:country>Client.Country</lwh:country>
+		<lwh:phone>Client.Phone</lwh:phone>
+		<lwh:fax>Client.Fax</lwh:fax>
+		<lwh:email>Client.Email</lwh:email>
+		<lwh:status>Client.ProfileType</lwh:status>
+	</lwh:handle>
+</lwh:productProperties>

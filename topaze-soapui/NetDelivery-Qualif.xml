@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="NetDelivery-Qualif" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="NetDeliveryServiceImplServiceSoapBinding" type="wsdl" bindingName="{http://www.nordnet.com/net-delivery}NetDeliveryServiceImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS?wsdl"><con:part><con:url>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="NetDeliveryServiceImplService" targetNamespace="http://www.nordnet.com/net-delivery" xmlns:ns1="http://www.nordnet.com/net-delivery/faults" xmlns:ns2="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.nordnet.com/net-delivery" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.nordnet.com/net-delivery/types" xmlns:ns1="http://www.nordnet.com/generic/types" xmlns:tns="http://www.nordnet.com/net-delivery/types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://www.nordnet.com/generic/types"/>
+      <xs:complexType name="TProperty">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="value" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayOfTShippingDemand">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="shippingDemands">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="shippingDemand" nillable="true" type="tns:TShippingDemand"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TShippingDemand">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="template" type="tns:TTemplate"/>
+          <xs:element name="creationDate" type="xs:date"/>
+          <xs:element name="receiver" type="tns:TReceiverContact"/>
+          <xs:element minOccurs="0" name="properties">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="property" type="tns:TProperty"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="equipments">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="equipment" type="tns:TEquipment"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="currentStatus" nillable="true" type="tns:TShippingStatus"/>
+          <xs:element name="customerId" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TTemplate">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TReceiverContact">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="firstName" type="xs:string"/>
+          <xs:element minOccurs="0" name="lastName" type="xs:string"/>
+          <xs:element minOccurs="0" name="company" type="xs:string"/>
+          <xs:element minOccurs="0" name="email" type="xs:string"/>
+          <xs:element minOccurs="0" name="phoneNumber" type="xs:string"/>
+          <xs:element name="civility" type="ns1:TCivility"/>
+          <xs:element name="address" type="tns:TDeliveryAddress"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TDeliveryAddress">
+        <xs:sequence>
+          <xs:element name="address1" type="xs:string"/>
+          <xs:element name="address2" type="xs:string"/>
+          <xs:element name="address3" type="xs:string"/>
+          <xs:element name="zipCode" type="xs:string"/>
+          <xs:element name="city" type="xs:string"/>
+          <xs:element name="country" type="xs:string"/>
+          <xs:element name="cedexCode" type="xs:string"/>
+          <xs:element name="cedexLabel" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TEquipment">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element name="equipmentModelName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TShippingProperties">
+        <xs:sequence>
+          <xs:element name="shippingKey" type="xs:string"/>
+          <xs:element name="currentStatus" nillable="true" type="tns:TShippingStatus"/>
+          <xs:element name="receiver" type="tns:TReceiverContact"/>
+          <xs:element minOccurs="0" name="shippingPacks">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="shippingPack" nillable="true" type="tns:TShippingPackItem"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="sendDate" type="xs:string"/>
+          <xs:element name="colisName" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TShippingPackItem">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="items">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="item" type="tns:TItem"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TItem">
+        <xs:sequence>
+          <xs:element name="reference" type="xs:string"/>
+          <xs:element name="serialNumber" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayOfTShippingAlert">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="shippingAlerts">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="shippingAlert" nillable="true" type="tns:TShippingAlert"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TShippingAlert">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element name="creationDate" type="xs:date"/>
+          <xs:element name="reason" type="xs:string"/>
+          <xs:element minOccurs="0" name="demand" type="tns:TShippingDemand"/>
+          <xs:element minOccurs="0" name="background">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="status" type="tns:TShippingAlertBackgroundStatus"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TShippingAlertBackgroundStatus">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element name="creationDate" type="xs:date"/>
+          <xs:element name="status" type="tns:TShippingAlertStatus"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayOfString">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="items">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="xs:string"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayOfTProperty">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="properties">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="property" nillable="true" type="tns:TProperty"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayOfTShippingPack">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="shippingPacks">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="shippingPack" nillable="true" type="tns:TShippingPack"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TShippingPack">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="properties">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="property" type="tns:TProperty"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="reservedShipperName" type="xs:string"/>
+          <xs:element minOccurs="0" name="equipments">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="equipment" type="tns:TEquipment"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayOfTEquipment">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="equipments">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="equipment" nillable="true" type="tns:TEquipment"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TBonRetour">
+        <xs:sequence>
+          <xs:element name="id" type="xs:long"/>
+          <xs:element name="shippingDemandId" type="xs:long"/>
+          <xs:element minOccurs="0" name="equipments">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="equipment" type="tns:TEquipment"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+          <xs:element minOccurs="0" name="cause" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayOfLong">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="items">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="xs:long"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="TShippingStatus">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="UNPROCESSED"/>
+          <xs:enumeration value="PROCESSING"/>
+          <xs:enumeration value="DELIVERING"/>
+          <xs:enumeration value="DELIVERED"/>
+          <xs:enumeration value="PROBLEM"/>
+          <xs:enumeration value="CLOSED"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TShippingAlertStatus">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="UNPROCESSED"/>
+          <xs:enumeration value="PROCESSING"/>
+          <xs:enumeration value="SOLVED"/>
+          <xs:enumeration value="INSOLVABLE"/>
+          <xs:enumeration value="CLOSED"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://www.nordnet.com/net-delivery/faults" version="1.0" xmlns:tns="http://www.nordnet.com/net-delivery/faults" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ConverterFault" nillable="true" type="tns:ConverterFault"/>
+      <xs:element name="NetDeliveryFault" nillable="true" type="tns:NetDeliveryFault"/>
+      <xs:element name="NotFoundFault" nillable="true" type="tns:NotFoundFault"/>
+      <xs:element name="NotRespectedRulesFault" nillable="true" type="tns:NotRespectedRulesFault"/>
+      <xs:element name="NullFault" nillable="true" type="tns:NullFault"/>
+      <xs:complexType abstract="true" name="GenericFault">
+        <xs:sequence>
+          <xs:element name="reason" type="xs:string"/>
+          <xs:element name="errorCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="NetDeliveryFault">
+        <xs:complexContent>
+          <xs:extension base="tns:GenericFault">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="ConverterFault">
+        <xs:complexContent>
+          <xs:extension base="tns:GenericFault">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="NotFoundFault">
+        <xs:complexContent>
+          <xs:extension base="tns:GenericFault">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="NullFault">
+        <xs:complexContent>
+          <xs:extension base="tns:GenericFault">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="NotRespectedRulesFault">
+        <xs:complexContent>
+          <xs:extension base="tns:GenericFault">
+            <xs:sequence/>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://www.nordnet.com/generic/types" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:simpleType name="TCivility">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="M."/>
+          <xs:enumeration value="Mlle"/>
+          <xs:enumeration value="Mme"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+    <xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.nordnet.com/net-delivery" xmlns:ns0="http://www.nordnet.com/net-delivery/types">
+      <xsd:import namespace="http://www.nordnet.com/net-delivery/types"/>
+      <xsd:element name="findByShippingDemandPropertyRequest" nillable="true" type="ns0:TProperty"/>
+      <xsd:element name="findByShippingDemandPropertyResponse" nillable="true" type="ns0:TArrayOfTShippingDemand"/>
+      <xsd:element name="pShippingDemandId" nillable="true" type="xsd:long"/>
+      <xsd:element name="shippingKey" nillable="true" type="xsd:string"/>
+      <xsd:element name="shippingProperties" nillable="true" type="ns0:TShippingProperties"/>
+      <xsd:element name="findShippingAlertsByShippingAlertStatusRequest" nillable="true" type="ns0:TShippingAlertStatus"/>
+      <xsd:element name="findShippingAlertsByShippingAlertStatusResponse" nillable="true" type="ns0:TArrayOfTShippingAlert"/>
+      <xsd:element name="changeShippingAlertShippingAlertIdParamRequest" nillable="true" type="xsd:long"/>
+      <xsd:element name="changeShippingAlertShippingAlertStatusParamRequest" nillable="true" type="ns0:TShippingAlertStatus"/>
+      <xsd:element name="getVersionResponse" nillable="true" type="xsd:string"/>
+      <xsd:element name="pReceiverContact" nillable="true" type="ns0:TReceiverContact"/>
+      <xsd:element name="pEquipments" nillable="true" type="ns0:TArrayOfString"/>
+      <xsd:element name="pShippers" nillable="true" type="ns0:TArrayOfString"/>
+      <xsd:element name="pShippingProperties" nillable="true" type="ns0:TArrayOfTProperty"/>
+      <xsd:element name="pShippingPacks" nillable="true" type="ns0:TArrayOfTShippingPack"/>
+      <xsd:element name="pTemplateName" nillable="true" type="xsd:string"/>
+      <xsd:element name="pCustomerId" nillable="true" type="xsd:string"/>
+      <xsd:element name="createShippingDemandReturn" nillable="true" type="ns0:TShippingDemand"/>
+      <xsd:element name="throwExceptionRequest" nillable="true" type="xsd:string"/>
+      <xsd:element name="findShippingAlertsByShippingDemandRequest" nillable="true" type="xsd:long"/>
+      <xsd:element name="findShippingAlertsByShippingDemandResponse" nillable="true" type="ns0:TArrayOfTShippingAlert"/>
+      <xsd:element name="getShippingDemandsReturn" nillable="true" type="ns0:TShippingDemand"/>
+      <xsd:element name="findByCustomerIdRequest" nillable="true" type="xsd:string"/>
+      <xsd:element name="findByCustomerIdResponse" nillable="true" type="ns0:TArrayOfTShippingDemand"/>
+      <xsd:element name="minTimeOutSec" nillable="true" type="xsd:long"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="changeShippingAlert">
+    <wsdl:part element="tns:changeShippingAlertShippingAlertIdParamRequest" name="changeShippingAlertShippingAlertIdParamRequest"/>
+    <wsdl:part element="tns:changeShippingAlertShippingAlertStatusParamRequest" name="changeShippingAlertShippingAlertStatusParamRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getShippingProperties">
+    <wsdl:part element="tns:shippingKey" name="shippingKey"/>
+  </wsdl:message>
+  <wsdl:message name="findShippingAlertsByShippingAlertStatus">
+    <wsdl:part element="tns:findShippingAlertsByShippingAlertStatusRequest" name="findShippingAlertsByShippingAlertStatusRequest"/>
+  </wsdl:message>
+  <wsdl:message name="NotFoundException">
+    <wsdl:part element="ns1:NotFoundFault" name="NotFoundException"/>
+  </wsdl:message>
+  <wsdl:message name="findByCustomerIdResponse">
+    <wsdl:part element="tns:findByCustomerIdResponse" name="findByCustomerIdResponse"/>
+  </wsdl:message>
+  <wsdl:message name="deleteShippingDemandResponse"></wsdl:message>
+  <wsdl:message name="throwException">
+    <wsdl:part element="tns:throwExceptionRequest" name="throwExceptionRequest"/>
+  </wsdl:message>
+  <wsdl:message name="deleteShippingDemand">
+    <wsdl:part element="tns:pShippingDemandId" name="pShippingDemandId"/>
+  </wsdl:message>
+  <wsdl:message name="timeOutResponse"></wsdl:message>
+  <wsdl:message name="createShippingDemandResponse">
+    <wsdl:part element="tns:createShippingDemandReturn" name="createShippingDemandReturn"/>
+  </wsdl:message>
+  <wsdl:message name="throwExceptionResponse"></wsdl:message>
+  <wsdl:message name="changeShippingDemand">
+    <wsdl:part element="tns:pShippingDemandId" name="pShippingDemandId"/>
+    <wsdl:part element="tns:pReceiverContact" name="pReceiverContact"/>
+    <wsdl:part element="tns:pEquipments" name="pEquipments"/>
+    <wsdl:part element="tns:pShippers" name="pShippers"/>
+    <wsdl:part element="tns:pShippingProperties" name="pShippingProperties"/>
+  </wsdl:message>
+  <wsdl:message name="getVersionResponse">
+    <wsdl:part element="tns:getVersionResponse" name="getVersionResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getShippingPacksResponse">
+    <wsdl:part element="tns:pShippingPacks" name="pShippingPacks"/>
+  </wsdl:message>
+  <wsdl:message name="changeShippingAlertResponse"></wsdl:message>
+  <wsdl:message name="timeOut">
+    <wsdl:part element="tns:minTimeOutSec" name="minTimeOutSec"/>
+  </wsdl:message>
+  <wsdl:message name="getShippingPacks">
+    <wsdl:part element="tns:pShippingDemandId" name="pShippingDemandId"/>
+  </wsdl:message>
+  <wsdl:message name="findShippingAlertsByShippingDemand">
+    <wsdl:part element="tns:findShippingAlertsByShippingDemandRequest" name="findShippingAlertsByShippingDemandRequest"/>
+  </wsdl:message>
+  <wsdl:message name="NetDeliveryException">
+    <wsdl:part element="ns1:NetDeliveryFault" name="NetDeliveryException"/>
+  </wsdl:message>
+  <wsdl:message name="findByShippingDemandProperty">
+    <wsdl:part element="tns:findByShippingDemandPropertyRequest" name="findByShippingDemandPropertyRequest"/>
+  </wsdl:message>
+  <wsdl:message name="NotRespectedRulesException">
+    <wsdl:part element="ns1:NotRespectedRulesFault" name="NotRespectedRulesException"/>
+  </wsdl:message>
+  <wsdl:message name="getVersion"></wsdl:message>
+  <wsdl:message name="findByShippingDemandPropertyResponse">
+    <wsdl:part element="tns:findByShippingDemandPropertyResponse" name="findByShippingDemandPropertyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="findShippingAlertsByShippingDemandResponse">
+    <wsdl:part element="tns:findShippingAlertsByShippingDemandResponse" name="findShippingAlertsByShippingDemandResponse"/>
+  </wsdl:message>
+  <wsdl:message name="createShippingDemand">
+    <wsdl:part element="tns:pTemplateName" name="pTemplateName"/>
+    <wsdl:part element="tns:pCustomerId" name="pCustomerId"/>
+    <wsdl:part element="tns:pReceiverContact" name="pReceiverContact"/>
+    <wsdl:part element="tns:pEquipments" name="pEquipments"/>
+    <wsdl:part element="tns:pShippers" name="pShippers"/>
+    <wsdl:part element="tns:pShippingProperties" name="pShippingProperties"/>
+  </wsdl:message>
+  <wsdl:message name="changeShippingDemandResponse"></wsdl:message>
+  <wsdl:message name="NullException">
+    <wsdl:part element="ns1:NullFault" name="NullException"/>
+  </wsdl:message>
+  <wsdl:message name="findByCustomerId">
+    <wsdl:part element="tns:findByCustomerIdRequest" name="findByCustomerIdRequest"/>
+  </wsdl:message>
+  <wsdl:message name="getShippingDemandResponse">
+    <wsdl:part element="tns:getShippingDemandsReturn" name="getShippingDemandsReturn"/>
+  </wsdl:message>
+  <wsdl:message name="findShippingAlertsByShippingAlertStatusResponse">
+    <wsdl:part element="tns:findShippingAlertsByShippingAlertStatusResponse" name="findShippingAlertsByShippingAlertStatusResponse"/>
+  </wsdl:message>
+  <wsdl:message name="getShippingDemand">
+    <wsdl:part element="tns:pShippingDemandId" name="pShippingDemandId"/>
+  </wsdl:message>
+  <wsdl:message name="getShippingPropertiesResponse">
+    <wsdl:part element="tns:shippingProperties" name="shippingProperties"/>
+  </wsdl:message>
+  <wsdl:message name="ConverterException">
+    <wsdl:part element="ns1:ConverterFault" name="ConverterException"/>
+  </wsdl:message>
+  <wsdl:portType name="NetDeliveryService">
+    <wsdl:operation name="findByShippingDemandProperty">
+      <wsdl:input message="tns:findByShippingDemandProperty" name="findByShippingDemandProperty"/>
+      <wsdl:output message="tns:findByShippingDemandPropertyResponse" name="findByShippingDemandPropertyResponse"/>
+      <wsdl:fault message="tns:NotFoundException" name="NotFoundException"/>
+      <wsdl:fault message="tns:NullException" name="NullException"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+      <wsdl:fault message="tns:ConverterException" name="ConverterException"/>
+    </wsdl:operation>
+    <wsdl:operation name="deleteShippingDemand">
+      <wsdl:input message="tns:deleteShippingDemand" name="deleteShippingDemand"/>
+      <wsdl:output message="tns:deleteShippingDemandResponse" name="deleteShippingDemandResponse"/>
+      <wsdl:fault message="tns:NotFoundException" name="NotFoundException"/>
+      <wsdl:fault message="tns:NullException" name="NullException"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+      <wsdl:fault message="tns:NotRespectedRulesException" name="NotRespectedRulesException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getShippingProperties">
+      <wsdl:input message="tns:getShippingProperties" name="getShippingProperties"/>
+      <wsdl:output message="tns:getShippingPropertiesResponse" name="getShippingPropertiesResponse"/>
+      <wsdl:fault message="tns:NotFoundException" name="NotFoundException"/>
+      <wsdl:fault message="tns:NullException" name="NullException"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+      <wsdl:fault message="tns:ConverterException" name="ConverterException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findShippingAlertsByShippingAlertStatus">
+      <wsdl:input message="tns:findShippingAlertsByShippingAlertStatus" name="findShippingAlertsByShippingAlertStatus"/>
+      <wsdl:output message="tns:findShippingAlertsByShippingAlertStatusResponse" name="findShippingAlertsByShippingAlertStatusResponse"/>
+      <wsdl:fault message="tns:NotFoundException" name="NotFoundException"/>
+      <wsdl:fault message="tns:NullException" name="NullException"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+      <wsdl:fault message="tns:ConverterException" name="ConverterException"/>
+    </wsdl:operation>
+    <wsdl:operation name="changeShippingAlert">
+      <wsdl:input message="tns:changeShippingAlert" name="changeShippingAlert"/>
+      <wsdl:output message="tns:changeShippingAlertResponse" name="changeShippingAlertResponse"/>
+      <wsdl:fault message="tns:NotFoundException" name="NotFoundException"/>
+      <wsdl:fault message="tns:NullException" name="NullException"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+      <wsdl:fault message="tns:NotRespectedRulesException" name="NotRespectedRulesException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <wsdl:input message="tns:getVersion" name="getVersion"/>
+      <wsdl:output message="tns:getVersionResponse" name="getVersionResponse"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+    </wsdl:operation>
+    <wsdl:operation name="changeShippingDemand">
+      <wsdl:input message="tns:changeShippingDemand" name="changeShippingDemand"/>
+      <wsdl:output message="tns:changeShippingDemandResponse" name="changeShippingDemandResponse"/>
+      <wsdl:fault message="tns:NotFoundException" name="NotFoundException"/>
+      <wsdl:fault message="tns:NullException" name="NullException"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+      <wsdl:fault message="tns:NotRespectedRulesException" name="NotRespectedRulesException"/>
+      <wsdl:fault message="tns:ConverterException" name="ConverterException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getShippingPacks">
+      <wsdl:input message="tns:getShippingPacks" name="getShippingPacks"/>
+      <wsdl:output message="tns:getShippingPacksResponse" name="getShippingPacksResponse"/>
+      <wsdl:fault message="tns:NotFoundException" name="NotFoundException"/>
+      <wsdl:fault message="tns:NullException" name="NullException"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+      <wsdl:fault message="tns:ConverterException" name="ConverterException"/>
+    </wsdl:operation>
+    <wsdl:operation name="createShippingDemand">
+      <wsdl:input message="tns:createShippingDemand" name="createShippingDemand"/>
+      <wsdl:output message="tns:createShippingDemandResponse" name="createShippingDemandResponse"/>
+      <wsdl:fault message="tns:NotFoundException" name="NotFoundException"/>
+      <wsdl:fault message="tns:NullException" name="NullException"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+      <wsdl:fault message="tns:NotRespectedRulesException" name="NotRespectedRulesException"/>
+      <wsdl:fault message="tns:ConverterException" name="ConverterException"/>
+    </wsdl:operation>
+    <wsdl:operation name="throwException">
+      <wsdl:input message="tns:throwException" name="throwException"/>
+      <wsdl:output message="tns:throwExceptionResponse" name="throwExceptionResponse"/>
+      <wsdl:fault message="tns:NotFoundException" name="NotFoundException"/>
+      <wsdl:fault message="tns:NullException" name="NullException"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+      <wsdl:fault message="tns:NotRespectedRulesException" name="NotRespectedRulesException"/>
+      <wsdl:fault message="tns:ConverterException" name="ConverterException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findShippingAlertsByShippingDemand">
+      <wsdl:input message="tns:findShippingAlertsByShippingDemand" name="findShippingAlertsByShippingDemand"/>
+      <wsdl:output message="tns:findShippingAlertsByShippingDemandResponse" name="findShippingAlertsByShippingDemandResponse"/>
+      <wsdl:fault message="tns:NotFoundException" name="NotFoundException"/>
+      <wsdl:fault message="tns:NullException" name="NullException"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+      <wsdl:fault message="tns:ConverterException" name="ConverterException"/>
+    </wsdl:operation>
+    <wsdl:operation name="getShippingDemand">
+      <wsdl:input message="tns:getShippingDemand" name="getShippingDemand"/>
+      <wsdl:output message="tns:getShippingDemandResponse" name="getShippingDemandResponse"/>
+      <wsdl:fault message="tns:NotFoundException" name="NotFoundException"/>
+      <wsdl:fault message="tns:NullException" name="NullException"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+      <wsdl:fault message="tns:ConverterException" name="ConverterException"/>
+    </wsdl:operation>
+    <wsdl:operation name="findByCustomerId">
+      <wsdl:input message="tns:findByCustomerId" name="findByCustomerId"/>
+      <wsdl:output message="tns:findByCustomerIdResponse" name="findByCustomerIdResponse"/>
+      <wsdl:fault message="tns:NotFoundException" name="NotFoundException"/>
+      <wsdl:fault message="tns:NullException" name="NullException"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+      <wsdl:fault message="tns:ConverterException" name="ConverterException"/>
+    </wsdl:operation>
+    <wsdl:operation name="timeOut">
+      <wsdl:input message="tns:timeOut" name="timeOut"/>
+      <wsdl:output message="tns:timeOutResponse" name="timeOutResponse"/>
+      <wsdl:fault message="tns:NetDeliveryException" name="NetDeliveryException"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetDeliveryServiceImplServiceSoapBinding" type="tns:NetDeliveryService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="deleteShippingDemand">
+      <soap:operation soapAction="deleteShippingDemand" style="document"/>
+      <wsdl:input name="deleteShippingDemand">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteShippingDemandResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NullException">
+        <soap:fault name="NullException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotRespectedRulesException">
+        <soap:fault name="NotRespectedRulesException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findByShippingDemandProperty">
+      <soap:operation soapAction="findByShippingDemandProperty" style="document"/>
+      <wsdl:input name="findByShippingDemandProperty">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findByShippingDemandPropertyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NullException">
+        <soap:fault name="NullException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConverterException">
+        <soap:fault name="ConverterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getShippingProperties">
+      <soap:operation soapAction="getShippingProperties" style="document"/>
+      <wsdl:input name="getShippingProperties">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getShippingPropertiesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NullException">
+        <soap:fault name="NullException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConverterException">
+        <soap:fault name="ConverterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findShippingAlertsByShippingAlertStatus">
+      <soap:operation soapAction="findShippingAlertsByShippingAlertStatus" style="document"/>
+      <wsdl:input name="findShippingAlertsByShippingAlertStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findShippingAlertsByShippingAlertStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NullException">
+        <soap:fault name="NullException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConverterException">
+        <soap:fault name="ConverterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeShippingAlert">
+      <soap:operation soapAction="changeShippingAlert" style="document"/>
+      <wsdl:input name="changeShippingAlert">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changeShippingAlertResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NullException">
+        <soap:fault name="NullException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotRespectedRulesException">
+        <soap:fault name="NotRespectedRulesException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getVersion">
+      <soap:operation soapAction="getVersion" style="document"/>
+      <wsdl:input name="getVersion">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getVersionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeShippingDemand">
+      <soap:operation soapAction="changeShippingDemand" style="document"/>
+      <wsdl:input name="changeShippingDemand">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="changeShippingDemandResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NullException">
+        <soap:fault name="NullException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotRespectedRulesException">
+        <soap:fault name="NotRespectedRulesException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConverterException">
+        <soap:fault name="ConverterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getShippingPacks">
+      <soap:operation soapAction="getShippingPacks" style="document"/>
+      <wsdl:input name="getShippingPacks">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getShippingPacksResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NullException">
+        <soap:fault name="NullException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConverterException">
+        <soap:fault name="ConverterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createShippingDemand">
+      <soap:operation soapAction="createShippingDemand" style="document"/>
+      <wsdl:input name="createShippingDemand">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createShippingDemandResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NullException">
+        <soap:fault name="NullException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotRespectedRulesException">
+        <soap:fault name="NotRespectedRulesException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConverterException">
+        <soap:fault name="ConverterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="throwException">
+      <soap:operation soapAction="throwException" style="document"/>
+      <wsdl:input name="throwException">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="throwExceptionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NullException">
+        <soap:fault name="NullException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NotRespectedRulesException">
+        <soap:fault name="NotRespectedRulesException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConverterException">
+        <soap:fault name="ConverterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findShippingAlertsByShippingDemand">
+      <soap:operation soapAction="findShippingAlertsByShippingDemand" style="document"/>
+      <wsdl:input name="findShippingAlertsByShippingDemand">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findShippingAlertsByShippingDemandResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NullException">
+        <soap:fault name="NullException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConverterException">
+        <soap:fault name="ConverterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="findByCustomerId">
+      <soap:operation soapAction="findByCustomerId" style="document"/>
+      <wsdl:input name="findByCustomerId">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findByCustomerIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NullException">
+        <soap:fault name="NullException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConverterException">
+        <soap:fault name="ConverterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getShippingDemand">
+      <soap:operation soapAction="getShippingDemand" style="document"/>
+      <wsdl:input name="getShippingDemand">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getShippingDemandResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NotFoundException">
+        <soap:fault name="NotFoundException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NullException">
+        <soap:fault name="NullException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+      <wsdl:fault name="ConverterException">
+        <soap:fault name="ConverterException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="timeOut">
+      <soap:operation soapAction="timeOut" style="document"/>
+      <wsdl:input name="timeOut">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="timeOutResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="NetDeliveryException">
+        <soap:fault name="NetDeliveryException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NetDeliveryServiceImplService">
+    <wsdl:port binding="tns:NetDeliveryServiceImplServiceSoapBinding" name="NetDeliveryServicePort">
+      <soap:address location="http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint></con:endpoints><con:operation isOneWay="false" action="changeShippingAlert" name="changeShippingAlert" bindingOperationName="changeShippingAlert" type="Request-Response" outputName="changeShippingAlertResponse" inputName="changeShippingAlert" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-delivery">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:changeShippingAlertShippingAlertIdParamRequest>?</net:changeShippingAlertShippingAlertIdParamRequest>
+      <net:changeShippingAlertShippingAlertStatusParamRequest>?</net:changeShippingAlertShippingAlertStatusParamRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="changeShippingAlert"/></con:call></con:operation><con:operation isOneWay="false" action="changeShippingDemand" name="changeShippingDemand" bindingOperationName="changeShippingDemand" type="Request-Response" outputName="changeShippingDemandResponse" inputName="changeShippingDemand" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-delivery">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:pShippingDemandId>?</net:pShippingDemandId>
+      <net:pReceiverContact>
+         <id>?</id>
+         <!--Optional:-->
+         <firstName>?</firstName>
+         <!--Optional:-->
+         <lastName>?</lastName>
+         <!--Optional:-->
+         <company>?</company>
+         <!--Optional:-->
+         <email>?</email>
+         <!--Optional:-->
+         <phoneNumber>?</phoneNumber>
+         <civility>?</civility>
+         <address>
+            <address1>?</address1>
+            <address2>?</address2>
+            <address3>?</address3>
+            <zipCode>?</zipCode>
+            <city>?</city>
+            <country>?</country>
+            <cedexCode>?</cedexCode>
+            <cedexLabel>?</cedexLabel>
+         </address>
+      </net:pReceiverContact>
+      <net:pEquipments>
+         <!--Optional:-->
+         <items>
+            <!--Zero or more repetitions:-->
+            <item>?</item>
+         </items>
+      </net:pEquipments>
+      <net:pShippers>
+         <!--Optional:-->
+         <items>
+            <!--Zero or more repetitions:-->
+            <item>?</item>
+         </items>
+      </net:pShippers>
+      <net:pShippingProperties>
+         <!--Optional:-->
+         <properties>
+            <!--Zero or more repetitions:-->
+            <property>
+               <name>?</name>
+               <value>?</value>
+            </property>
+         </properties>
+      </net:pShippingProperties>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="changeShippingDemand"/></con:call></con:operation><con:operation isOneWay="false" action="createShippingDemand" name="createShippingDemand" bindingOperationName="createShippingDemand" type="Request-Response" outputName="createShippingDemandResponse" inputName="createShippingDemand" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:net="http://www.nordnet.com/net-delivery">
+	<soapenv:Header />
+	<soapenv:Body>
+		<net:pTemplateName>astra.gilat.jet20_5</net:pTemplateName>
+		<net:pCustomerId>777</net:pCustomerId>
+		<net:pReceiverContact>
+			<id>777</id>
+			<firstName>Guillaume</firstName>
+			<lastName>Cusnieux</lastName>
+			<company>Ineat</company>
+			<email>guillaume.cusnieux@nordnet.fr</email>
+			<phoneNumber>0678382572</phoneNumber>
+			<civility>Mr</civility>
+			<address>
+				<address1>9 allée du château blanc</address1>
+				<address2></address2>
+				<address3></address3>
+				<zipCode>59290</zipCode>
+				<city>WASQUEHAL</city>
+				<country>fr</country>
+				<cedexCode></cedexCode>
+				<cedexLabel></cedexLabel>
+			</address>
+		</net:pReceiverContact>
+		<net:pEquipments>
+			<items>
+				<item>PACK-WIFI-LRHD</item>
+			</items>
+		</net:pEquipments>
+		<net:pShippers>
+			<items></items>
+		</net:pShippers>
+		<net:pShippingProperties>
+			<properties></properties>
+		</net:pShippingProperties>
+	</soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username/><con:password/><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="createShippingDemand"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="deleteShippingDemand" name="deleteShippingDemand" bindingOperationName="deleteShippingDemand" type="Request-Response" outputName="deleteShippingDemandResponse" inputName="deleteShippingDemand" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-delivery">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:pShippingDemandId>?</net:pShippingDemandId>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="deleteShippingDemand"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="findByCustomerId" name="findByCustomerId" bindingOperationName="findByCustomerId" type="Request-Response" outputName="findByCustomerIdResponse" inputName="findByCustomerId" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Cas de test - donnée 2012"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-delivery">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:findByCustomerIdRequest>777</net:findByCustomerIdRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="findByCustomerId"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="findByShippingDemandProperty" name="findByShippingDemandProperty" bindingOperationName="findByShippingDemandProperty" type="Request-Response" outputName="findByShippingDemandPropertyResponse" inputName="findByShippingDemandProperty" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-delivery">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:findByShippingDemandPropertyRequest>
+         <name>avfwessentiel.product.identifiers</name>
+         <value>FAKE-AAAA-BKOU-PT0R-5KFC</value>
+      </net:findByShippingDemandPropertyRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="findByShippingDemandProperty"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="findShippingAlertsByShippingAlertStatus" name="findShippingAlertsByShippingAlertStatus" bindingOperationName="findShippingAlertsByShippingAlertStatus" type="Request-Response" outputName="findShippingAlertsByShippingAlertStatusResponse" inputName="findShippingAlertsByShippingAlertStatus" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-delivery">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:findShippingAlertsByShippingAlertStatusRequest>?</net:findShippingAlertsByShippingAlertStatusRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="findShippingAlertsByShippingAlertStatus"/></con:call></con:operation><con:operation isOneWay="false" action="findShippingAlertsByShippingDemand" name="findShippingAlertsByShippingDemand" bindingOperationName="findShippingAlertsByShippingDemand" type="Request-Response" outputName="findShippingAlertsByShippingDemandResponse" inputName="findShippingAlertsByShippingDemand" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-delivery">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:findShippingAlertsByShippingDemandRequest>?</net:findShippingAlertsByShippingDemandRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="findShippingAlertsByShippingDemand"/></con:call></con:operation><con:operation isOneWay="false" action="getShippingDemand" name="getShippingDemand" bindingOperationName="getShippingDemand" type="Request-Response" outputName="getShippingDemandResponse" inputName="getShippingDemand" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-delivery">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:pShippingDemandId>1835</net:pShippingDemandId>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getShippingDemand"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getShippingPacks" name="getShippingPacks" bindingOperationName="getShippingPacks" type="Request-Response" outputName="getShippingPacksResponse" inputName="getShippingPacks" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-delivery">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:pShippingDemandId>1835</net:pShippingDemandId>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getShippingPacks"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getShippingProperties" name="getShippingProperties" bindingOperationName="getShippingProperties" type="Request-Response" outputName="getShippingPropertiesResponse" inputName="getShippingProperties" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-delivery">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:shippingKey>logvad</net:shippingKey>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getShippingProperties"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="getVersion" name="getVersion" bindingOperationName="getVersion" type="Request-Response" outputName="getVersionResponse" inputName="getVersion" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request>&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   &lt;soapenv:Header/>
+   &lt;soapenv:Body/>
+&lt;/soapenv:Envelope></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="getVersion"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="throwException" name="throwException" bindingOperationName="throwException" type="Request-Response" outputName="throwExceptionResponse" inputName="throwException" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-delivery">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:throwExceptionRequest>?</net:throwExceptionRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:wsaConfig mustUnderstand="NONE" version="200508" action="throwException"/></con:call></con:operation><con:operation isOneWay="false" action="timeOut" name="timeOut" bindingOperationName="timeOut" type="Request-Response" outputName="timeOutResponse" inputName="timeOut" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:net="http://www.nordnet.com/net-delivery">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <net:minTimeOutSec>3</net:minTimeOutSec>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="timeOut"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="COMPLEMENT" username="topaze" password="88697c99d091efc9bc9dbc3807172cfb" wssType="PasswordText">http://10.151.0.23:8080/net-delivery-ws-2.1.x/services/NetDeliveryWS</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jms="http://www.springframework.org/schema/jms"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms-3.0.xsd">
+
+	<!-- Activemq connection factory -->
+	<bean id="amqConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<constructor-arg value="${brokerURL}" />
+	</bean>
+
+	<!-- ConnectionFactory Definition -->
+	<bean id="connectionFactory"
+		class="org.springframework.jms.connection.CachingConnectionFactory">
+		<constructor-arg ref="amqConnectionFactory" />
+	</bean>
+
+	<!-- Message Receiver Definition -->
+	<bean id="contratValidatedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.ContratValidatedListener">
+	</bean>
+
+	<bean id="contractMigratedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.ContractMigratedListener">
+	</bean>
+
+	<bean id="deliveryInitiatedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.DeliveryInitiatedListener">
+	</bean>
+
+	<bean id="subDeliveryPreparedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.SubDeliveryPreparedListener">
+	</bean>
+
+	<bean id="deliveryDeliveredListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.DeliveryDeliveredListener">
+	</bean>
+
+	<bean id="subDeliveryDeliveredListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.SubDeliveryDeliveredListener">
+	</bean>
+
+	<bean id="contractResiliatedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.ContractResiliatedListener">
+	</bean>
+
+	<bean id="returnInitiatedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.ReturnInitiatedListener">
+	</bean>
+
+	<bean id="subReturnInitiatedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.SubReturnInitiatedListener">
+	</bean>
+
+	<bean id="subDeliveryMigrationDeliveredListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.SubDeliveryMigrationDeliveredListener">
+	</bean>
+
+	<bean id="subDeliveryMigrationReturnedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.SubDeliveryMigrationReturnedListener">
+	</bean>
+
+	<bean id="migrationInitiatedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.MigrationInitiatedListener">
+	</bean>
+
+	<bean id="contratSuccessionListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.ContratSuccessionListener">
+	</bean>
+
+	<bean id="subDeliverySuccessedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.SubDeliverySuccessedListener">
+	</bean>
+
+	<bean id="deliverySuccessedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.DeliverySuccessedListener">
+	</bean>
+	<bean id="migrationDelivredListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.MigrationDelivredListener">
+	</bean>
+	
+		<bean id="contractRenewedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.ContractRenewedListener">
+	</bean>
+	
+	<bean id="subDeliveryRenewedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.SubDeliveryRenewedListener">
+	</bean>
+	
+	<bean id="deliveryRenewedListener"
+		class="com.nordnet.topaze.businessprocess.core.jms.DeliveryRenewedListener">
+	</bean>
+
+	<!-- JmsTemplate Definition -->
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+	</bean>
+
+	<jms:listener-container connection-factory="connectionFactory">
+
+		<jms:listener destination="ContratValidatedQueue" ref="contratValidatedListener"
+			method="onMessage" />
+
+		<jms:listener destination="ContratMigratedQueue" ref="contractMigratedListener"
+			method="onMessage" />
+
+		<jms:listener destination="DeliveryInitiatedQueue" ref="deliveryInitiatedListener"
+			method="onMessage" />
+
+		<jms:listener destination="SubDeliveryPreparedQueue" ref="subDeliveryPreparedListener"
+			method="onMessage" />
+
+		<jms:listener destination="SubDeliveryDeliveredQueue"
+			ref="subDeliveryDeliveredListener" method="onMessage" />
+
+		<jms:listener destination="DeliveryDeliveredQueue" ref="deliveryDeliveredListener"
+			method="onMessage" />
+
+		<jms:listener destination="ContractResiliatedQueue" ref="contractResiliatedListener"
+			method="onMessage" />
+
+		<jms:listener destination="ReturnInitiatedQueue" ref="returnInitiatedListener"
+			method="onMessage" />
+
+		<jms:listener destination="SubReturnInitiatedQueue" ref="subReturnInitiatedListener"
+			method="onMessage" />
+
+		<jms:listener destination="SubDeliveryMigrationDeliveredQueue"
+			ref="subDeliveryMigrationDeliveredListener" method="onMessage" />
+
+		<jms:listener destination="SubDeliveryMigrationReturnedQueue"
+			ref="subDeliveryMigrationReturnedListener" method="onMessage" />
+
+		<jms:listener destination="MigrationInitiatedQueue" ref="migrationInitiatedListener"
+			method="onMessage" />
+
+		<jms:listener destination="ContratSuccessionQueue" ref="contratSuccessionListener"
+			method="onMessage" />
+
+		<jms:listener destination="SubDeliverySuccessedQueue"
+			ref="subDeliverySuccessedListener" method="onMessage" />
+
+		<jms:listener destination="DeliverySuccessedQueue" ref="deliverySuccessedListener"
+			method="onMessage" />
+			
+				<jms:listener destination="MigrationDelivredQueue" ref="migrationDelivredListener"
+			method="onMessage" />
+			
+			<jms:listener destination="ContractRenewedQueue" ref="contractRenewedListener"
+			method="onMessage" />
+			
+			<jms:listener destination="SubDeliveryRenewedQueue" ref="subDeliveryRenewedListener"
+			method="onMessage" />
+			
+			<jms:listener destination="DeliveryRenewedQueue" ref="deliveryRenewedListener"
+			method="onMessage" />
+
+	</jms:listener-container>
+</beans>

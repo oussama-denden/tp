@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Mandathèque - Recette" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="MandateLibraryWSImplServiceSoapBinding" type="wsdl" bindingName="{http://impl.ws.mandatelibrary.nordnet.com/}MandateLibraryWSImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:endpoints><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="addCustomer" bindingOperationName="addCustomer" type="Request-Response" outputName="addCustomerResponse" inputName="addCustomer" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:addCustomer>
+         <!--Optional:-->
+         <ws:rum>gero et</ws:rum>
+         <!--Optional:-->
+         <ws:customerKey>sonoras imperio</ws:customerKey>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>quae divum incedo</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>verrantque per auras</typ:ip>
+            <!--Optional:-->
+            <typ:userName>per auras</typ:userName>
+         </ws:userInfos>
+      </ws:addCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/addCustomer"/></con:call></con:operation><con:operation isOneWay="false" action="" name="checkIban" bindingOperationName="checkIban" type="Request-Response" outputName="checkIbanResponse" inputName="checkIban" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/" xmlns:typ="http://types.ws.mandatelibrary.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:checkIban>
+         <!--Optional:-->
+         <ws:iban>
+            <!--Optional:-->
+            <typ:bic>gero et</typ:bic>
+            <!--Optional:-->
+            <typ:creationDate>2013-11-23T15:44:07</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>ventos tempestatesque</typ:label>
+            <!--Optional:-->
+            <typ:number>temperat iras</typ:number>
+         </ws:iban>
+      </ws:checkIban>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/checkIban"/></con:call></con:operation><con:operation isOneWay="false" action="" name="create" bindingOperationName="create" type="Request-Response" outputName="createResponse" inputName="create" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/" xmlns:inp="http://input.types.ws.mandatelibrary.nordnet.com" xmlns:typ="http://types.ws.mandatelibrary.nordnet.com" xmlns:typ1="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:create>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:ics>sonoras imperio</ws:ics>
+         <!--Optional:-->
+         <ws:account>
+            <!--Optional:-->
+            <inp:accountKey>quae divum incedo</inp:accountKey>
+            <!--Optional:-->
+            <inp:address1>verrantque per auras</inp:address1>
+            <!--Optional:-->
+            <inp:address2>per auras</inp:address2>
+            <!--Optional:-->
+            <inp:city>circum claustra</inp:city>
+            <!--Optional:-->
+            <inp:company>nimborum in</inp:company>
+            <!--Optional:-->
+            <inp:country>foedere certo</inp:country>
+            <!--Optional:-->
+            <inp:email>profundum quippe ferant</inp:email>
+            <!--Optional:-->
+            <inp:firstName>et carcere</inp:firstName>
+            <!--Optional:-->
+            <inp:holder>iovis rapidum iaculata</inp:holder>
+            <!--Optional:-->
+            <inp:lastName>speluncis abdidit</inp:lastName>
+            <!--Optional:-->
+            <inp:origin>bella gero et</inp:origin>
+            <!--Optional:-->
+            <inp:zipCode>flammas turbine</inp:zipCode>
+         </ws:account>
+         <!--Optional:-->
+         <ws:iban>
+            <!--Optional:-->
+            <typ:bic>hoc metuens</typ:bic>
+            <!--Optional:-->
+            <typ:creationDate>2014-06-10T20:33:25+02:00</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>circum claustra</typ:label>
+            <!--Optional:-->
+            <typ:number>coniunx una</typ:number>
+         </ws:iban>
+         <!--Optional:-->
+         <ws:creditCard>
+            <!--Optional:-->
+            <typ:creationDate>2015-06-18T00:07:00+02:00</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>imperio premit</typ:label>
+            <!--Optional:-->
+            <typ:transId>quisquam numen</typ:transId>
+         </ws:creditCard>
+         <!--Optional:-->
+         <ws:facture>
+            <!--Optional:-->
+            <typ:creationDate>2012-04-24T23:37:57+02:00</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>sed pater</typ:label>
+            <!--Optional:-->
+            <typ:reference>talia flammato secum</typ:reference>
+         </ws:facture>
+         <!--Optional:-->
+         <ws:paypal>
+            <!--Optional:-->
+            <typ:creationDate>2016-09-11T23:45:33</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>certo et</typ:label>
+            <!--Optional:-->
+            <typ:reference>rates evertitque aequora</typ:reference>
+         </ws:paypal>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ1:httpUserAgent>volutans nimborum in</typ1:httpUserAgent>
+            <!--Optional:-->
+            <typ1:ip>faciat maria</typ1:ip>
+            <!--Optional:-->
+            <typ1:userName>et quisquam</typ1:userName>
+         </ws:userInfos>
+      </ws:create>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/create"/></con:call></con:operation><con:operation isOneWay="false" action="" name="createForOldCustomer" bindingOperationName="createForOldCustomer" type="Request-Response" outputName="createForOldCustomerResponse" inputName="createForOldCustomer" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/" xmlns:inp="http://input.types.ws.mandatelibrary.nordnet.com" xmlns:typ="http://types.ws.mandatelibrary.nordnet.com" xmlns:typ1="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:createForOldCustomer>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:ics>sonoras imperio</ws:ics>
+         <!--Optional:-->
+         <ws:account>
+            <!--Optional:-->
+            <inp:accountKey>quae divum incedo</inp:accountKey>
+            <!--Optional:-->
+            <inp:address1>verrantque per auras</inp:address1>
+            <!--Optional:-->
+            <inp:address2>per auras</inp:address2>
+            <!--Optional:-->
+            <inp:city>circum claustra</inp:city>
+            <!--Optional:-->
+            <inp:company>nimborum in</inp:company>
+            <!--Optional:-->
+            <inp:country>foedere certo</inp:country>
+            <!--Optional:-->
+            <inp:email>profundum quippe ferant</inp:email>
+            <!--Optional:-->
+            <inp:firstName>et carcere</inp:firstName>
+            <!--Optional:-->
+            <inp:holder>iovis rapidum iaculata</inp:holder>
+            <!--Optional:-->
+            <inp:lastName>speluncis abdidit</inp:lastName>
+            <!--Optional:-->
+            <inp:origin>bella gero et</inp:origin>
+            <!--Optional:-->
+            <inp:zipCode>flammas turbine</inp:zipCode>
+         </ws:account>
+         <!--Optional:-->
+         <ws:iban>
+            <!--Optional:-->
+            <typ:bic>hoc metuens</typ:bic>
+            <!--Optional:-->
+            <typ:creationDate>2014-06-10T20:33:25+02:00</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>circum claustra</typ:label>
+            <!--Optional:-->
+            <typ:number>coniunx una</typ:number>
+         </ws:iban>
+         <!--Optional:-->
+         <ws:creditCard>
+            <!--Optional:-->
+            <typ:creationDate>2015-06-18T00:07:00+02:00</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>imperio premit</typ:label>
+            <!--Optional:-->
+            <typ:transId>quisquam numen</typ:transId>
+         </ws:creditCard>
+         <!--Optional:-->
+         <ws:facture>
+            <!--Optional:-->
+            <typ:creationDate>2012-04-24T23:37:57+02:00</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>sed pater</typ:label>
+            <!--Optional:-->
+            <typ:reference>talia flammato secum</typ:reference>
+         </ws:facture>
+         <!--Optional:-->
+         <ws:paypal>
+            <!--Optional:-->
+            <typ:creationDate>2016-09-11T23:45:33</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>certo et</typ:label>
+            <!--Optional:-->
+            <typ:reference>rates evertitque aequora</typ:reference>
+         </ws:paypal>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ1:httpUserAgent>volutans nimborum in</typ1:httpUserAgent>
+            <!--Optional:-->
+            <typ1:ip>faciat maria</typ1:ip>
+            <!--Optional:-->
+            <typ1:userName>et quisquam</typ1:userName>
+         </ws:userInfos>
+      </ws:createForOldCustomer>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/createForOldCustomer"/></con:call></con:operation><con:operation isOneWay="false" action="" name="createNNBPayers" bindingOperationName="createNNBPayers" type="Request-Response" outputName="createNNBPayersResponse" inputName="createNNBPayers" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/" xmlns:util="http://utils.java/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:createNNBPayers>
+         <!--Optional:-->
+         <ws:rumCodes>
+            <!--Zero or more repetitions:-->
+            <util:string>gero et</util:string>
+         </ws:rumCodes>
+      </ws:createNNBPayers>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/createNNBPayers"/></con:call></con:operation><con:operation isOneWay="false" action="" name="existsCustomerForAccount" bindingOperationName="existsCustomerForAccount" type="Request-Response" outputName="existsCustomerForAccountResponse" inputName="existsCustomerForAccount" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:existsCustomerForAccount>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:accountKey>sonoras imperio</ws:accountKey>
+      </ws:existsCustomerForAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/existsCustomerForAccount"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getMandate" bindingOperationName="getMandate" type="Request-Response" outputName="getMandateResponse" inputName="getMandate" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getMandate>
+         <!--Optional:-->
+         <ws:rum>RF64B5CA</ws:rum>
+      </ws:getMandate>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/getMandate"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getMandateforAccount" bindingOperationName="getMandateforAccount" type="Request-Response" outputName="getMandateforAccountResponse" inputName="getMandateforAccount" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getMandateforAccount>
+         <!--Optional:-->
+         <ws:accountKey>31206271</ws:accountKey>
+      </ws:getMandateforAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/getMandateforAccount"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getMandatePdf" bindingOperationName="getMandatePdf" type="Request-Response" outputName="getMandatePdfResponse" inputName="getMandatePdf" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getMandatePdf>
+         <!--Optional:-->
+         <ws:rum>gero et</ws:rum>
+      </ws:getMandatePdf>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/getMandatePdf"/></con:call></con:operation><con:operation isOneWay="false" action="" name="listMandatesForCustomerKey" bindingOperationName="listMandatesForCustomerKey" type="Request-Response" outputName="listMandatesForCustomerKeyResponse" inputName="listMandatesForCustomerKey" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:listMandatesForCustomerKey>
+         <!--Optional:-->
+         <ws:customerKey>29521000</ws:customerKey>
+      </ws:listMandatesForCustomerKey>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/listMandatesForCustomerKey"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="listMandatesForIBAN" bindingOperationName="listMandatesForIBAN" type="Request-Response" outputName="listMandatesForIBANResponse" inputName="listMandatesForIBAN" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:listMandatesForIBAN>
+         <!--Optional:-->
+         <ws:number>gero et</ws:number>
+      </ws:listMandatesForIBAN>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/listMandatesForIBAN"/></con:call></con:operation><con:operation isOneWay="false" action="" name="processAddDebitRequests" bindingOperationName="processAddDebitRequests" type="Request-Response" outputName="processAddDebitRequestsResponse" inputName="processAddDebitRequests" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/" xmlns:util="http://utils.java/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:processAddDebitRequests>
+         <!--Optional:-->
+         <ws:invoiceKeys>
+            <!--Zero or more repetitions:-->
+            <util:string>gero et</util:string>
+         </ws:invoiceKeys>
+      </ws:processAddDebitRequests>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/processAddDebitRequests"/></con:call></con:operation><con:operation isOneWay="false" action="" name="processGetFolioCodeRequests" bindingOperationName="processGetFolioCodeRequests" type="Request-Response" outputName="processGetFolioCodeRequestsResponse" inputName="processGetFolioCodeRequests" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/" xmlns:util="http://utils.java/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:processGetFolioCodeRequests>
+         <!--Optional:-->
+         <ws:RUM>
+            <!--Zero or more repetitions:-->
+            <util:string>gero et</util:string>
+         </ws:RUM>
+      </ws:processGetFolioCodeRequests>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/processGetFolioCodeRequests"/></con:call></con:operation><con:operation isOneWay="false" action="" name="removeCustomerForAccount" bindingOperationName="removeCustomerForAccount" type="Request-Response" outputName="removeCustomerForAccountResponse" inputName="removeCustomerForAccount" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:removeCustomerForAccount>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:accountKey>sonoras imperio</ws:accountKey>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>quae divum incedo</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>verrantque per auras</typ:ip>
+            <!--Optional:-->
+            <typ:userName>per auras</typ:userName>
+         </ws:userInfos>
+      </ws:removeCustomerForAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/removeCustomerForAccount"/></con:call></con:operation><con:operation isOneWay="false" action="" name="setEnabled" bindingOperationName="setEnabled" type="Request-Response" outputName="setEnabledResponse" inputName="setEnabled" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:setEnabled>
+         <!--Optional:-->
+         <ws:rum>gero et</ws:rum>
+         <ws:enabled>true</ws:enabled>
+      </ws:setEnabled>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/setEnabled"/></con:call></con:operation><con:operation isOneWay="false" action="" name="setFolioCode" bindingOperationName="setFolioCode" type="Request-Response" outputName="setFolioCodeResponse" inputName="setFolioCode" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:setFolioCode>
+         <!--Optional:-->
+         <ws:rum>gero et</ws:rum>
+         <!--Optional:-->
+         <ws:folioCode>sonoras imperio</ws:folioCode>
+      </ws:setFolioCode>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/setFolioCode"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateAccount" bindingOperationName="updateAccount" type="Request-Response" outputName="updateAccountResponse" inputName="updateAccount" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/" xmlns:inp="http://input.types.ws.mandatelibrary.nordnet.com" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updateAccount>
+         <!--Optional:-->
+         <ws:rum>gero et</ws:rum>
+         <!--Optional:-->
+         <ws:account>
+            <!--Optional:-->
+            <inp:accountKey>sonoras imperio</inp:accountKey>
+            <!--Optional:-->
+            <inp:address1>quae divum incedo</inp:address1>
+            <!--Optional:-->
+            <inp:address2>verrantque per auras</inp:address2>
+            <!--Optional:-->
+            <inp:city>per auras</inp:city>
+            <!--Optional:-->
+            <inp:company>circum claustra</inp:company>
+            <!--Optional:-->
+            <inp:country>nimborum in</inp:country>
+            <!--Optional:-->
+            <inp:email>foedere certo</inp:email>
+            <!--Optional:-->
+            <inp:firstName>profundum quippe ferant</inp:firstName>
+            <!--Optional:-->
+            <inp:holder>et carcere</inp:holder>
+            <!--Optional:-->
+            <inp:lastName>iovis rapidum iaculata</inp:lastName>
+            <!--Optional:-->
+            <inp:origin>speluncis abdidit</inp:origin>
+            <!--Optional:-->
+            <inp:zipCode>bella gero et</inp:zipCode>
+         </ws:account>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>flammas turbine</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>hoc metuens</typ:ip>
+            <!--Optional:-->
+            <typ:userName>ac vinclis</typ:userName>
+         </ws:userInfos>
+      </ws:updateAccount>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/updateAccount"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateIBAN" bindingOperationName="updateIBAN" type="Request-Response" outputName="updateIBANResponse" inputName="updateIBAN" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/" xmlns:typ="http://types.ws.mandatelibrary.nordnet.com" xmlns:typ1="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updateIBAN>
+         <!--Optional:-->
+         <ws:rum>gero et</ws:rum>
+         <!--Optional:-->
+         <ws:iban>
+            <!--Optional:-->
+            <typ:bic>sonoras imperio</typ:bic>
+            <!--Optional:-->
+            <typ:creationDate>2004-02-14T19:44:14</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>temperat iras</typ:label>
+            <!--Optional:-->
+            <typ:number>turbine corripuit</typ:number>
+         </ws:iban>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ1:httpUserAgent>regemque dedit</typ1:httpUserAgent>
+            <!--Optional:-->
+            <typ1:ip>fremunt celsa</typ1:ip>
+            <!--Optional:-->
+            <typ1:userName>ferant rapidi</typ1:userName>
+         </ws:userInfos>
+      </ws:updateIBAN>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/updateIBAN"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateNNBPayers" bindingOperationName="updateNNBPayers" type="Request-Response" outputName="updateNNBPayersResponse" inputName="updateNNBPayers" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/" xmlns:util="http://utils.java/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updateNNBPayers>
+         <!--Optional:-->
+         <ws:rumCodes>
+            <!--Zero or more repetitions:-->
+            <util:string>gero et</util:string>
+         </ws:rumCodes>
+      </ws:updateNNBPayers>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/updateNNBPayers"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updatePayment" bindingOperationName="updatePayment" type="Request-Response" outputName="updatePaymentResponse" inputName="updatePayment" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.mandatelibrary.nordnet.com/" xmlns:typ="http://types.ws.mandatelibrary.nordnet.com" xmlns:typ1="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updatePayment>
+         <!--Optional:-->
+         <ws:rum>gero et</ws:rum>
+         <!--Optional:-->
+         <ws:iban>
+            <!--Optional:-->
+            <typ:bic>sonoras imperio</typ:bic>
+            <!--Optional:-->
+            <typ:creationDate>2004-02-14T19:44:14</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>temperat iras</typ:label>
+            <!--Optional:-->
+            <typ:number>turbine corripuit</typ:number>
+         </ws:iban>
+         <!--Optional:-->
+         <ws:creditCard>
+            <!--Optional:-->
+            <typ:creationDate>2017-05-15T08:41:13</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>foedere certo</typ:label>
+            <!--Optional:-->
+            <typ:transId>profundum quippe ferant</typ:transId>
+         </ws:creditCard>
+         <!--Optional:-->
+         <ws:facture>
+            <!--Optional:-->
+            <typ:creationDate>2009-10-14T09:16:36</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>flammato secum dea</typ:label>
+            <!--Optional:-->
+            <typ:reference>profundum quippe ferant</typ:reference>
+         </ws:facture>
+         <!--Optional:-->
+         <ws:paypal>
+            <!--Optional:-->
+            <typ:creationDate>2018-02-04T15:35:59+01:00</typ:creationDate>
+            <!--Optional:-->
+            <typ:label>hoc metuens</typ:label>
+            <!--Optional:-->
+            <typ:reference>ac vinclis</typ:reference>
+         </ws:paypal>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ1:httpUserAgent>speluncis abdidit</typ1:httpUserAgent>
+            <!--Optional:-->
+            <typ1:ip>aris imponet honorem</typ1:ip>
+            <!--Optional:-->
+            <typ1:userName>praeterea aut</typ1:userName>
+         </ws:userInfos>
+      </ws:updatePayment>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.mandatelibrary.nordnet.com/MandateLibraryWS/updatePayment"/></con:call></con:operation></con:interface><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="COMPLEMENT" password="1e2cec460349e1218f534ce337042895" username="topaze" wssType="PasswordText">http://jboss42-1c2.jboss.dev.nordnet.fr:8080/mandatelibrary-ws-1.0.x/services/MandateLibraryWS</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/></con:soapui-project>

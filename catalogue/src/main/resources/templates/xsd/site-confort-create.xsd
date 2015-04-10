@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.nordnet.com/packsite" xmlns:ps="http://www.nordnet.com/packsite">
+  <xs:element name="productProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ps:handleInformations"/>
+      </xs:sequence>
+      <xs:attribute name="nnbo_offerName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="handleInformations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ps:email"/>
+        <xs:element ref="ps:lastname"/>
+        <xs:element ref="ps:firstName"/>
+        <xs:element ref="ps:civility"/>
+        <xs:element ref="ps:address"/>
+        <xs:element ref="ps:phone"/>
+        <xs:element ref="ps:fax"/>
+        <xs:element ref="ps:company"/>
+        <xs:element ref="ps:status"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="email" type="xs:NCName"/>
+  <xs:element name="lastname" type="xs:NCName"/>
+  <xs:element name="firstName" type="xs:NCName"/>
+  <xs:element name="civility" type="xs:NCName"/>
+  <xs:element name="address">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ps:address1"/>
+        <xs:element ref="ps:address2"/>
+        <xs:element ref="ps:address3"/>
+        <xs:element ref="ps:zipCode"/>
+        <xs:element ref="ps:city"/>
+        <xs:element ref="ps:country"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="address1" type="xs:NCName"/>
+  <xs:element name="address2" type="xs:NCName"/>
+  <xs:element name="address3">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="zipCode" type="xs:NCName"/>
+  <xs:element name="city" type="xs:NCName"/>
+  <xs:element name="country" type="xs:NCName"/>
+  <xs:element name="phone" type="xs:NCName"/>
+  <xs:element name="fax" type="xs:NCName"/>
+  <xs:element name="company" type="xs:NCName"/>
+  <xs:element name="status" type="xs:NCName"/>
+</xs:schema>

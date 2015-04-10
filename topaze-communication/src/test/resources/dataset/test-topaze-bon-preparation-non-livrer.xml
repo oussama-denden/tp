@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE dataset SYSTEM "..\dtd\Topaze.dtd">
+<dataset>
+<bonpreparation id="1" reference="REF_BP_GLOBAL" addressLivraison="ADR_LIV" codeProduit="CODE_PRODUIT" dateInitiation="[now-7days]" datePreparation="[now]" idClient="ID_CLIENT"  outilLivraison="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="GLOBAL" etatBonPreparation="LIVRAISON"  causeNonlivraison="CAUSE_NON_LIVRAIS_TST"/>
+<bonpreparation id="2" reference="REF_SBP1" addressLivraison="ADR_LIV" bonPreparationParent="1" codeProduit="CODE_PRODUIT" dateInitiation="[now-7days]" datePreparation="[now]" idClient="ID_CLIENT"  outilLivraison="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="LOCATION" etatBonPreparation="LIVRAISON" causeNonlivraison="CAUSE_NON_LIVRAIS_TST" codeColis="CODE_COLIS_TST"/>
+<bonpreparation id="3" reference="REF_SBP2" addressLivraison="ADR_LIV" bonPreparationParent="1" codeProduit="CODE_PRODUIT" dateInitiation="[now-7days]" datePreparation="[now]" idClient="ID_CLIENT"  outilLivraison="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="LOCATION" etatBonPreparation="LIVRAISON" causeNonlivraison="CAUSE_NON_LIVRAIS_TST" codeColis="CODE_COLIS_TST1"/>
+</dataset>

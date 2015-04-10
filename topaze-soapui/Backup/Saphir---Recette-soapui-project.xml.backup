@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Saphir - Recette" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service WADL" type="rest" basePath="/saphir-ws-1.0.x/technical" definitionUrl="http://10.100.105.41:8080/saphir-ws-1.0.x/technical/application.wadl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://10.100.105.41:8080</con:endpoint></con:endpoints><con:resource name="/application.wadl" path="/application.wadl"><con:settings/><con:parameters/><con:method name="com.nordnet.saphir.ws.technical.WadlController.generateWadl - generateWadl" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE" id=""><con:mediaType>application/xml</con:mediaType><con:status>200</con:status><con:params/><con:element xsi:nil="true"/><con:description xsi:nil="true"/></con:representation><con:request name="Request 1" mediaType="application/json"><con:settings/><con:endpoint>http://10.100.105.41:8080</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="/discountcoupon" path="/discountcoupon"><con:settings/><con:parameters/><con:method name="com.nordnet.saphir.ws.technical.SaphirMovementController.addDiscountCoupon - addDiscountCoupon" method="PUT"><con:settings/><con:parameters/><con:request name="Request 1" mediaType="application/json"><con:settings/><con:endpoint>http://10.100.105.41:8080</con:endpoint><con:parameters/></con:request></con:method></con:resource><con:resource name="/downpayment" path="/downpayment"><con:settings/><con:parameters/><con:method name="com.nordnet.saphir.ws.technical.SaphirMovementController.addDownPayment - addDownPayment" method="PUT"><con:settings/><con:parameters/><con:request name="Request 1" mediaType="application/json"><con:settings/><con:endpoint>http://10.100.105.41:8080</con:endpoint><con:parameters/></con:request></con:method></con:resource><con:resource name="/movement" path="/movement"><con:settings/><con:parameters/><con:method name="com.nordnet.saphir.ws.technical.SaphirMovementController.addMovement - addMovement" method="PUT"><con:settings/><con:parameters/><con:request name="Add Mouvement" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://10.100.105.41:8080</con:endpoint><con:request>{
+"accountId" : "00131",
+"billType": "MONTHLY",
+"period": {
+	"startFrom": "2014-06-01",
+	"endTo": "2014-07-01"
+},
+"canBeGroup": "false",
+"billingGroup": "12345",
+"productId": "jet",
+"productLabel": "Abonnement Jet 10",
+"vatType": "R",
+"rum": "R0000012",
+"paymentType": "SEPA",
+"unitPrice": {
+	"amount": "30",
+	"currency": "EUR",
+	"transactionType": "DEBIT"
+}
+"appendixItems": [
+	{
+		"type": "OTHER", 
+		"price": "30",
+		"label": "Abo Jet 10",
+		"productReferenceId": "ce350f1a",
+	}
+],
+}
+</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="/movements" path="/movements"><con:settings/><con:parameters/><con:method name="com.nordnet.saphir.ws.technical.SaphirMovementController.addMovements - addMovements" method="PUT"><con:settings/><con:parameters/><con:request name="Request 1" mediaType="application/json"><con:settings/><con:endpoint>http://10.100.105.41:8080</con:endpoint><con:parameters/></con:request></con:method></con:resource><con:resource name="/releve/{releveId}" path="/releve/{releveId}"><con:settings/><con:parameters/><con:method name="com.nordnet.saphir.ws.technical.SaphirReleveController.revokeReleve - revokeReleve" method="DELETE"><con:settings/><con:parameters><con:parameter required="true"><con:name>releveId</con:name><con:value xsi:nil="true"/><con:style>TEMPLATE</con:style><con:default xsi:nil="true"/></con:parameter></con:parameters><con:request name="Request 1" mediaType="application/json"><con:settings/><con:endpoint>http://10.100.105.41:8080</con:endpoint><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.nordnet.com/soo/voip" xmlns:voip="http://www.nordnet.com/soo/voip">
+  <xs:element name="productProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="voip:phoneNumber"/>
+        <xs:element ref="voip:customerInfos"/>
+        <xs:element ref="voip:product"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="phoneNumber" type="xs:NCName"/>
+  <xs:element name="customerInfos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="voip:firstname"/>
+        <xs:element ref="voip:lastname"/>
+        <xs:element ref="voip:email"/>
+        <xs:element ref="voip:address"/>
+        <xs:element ref="voip:zipcode"/>
+        <xs:element ref="voip:city"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="firstname" type="xs:NCName"/>
+  <xs:element name="lastname" type="xs:NCName"/>
+  <xs:element name="email" type="xs:NCName"/>
+  <xs:element name="address" type="xs:NCName"/>
+  <xs:element name="zipcode" type="xs:NCName"/>
+  <xs:element name="city" type="xs:NCName"/>
+  <xs:element name="product">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="voip:ipPhone"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ipPhone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="voip:psnOfferId"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="psnOfferId" type="xs:NCName"/>
+</xs:schema>

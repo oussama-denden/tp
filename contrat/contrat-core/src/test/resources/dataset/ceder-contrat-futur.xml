@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+<avenant id="1" dateModification="[now]" typeAvenant="CESSION" referenceContrat="REF_GB" politiqueCessionId="1"/>
+
+<contrat id="1" politiqueValidationId="1000" reference="REF_GB" idClient="idCL" titre="Contrat Pour Test" datePreparation="[now]" dateValidation="[now]"  />
+
+<elementcontractuel id="1" numeroCommande="1" modePaiement="CB" periodicite="2" modeFacturation="PREMIER_MOIS" idAdrFacturation="adrFact" idAdrLivraison="adrLiv"  referenceProduit="PROD-01" titre="Contrat ABONNEMENT" numEC="1" datePreparation="[now]" dateDebutFacturation="[now]" contratParent="1" referenceModePaiement="RUM" montant="22" typeTVA="S"/>
+
+<fraiscontrat id="1" titre="Frais de dossier" montant="20" typeFrais="CREATION" contratId="1"/>
+
+<modification id="1" avenantId="1" trameJson="[cession-json-contrat]" />
+<modification id="2" avenantId="1" numEC="1" trameJson="[cession-json-element]"/>
+
+<politiquecession id="1" dateAction="[now]" fraisCession="10" montantRemboursement="10" remboursement="1"  conserverAncienneReduction="1"/>
+
+<politiquevalidation id="1000" fraisCreation="false" />
+
+</dataset>

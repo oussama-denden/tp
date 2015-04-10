@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+
+<contrat id="1" reference="REF_GB_migre" idClient="gggg" segmentTVA="00" titre="Contrat Pour Test" datePreparation="[now]" dateValidation="[now]" dateDebutFacturation="[now]" />
+<contrat id="3" reference="REF_GB_2" idClient="gggg" segmentTVA="00" titre="Contrat Pour Test" datePreparation="[now]" dateValidation="[now]" dateDebutFacturation="[now]" />
+<contrat id="4" reference="REF_GB_migre-2" idClient="gggg" segmentTVA="00" titre="Contrat Pour Test" datePreparation="[now]" dateValidation="[now]" dateDebutFacturation="[now]" />
+
+<elementcontractuel id="2" numeroCommande="1" numEC="1" modeFacturation="DATE_ANNIVERSAIRE"  idAdrFacturation="id-fact" typeProduit="SERVICE" referenceProduit="avfwpro-confort-s" titre="Contrat ABONNEMENT pour le produit : avfwpro-confort-s" datePreparation="[now]" dateValidation="[now]"  dateDebutFacturation="[now]" contratParent="1" montant="5" modePaiement="SEPA" typeTVA="R" periodicite="1" duree="24" engagement="12" dateDerniereFacture="[now+10days]" dateFinContrat="[now+10years]"  idAdrLivraison="adr" />
+<elementcontractuel id="4" numeroCommande="1"  modeFacturation="DATE_ANNIVERSAIRE"  idAdrFacturation="id-fact" typeProduit="SERVICE" referenceProduit="avfwpro-confort-s" titre="Contrat ABONNEMENT pour le produit : avfwpro-confort-s" datePreparation="[now]" dateValidation="[now]"  dateDebutFacturation="[now]" contratParent="3" montant="5" modePaiement="SEPA" typeTVA="R" periodicite="1" duree="24" engagement="12" dateDerniereFacture="[now+10days]" dateFinContrat="[now+10years]" idAdrLivraison="adr" />
+<elementcontractuel id="5" numeroCommande="1" numEC="1" modeFacturation="DATE_ANNIVERSAIRE"  idAdrFacturation="id-fact" typeProduit="SERVICE" referenceProduit="avfwpro-confort-s" titre="Contrat ABONNEMENT pour le produit : avfwpro-confort-s" datePreparation="[now]" dateValidation="[now]"  dateDebutFacturation="[now]" contratParent="4" montant="5" modePaiement="SEPA" typeTVA="R" periodicite="1" duree="24" engagement="12" dateDerniereFacture="[now+10days]" dateFinContrat="[now+10years]" idAdrLivraison="adr" />
+
+</dataset>

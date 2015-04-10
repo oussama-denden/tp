@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="packagerService"
+		class="com.nordnet.topaze.businessprocess.packager.service.PackagerServiceImpl" />
+	<bean id="restClientPackager" class="com.nordnet.topaze.client.rest.RestClientPackager" />
+
+	<!-- Job Details Beans -->
+	<bean name="serviceActiveJob"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="com.nordnet.topaze.businessprocess.packager.cron.ServiceActiveJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="packagerService" value-ref="packagerService" />
+				<entry key="restClientPackager" value-ref="restClientPackager" />
+			</map>
+		</property>
+		<property name="durability" value="true" />
+	</bean>
+
+	<bean name="serviceSuspendJob"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="com.nordnet.topaze.businessprocess.packager.cron.ServiceSuspendJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="packagerService" value-ref="packagerService" />
+				<entry key="restClientPackager" value-ref="restClientPackager" />
+			</map>
+		</property>
+		<property name="durability" value="true" />
+	</bean>
+
+	<bean name="cancelServiceJob"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="com.nordnet.topaze.businessprocess.packager.cron.CancelServiceJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="packagerService" value-ref="packagerService" />
+				<entry key="restClientPackager" value-ref="restClientPackager" />
+			</map>
+		</property>
+		<property name="durability" value="true" />
+	</bean>
+
+	<!-- Cron Triggers -->
+	<bean id="serviceActiveTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="serviceActiveJob" />
+		<property name="cronExpression" value="${cronActiverPackager}" />
+		<!-- <property name="cronExpression" value="0 0 12 * * ?" /> -->
+	</bean>
+
+	<bean id="serviceSuspendTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="serviceSuspendJob" />
+		<property name="cronExpression" value="${cronSuspendPackager}" />
+		<!-- <property name="cronExpression" value="0 0 12 * * ?" /> -->
+	</bean>
+
+	<bean id="cancelServiceTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="cancelServiceJob" />
+		<property name="cronExpression" value="${cronCancelPackager}" />
+	</bean>
+
+	<!-- Job Schedulers Beans -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="jobDetails">
+			<list>
+				<ref bean="serviceActiveJob" />
+				<ref bean="serviceSuspendJob" />
+				<ref bean="cancelServiceJob" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="serviceActiveTrigger" />
+				<ref bean="serviceSuspendTrigger" />
+				<ref bean="cancelServiceTrigger" />
+			</list>
+		</property>
+	</bean>
+</beans>

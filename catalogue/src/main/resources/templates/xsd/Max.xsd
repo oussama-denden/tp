@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.nordnet.com/astra-gilat" xmlns:gilat="http://www.nordnet.com/astra-gilat">
+  <xs:element name="productProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="gilat:offerElements"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="offerElements">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="gilat:name"/>
+        <xs:element ref="gilat:voip"/>
+        <xs:element ref="gilat:freezone"/>
+        <xs:element ref="gilat:abondance"/>
+        <xs:element ref="gilat:optionPlus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name" type="xs:NCName"/>
+  <xs:element name="voip" type="xs:NCName"/>
+  <xs:element name="freezone" type="xs:NCName"/>
+  <xs:element name="abondance" type="xs:NCName"/>
+  <xs:element name="optionPlus" type="xs:NCName"/>
+</xs:schema>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="contratService" class="com.nordnet.topaze.contrat.service.ContratServiceImpl" />
+	<bean id="migrationService" class="com.nordnet.topaze.contrat.service.MigrationServiceImpl" />
+	<bean id="avenantService" class="com.nordnet.topaze.contrat.service.AvenantServiceImpl" />
+	<bean id="resiliationService"
+		class="com.nordnet.topaze.contrat.service.ResiliationServiceImpl" />
+
+	<!-- Job Details Beans -->
+	<bean name="contratJob"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass" value="com.nordnet.topaze.contrat.cron.ContratJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="migrationService" value-ref="migrationService" />
+				<entry key="avenantService" value-ref="avenantService" />
+				<entry key="contratService" value-ref="contratService" />
+				<entry key="resiliationService" value-ref="resiliationService" />
+			</map>
+		</property>
+		<property name="durability" value="true" />
+	</bean>
+
+	<bean name="resiliationFutureGlobale"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="com.nordnet.topaze.contrat.cron.ResiliationFutureGlobale" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="resiliationService" value-ref="resiliationService" />
+				<entry key="contratService" value-ref="contratService" />
+			</map>
+		</property>
+		<property name="durability" value="true" />
+	</bean>
+
+	<bean name="resiliationDifferee"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="com.nordnet.topaze.contrat.cron.ResiliationDifferee" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="resiliationService" value-ref="resiliationService" />
+				<entry key="contratService" value-ref="contratService" />
+			</map>
+		</property>
+		<property name="durability" value="true" />
+	</bean>
+
+	<bean name="resiliationFuturePartielle"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="com.nordnet.topaze.contrat.cron.ResiliationFuturePartielle" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="resiliationService" value-ref="resiliationService" />
+				<entry key="contratService" value-ref="contratService" />
+			</map>
+		</property>
+		<property name="durability" value="true" />
+	</bean>
+	<bean name="migrationFutur"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="com.nordnet.topaze.contrat.cron.MigrationFutureGlobale" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="migrationService" value-ref="migrationService" />
+				<entry key="avenantService" value-ref="avenantService" />
+				<entry key="contratService" value-ref="contratService" />
+			</map>
+		</property>
+		<property name="durability" value="true" />
+	</bean>
+
+	<bean name="cessionFuture"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="com.nordnet.topaze.contrat.cron.CessionFuture" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="migrationService" value-ref="migrationService" />
+				<entry key="contratService" value-ref="contratService" />
+				<entry key="avenantService" value-ref="avenantService" />
+			</map>
+		</property>
+		<property name="durability" value="true" />
+	</bean>
+
+	<!-- Cron Triggers -->
+	<bean id="cronTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="contratJob" />
+		<property name="cronExpression" value="${cronContrat}" />
+	</bean>
+
+	<bean id="cronResiliationFutureGlobale"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="resiliationFutureGlobale" />
+		<property name="cronExpression" value="${cronResiliationFuture}" />
+	</bean>
+
+	<bean id="cronResiliationDifferee"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="resiliationDifferee" />
+		<property name="cronExpression" value="${cronResiliationDifferee}" />
+	</bean>
+
+	<bean id="cronResiliationFuturePartielle"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="resiliationFuturePartielle" />
+		<property name="cronExpression" value="${cronResiliationFuture}" />
+	</bean>
+	<bean id="cronMigrationFutur"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="migrationFutur" />
+		<property name="cronExpression" value="${cronMigrationFutur}" />
+	</bean>
+
+	<bean id="cronCessionFuture"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="cessionFuture" />
+		<property name="cronExpression" value="${cronCessionFuture}" />
+	</bean>
+
+	<!-- Job Schedulers Beans -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="jobDetails">
+			<list>
+				<ref bean="resiliationFutureGlobale" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="cronResiliationFutureGlobale" />
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="jobDetails">
+			<list>
+				<ref bean="resiliationDifferee" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="cronResiliationDifferee" />
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="jobDetails">
+			<list>
+				<ref bean="resiliationFuturePartielle" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="cronResiliationFuturePartielle" />
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="jobDetails">
+			<list>
+				<ref bean="migrationFutur" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="cronMigrationFutur" />
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="jobDetails">
+			<list>
+				<ref bean="cessionFuture" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="cronCessionFuture" />
+			</list>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="jobDetails">
+			<list>
+				<ref bean="contratJob" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="cronTrigger" />
+			</list>
+		</property>
+	</bean>
+</beans>

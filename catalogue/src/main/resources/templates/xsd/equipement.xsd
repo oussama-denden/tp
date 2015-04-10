@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.nordnet.com/equipment" xmlns:equipment="http://www.nordnet.com/equipment">
+  <xs:element name="productProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="equipment:productName"/>
+        <xs:element ref="equipment:retailerPackagerId"/>
+      </xs:sequence>
+      <xs:attribute name="nnbo_offerName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="productName" type="xs:NCName"/>
+  <xs:element name="retailerPackagerId" type="xs:NCName"/>
+</xs:schema>

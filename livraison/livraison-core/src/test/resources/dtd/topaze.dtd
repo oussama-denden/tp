@@ -1,0 +1,57 @@
+<!ELEMENT dataset (
+    bonpreparation*,
+    elementlivraison*,
+    tracage*)>
+
+<!ELEMENT bonpreparation EMPTY>
+<!ATTLIST bonpreparation
+    id CDATA #REQUIRED
+    causeNonlivraison CDATA #IMPLIED
+    dateDebutPreparation CDATA #IMPLIED
+    dateInitiation CDATA #IMPLIED
+    dateLivraisonTermine CDATA #IMPLIED
+    datePreparation CDATA #IMPLIED
+    dateRetourTermine CDATA #IMPLIED
+    dateAnnulation CDATA #IMPLIED
+    idClient CDATA #IMPLIED
+    reference CDATA #IMPLIED
+    typeBonPreparation CDATA #IMPLIED
+>
+
+<!ELEMENT elementlivraison EMPTY>
+<!ATTLIST elementlivraison
+    id CDATA #REQUIRED
+    acteur CDATA #IMPLIED
+    addresseLivraison CDATA #IMPLIED
+    ancienCodeColis CDATA #IMPLIED
+    ancienRetailerPackagerId CDATA #IMPLIED
+    causeNonlivraison CDATA #IMPLIED
+    codeColis CDATA #IMPLIED
+    dateDebutPreparation CDATA #IMPLIED
+    dateInitiation CDATA #IMPLIED
+    dateLivraisonTermine CDATA #IMPLIED
+    datePreparation CDATA #IMPLIED
+    dateRetourTermine CDATA #IMPLIED
+    numEC CDATA #IMPLIED
+    reference CDATA #IMPLIED
+    referenceAncienProduit CDATA #IMPLIED
+    referenceProduit CDATA #IMPLIED
+    resiliationPartiel CDATA #IMPLIED
+    retailerPackagerId CDATA #IMPLIED
+    typeBonPreparation CDATA #IMPLIED
+    typeContrat CDATA #IMPLIED
+    bonPreparationParent CDATA #IMPLIED
+>
+
+<!ELEMENT tracage EMPTY>
+<!ATTLIST tracage
+    id CDATA #REQUIRED
+    date CDATA #IMPLIED
+    descr CDATA #IMPLIED
+    ip CDATA #IMPLIED
+    reference CDATA #IMPLIED
+    target CDATA #IMPLIED
+    type CDATA #IMPLIED
+    user CDATA #IMPLIED
+>
+

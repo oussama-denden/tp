@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="Topaze-Dev" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://10.10.2.52:8080" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://10.10.2.52:8080</con:endpoint></con:endpoints><con:resource name="Preparer" path="/contrat-core/contrat/preparer"><con:settings/><con:parameters/><con:method name="" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:prep="http://10.10.2.52/topaze-contrat/contrat/preparer">prep:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>400 404</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Preparer" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://10.10.2.52:8080</con:endpoint><con:request>[
+ {
+  "reference": "jet",
+  "numEC" : "1",
+  "numeroCommande": "order-01",
+  "label": "Connexion Satellite Jet 10",
+  "typeProduit": "SERVICE",
+  "prix": {
+	"engagement": "24",
+	"periodicite": "1",
+	"typeTVA": "R",
+	"montant": "30",
+	"frais": [
+	  {
+		"montant": "50",
+		"typeFrais": "creation"
+	  },
+	  {
+		"montant": "30",
+		"typeFrais": "resiliation"
+	  }
+	],
+	"modePaiement": "SEPA",
+	"modeFacturation": "PREMIER_MOIS"
+  }
+ },
+ {
+  "reference": "option.plus.50g",
+  "numEC" : "2",
+  "numeroCommande": "order-01",
+  "label": "Option Plus 50Go",
+  "typeProduit": "SERVICE",
+  "prix": {
+	"periodicite": "1",
+	"typeTVA": "R",
+	"montant": "24",
+	"modePaiement": "SEPA",
+	"modeFacturation": "PREMIER_MOIS"
+  },
+  "refProduitParent": "jet"
+ }
+]</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Demo - Prepare" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://10.10.2.52:8080</con:endpoint><con:request>{
+ "user": "test",
+ "produits": [
+ 	{
+      "reference": "jet",
+      "numeroCommande": "12345",
+      "label": "Abonnement jet 10Go",
+      "typeProduit": "SERVICE",
+      "prix": {
+        "periodicite": "1",
+        "typeTVA": "R",
+        "montant": "30",
+        "frais": [
+          {
+            "montant": "30",
+            "typeFrais": "creation"
+          }
+        ],
+        "modePaiement": "SEPA",
+        "modeFacturation": "PREMIER_MOIS"
+      }
+    },
+    {
+      "reference": "option.plus.50g",
+      "numeroCommande": "12345",
+      "label": "Option+ 50Go",
+      "typeProduit": "SERVICE",
+      "prix": {
+        "periodicite": "1",
+        "typeTVA": "R",
+        "montant": "50",
+        "frais": [
+          {
+            "montant": "50",
+            "typeFrais": "resiliation",
+            "nombreMois": "12",
+            "ordre": "1"
+          },
+          {
+            "montant": "30",
+            "typeFrais": "resiliation",
+            "ordre": "2"
+          }
+        ],
+        "modePaiement": "SEPA",
+        "modeFacturation": "PREMIER_MOIS"
+      },
+      "refProduitParent": "jet"
+    },
+    {
+      "reference": "kit-sat",
+      "numeroCommande": "12345",
+      "label": "Kit Satellite Jet",
+      "typeProduit": "SERVICE",
+      "prix": {
+        "engagement" : "24",
+        "duree" : "48",
+        "typeTVA": "R",
+        "montant": "10",
+        "modePaiement": "SEPA",
+        "modeFacturation": "PREMIER_MOIS"
+      },
+      "refProduitParent": "jet"
+    }
+  ]
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:resource name="valider" path="/contrat-core/contrat/{refContrat}/valider"><con:settings/><con:parameters><con:parameter><con:name>refContrat</con:name><con:value>refContrat</con:value><con:style>TEMPLATE</con:style><con:default>refContrat</con:default></con:parameter></con:parameters><con:method name="Method 1" method="POST"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>404 400</con:status><con:params/><con:element>html</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:val="http://10.10.2.52/topaze-contrat/contrat/537621e1/valider">val:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Valide" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://10.10.2.52:8080</con:endpoint><con:request>{
+  "idClient": "00131",
+  "idAdrFacturation": "685",
+  "paiementInfos": [
+    {
+      "referenceProduit": "sat.jet.10",
+      "identifiantProduit" : "2",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "sat.jet.option.50",
+      "identifiantProduit" : "3",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "sat.jet.kit",
+      "identifiantProduit" : "4",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "tv.canal+",
+      "identifiantProduit" : "5",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "voip.confort",
+      "identifiantProduit" : "6",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "voip.tel.prestige",
+      "identifiantProduit" : "6",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "avfw.confort",
+      "identifiantProduit" : "1",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+  ],
+  "politiqueValidation": {"fraisCreation": "true"}
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refContrat" value="" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request><con:request name="Demo - Valide" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://10.10.2.52:8080</con:endpoint><con:request>{
+  "idClient": "00131",
+  "idAdrFacturation": "685",
+  "paiementInfos": [
+    {
+      "referenceProduit": "jet",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "option.plus.50g",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    }
+  ],
+  "politiqueValidation": {"fraisCreation": "true"}
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refContrat" value="d602c9a9" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource><con:resource name="resilier" path="/contrat-core/contrat/{refContrat}/resilier"><con:settings/><con:parameters><con:parameter><con:name>refContrat</con:name><con:value>refContrat</con:value><con:style>TEMPLATE</con:style><con:default>refContrat</con:default></con:parameter></con:parameters><con:method name="Method 1" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>text/html;charset=utf-8</con:mediaType><con:status>400</con:status><con:params/><con:element>html</con:element></con:representation><con:request name="Demo - Résil" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://10.10.2.52:8080</con:endpoint><con:request>{
+"fraisResiliation": "true", 
+"typeResiliation": "RIC", 
+"remboursement": "true",
+"penalite": "true"
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refContrat" value="ada0b043" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource></con:interface><con:testSuite name="Happy Path Testing"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Creer Jet - Option+ - Kit" searchProperties="true" id="7020e596-36fd-47d5-ad9c-a6baab006775"><con:settings/><con:testStep type="groovy" name="SetRefCommande"><con:settings/><con:config><script>import static java.util.UUID.randomUUID
+def tc = context.testCase
+uuid = randomUUID().toString()
+testRunner.testCase.setPropertyValue( "RefCommande", uuid )
+log.info testRunner.testCase.getPropertyValue("RefCommande")</script></con:config></con:testStep><con:testStep type="properties" name="InfosContrat"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>refContrat</con:name><con:value>86acc1a6</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="Preparer"><con:settings/><con:config service="http://10.10.2.52:8080" resourcePath="/contrat-core/contrat/preparer" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Preparer" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://10.10.2.52:8080</con:endpoint><con:request>{
+ "user": "test",
+ "produits": [
+{
+      "reference": "jet",
+      "numEC" : "1",
+      "numeroCommande": "${#TestCase#RefCommande}",
+      "label": "Abonnement jet 10Go",
+      "typeProduit": "SERVICE",
+      "prix": {
+        "periodicite": "1",
+        "typeTVA": "R",
+        "montant": "30",
+        "frais": [
+          {
+            "montant": "30",
+			"titre" : "frais de dossier",
+            "typeFrais": "creation"
+          }
+        ],
+        "modePaiement": "SEPA",
+        "modeFacturation": "PREMIER_MOIS"
+      }
+    },
+    {
+      "reference": "option.plus.50g",
+      "numEC" : "2",
+      "numECParent": "1",
+	  "delaisPreparation": 0,
+      "numeroCommande": "${#TestCase#RefCommande}",
+      "label": "Option+ 50Go",
+      "typeProduit": "SERVICE",
+      "prix": {
+        "periodicite": "1",
+        "typeTVA": "R",
+        "montant": "50",
+        "frais": [
+          {
+            "montant": "50",
+            "typeFrais": "resiliation",
+			"titre" : "frais de dossier",
+            "nombreMois": "12",
+            "ordre": "1"
+          },
+          {
+            "montant": "30",
+            "typeFrais": "resiliation",
+			"titre" : "frais de dossier",
+            "ordre": "2"
+          }
+        ],
+        "modePaiement": "CB",
+        "modeFacturation": "PREMIER_MOIS"
+      }
+    },
+    {
+      "reference": "kit-sat",
+      "numEC" : "3",
+      "numECParent": "1",
+	  "delaisPreparation": 0,
+      "numeroCommande": "${#TestCase#RefCommande}",
+      "label": "Kit Satellite Jet",
+      "typeProduit": "BIEN",
+      "prix": {
+        "engagement" : "24",
+        "duree" : "48",
+        "periodicite" : "3",
+        "typeTVA": "R",
+        "montant": "30",
+        "modePaiement": "SEPA",
+        "modeFacturation": "PREMIER_MOIS"
+      }
+    }
+  ]
+}</con:request><con:assertion type="XQuery Match" name="Check Abonnement - Location - Vente" id="a7be7707-e837-44f7-945e-e70b793fee11"><con:configuration><path>declare namespace ns1='http://10.10.2.52/contrat-core/contrat/preparer';
+
+&lt;Results>
+{
+for $x in //ns1:sousContrats/ns1:e
+order by $x/referenceProduit
+return &lt;t>{$x/ns1:typeContrat/text()}&lt;/t>
+}
+&lt;/Results></path><content><![CDATA[<Results>
+  <t>LOCATION</t>
+  <t>ABONNEMENT</t>
+  <t>ABONNEMENT</t>
+</Results>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Statut = PREPARER" id="70a0d4a1-8263-4c9b-bdfd-b2acdf3b3367"><con:configuration><path>declare namespace ns1='http://10.10.2.52/contrat-core/contrat/preparer';
+
+&lt;Results>
+{
+for $x in //ns1:sousContrats/ns1:e
+return &lt;result>{$x/ns1:statut/text()}&lt;/result>
+}
+&lt;/Results></path><content><![CDATA[<Results>
+  <result>PREPARER</result>
+  <result>PREPARER</result>
+  <result>PREPARER</result>
+</Results>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="transfer" name="Transfert Ref Contrat"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>Ref Contrat</con:name><con:sourceType>ResponseAsXml</con:sourceType><con:sourceStep>Preparer</con:sourceStep><con:sourcePath>declare namespace nsa='http://10.10.2.52/contrat-core/contrat/preparer';
+//nsa:reference</con:sourcePath><con:targetType>refContrat</con:targetType><con:targetStep>InfosContrat</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true"><con:name>Ref Contrat Global</con:name><con:sourceType>ResponseAsXml</con:sourceType><con:sourceStep>Preparer</con:sourceStep><con:sourcePath>declare namespace nsa='http://10.10.2.52/contrat-core/contrat/preparer';
+//nsa:reference</con:sourcePath><con:targetType>RefContrat</con:targetType><con:targetStep>#TestCase#</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="jdbc" name="Contrat Prepare"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://10.10.2.52:3306/topaze_test?user=test&amp;password=test</con:connectionString><con:query>select * from contrat
+where reference = "${InfosContrat#refContrat}"</con:query><con:assertion type="Simple Contains" name="DatePreparation is NOT NULL"><con:configuration><token>&lt;CONTRAT.DATEPREPARATION></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Reference Contrat"><con:configuration><path>&lt;Result>
+{
+for $i in //Row
+return $i/CONTRAT.REFERENCE/string()
+}
+&lt;/Result></path><content>&lt;Result>${InfosContrat#RefContrat}&lt;/Result></content><allowWildcards>true</allowWildcards></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="restrequest" name="Valider"><con:settings/><con:config service="http://10.10.2.52:8080" resourcePath="/contrat-core/contrat/{refContrat}/valider" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Valider" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://10.10.2.52:8080</con:endpoint><con:request>{
+  "idClient": "00003870",
+  "idAdrFacturation": "685",
+  "paiementInfos": [
+    {
+      "referenceProduit": "jet",
+      "numEC" : "1",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "option.plus.50g",
+      "numEC" : "2",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "kit-sat",
+      "numEC" : "3",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    }
+  ],
+  "politiqueValidation": {"fraisCreation": "true"},
+  "user" : "test"
+}</con:request><con:assertion type="Valid HTTP Status Codes" name="Valid HTTP Status Codes" id="0f6e79cf-8018-4a81-85f1-bbff3ac5c7ed"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="GroovyScriptAssertion" name="Response must be empty" id="a3a7df0f-94f6-4f97-a1e8-611066164e23"><con:configuration><scriptText>assert messageExchange.hasResponse() == false</scriptText></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refContrat" value="${InfosContrat#RefContrat}" xmlns="http://eviware.com/soapui/config"/></con:parameters><con:parameterOrder><con:entry>refContrat</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:testStep type="jdbc" name="Politique Validation"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://10.10.2.52:3306/topaze_test?user=test&amp;password=test</con:connectionString><con:query>select *
+from politiquevalidation
+where Id = 
+  (select politiqueValidationId from contrat where reference = "${InfosContrat#refContrat}")</con:query><con:assertion type="Simple Contains" name="Frais Création = True"><con:configuration><token>&lt;POLITIQUEVALIDATION.FRAISCREATION>1&lt;/POLITIQUEVALIDATION.FRAISCREATION></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="delay" name="Wait for beginning Livraison"><con:settings/><con:config><delay>500</delay></con:config></con:testStep><con:testStep type="jdbc" name="Bon de Livraison - exists"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://10.10.2.52:3306/topaze_test?user=test&amp;password=test</con:connectionString><con:query>select * from bonpreparation
+where reference = "${InfosContrat#refContrat}"</con:query><con:properties/></con:config></con:testStep><con:testStep type="goto" name="Go Beginning Livraison"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:condition><con:name>Wait Facturation</con:name><con:type>XPATH</con:type><con:expression>not(//Results/ResultSet/Row/BONPREPARATION.DATEINITIATION/text())</con:expression><con:targetStep>Wait for beginning Livraison</con:targetStep></con:condition></con:config></con:testStep><con:testStep type="jdbc" name="Elements de Livraison"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://10.10.2.52:3306/topaze_test?user=test&amp;password=test</con:connectionString><con:query>select * from elementlivraison
+where reference LIKE "${InfosContrat#refContrat}%"</con:query><con:assertion type="XQuery Match" name="Acteurs=NetDelivery ou Packager"><con:configuration><path>&lt;Results>
+{
+for $x in //Row
+order by $x/ELEMENTLIVRAISON.TYPECONTRAT
+return &lt;result>{$x/ELEMENTLIVRAISON.ACTEUR/text()}&lt;/result>
+}
+&lt;/Results></path><content><![CDATA[<Results>
+  <result>PACKAGER</result>
+  <result>PACKAGER</result>
+  <result>NETDELIVERY</result>
+</Results>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Reference Contrat"><con:configuration><path>&lt;Results>
+{
+for $x in //Row
+order by $x/ELEMENTLIVRAISON.REFERENCEPRODUIT
+return &lt;result>{$x/ELEMENTLIVRAISON.REFERENCE/text()}&lt;/result>
+}
+&lt;/Results></path><content><![CDATA[<Results>
+  <result>${InfosContrat#refContrat}-1</result>
+  <result>${InfosContrat#refContrat}-3</result>
+  <result>${InfosContrat#refContrat}-2</result>
+</Results>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match" name="TypeEL=Livraison"><con:configuration><path>&lt;Results>
+{
+for $x in //Row
+return &lt;Result>{$x/ELEMENTLIVRAISON.TYPEBONPREPARATION/text()}&lt;/Result>
+}
+&lt;/Results></path><content><![CDATA[<Results>
+  <Result>LIVRAISON</Result>
+  <Result>LIVRAISON</Result>
+  <Result>LIVRAISON</Result>
+</Results>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="delay" name="Wait for end Livraison"><con:settings/><con:config><delay>500</delay></con:config></con:testStep><con:testStep type="jdbc" name="Bon de Livraison"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://10.10.2.52:3306/topaze_test?user=test&amp;password=test</con:connectionString><con:query>select * from bonpreparation
+where reference = "${InfosContrat#refContrat}"</con:query><con:assertion type="XPath Match" name="Date Initiation"><con:configuration><path>exists(//Row/BONPREPARATION.DATEINITIATION)</path><content>true</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="TypeBonPreparation=Livraison"><con:configuration><path>//Row/BONPREPARATION.TYPEBONPREPARATION</path><content>LIVRAISON</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Aucune Erreur de Livraison"><con:configuration><path>&lt;BONPREPARATION.CAUSENONLIVRAISON/></path><content/><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="goto" name="Go End Livraison"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:condition><con:name>Wait Facturation</con:name><con:type>XPATH</con:type><con:expression>not(//Results/ResultSet/Row/BONPREPARATION.DATETERMINE/text())
+and
+not(//Results/ResultSet/Row/BONPREPARATION.CAUSENONLIVRAISON/text())</con:expression><con:targetStep>Wait for end Livraison</con:targetStep></con:condition></con:config></con:testStep><con:testStep type="jdbc" name="Elements de Livraison - Livré"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://10.10.2.52:3306/topaze_test?user=test&amp;password=test</con:connectionString><con:query>select * from elementlivraison
+where reference LIKE "${InfosContrat#refContrat}%"</con:query><con:assertion type="Simple NotContains" name="Tous les éléments livrés"><con:configuration><token>&lt;ELEMENTLIVRAISON.DATETERMINE/></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XPath Match" name="1 seul Code Produit"><con:configuration><path>count(//Row[ELEMENTLIVRAISON.TYPEELEMENT="SERVICE"]/ELEMENTLIVRAISON.CODEPRODUIT/text())</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XQuery Match" name="1 seul Code Colis"><con:configuration><path>count(//Row[ELEMENTLIVRAISON.TYPEELEMENT="BIEN"]/ELEMENTLIVRAISON.CODECOLIS/text())</path><content>&lt;xml-fragment>1&lt;/xml-fragment></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="properties" name="InfosFacture"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>DateLivraison</con:name><con:value>2014-07-30 17:48:00.0</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="transfer" name="Transfert Date Livraison"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>DateLivraison</con:name><con:sourceType>ResponseAsXml</con:sourceType><con:sourceStep>Bon de Livraison</con:sourceStep><con:sourcePath>//Results/ResultSet/Row/BONPREPARATION.DATETERMINE/text()</con:sourcePath><con:targetType>DateLivraison</con:targetType><con:targetStep>InfosFacture</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="delay" name="Wait for end Facturation"><con:settings/><con:config><delay>500</delay></con:config></con:testStep><con:testStep type="jdbc" name="Facturation-exists"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://10.10.2.52:3306/topaze_test?user=test&amp;password=test</con:connectionString><con:query>select * from movement 
+where accountId = '00003870'
+  and billinggroup = "${#TestCase#RefCommande}"
+ ;</con:query><con:properties/></con:config></con:testStep><con:testStep type="goto" name="Go Facturation"><con:settings/><con:config xsi:type="con:GotoStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:condition><con:name>Wait Facturation</con:name><con:type>XPATH</con:type><con:expression>not(//Results/ResultSet/Row/MOVEMENT.ID/text())</con:expression><con:targetStep>Wait for end Facturation</con:targetStep></con:condition></con:config></con:testStep><con:testStep type="jdbc" name="Facturation-valid"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://10.10.2.52:3306/topaze_test?user=test&amp;password=test</con:connectionString><con:query>select * from movement 
+where accountId = '00003870'
+  and billinggroup = "${#TestCase#RefCommande}"
+ ;</con:query><con:assertion type="XQuery Match" name="Frais de Création - amount"><con:configuration><path><![CDATA[<Results>
+{
+for $x in //Row[contains(MOVEMENT.PRODUCTID/text(), 'Frais/Creation')]
+return <result><label>{$x/MOVEMENT.PRODUCTLABEL/text()}</label><productId>{$x/MOVEMENT.PRODUCTID/text()}</productId><amount>{$x/MOVEMENT.AMOUNT/text()}</amount></result>
+}
+</Results>]]></path><content><![CDATA[<Results>
+  <result>
+    <label>Frais Creation</label>
+    <productId>jet/Frais/Creation</productId>
+    <amount>30.000000</amount>
+  </result>
+</Results>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Frais de Création - tva"><con:configuration><path>&lt;Results>
+{
+for $x in //Row[contains(MOVEMENT.PRODUCTID/text(), 'Frais/Creation')]
+return &lt;result>{$x/MOVEMENT.VAT_TYPE/text()}&lt;/result>
+}
+&lt;/Results></path><content>&lt;Results>
+  &lt;result>R&lt;/result>
+&lt;/Results></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Frais de Création - RUM + PaymentType"><con:configuration><path><![CDATA[<Results>
+{
+for $x in //Row[contains(MOVEMENT.PRODUCTID/text(), 'Frais/Creation')]
+return <result><rum>{$x/MOVEMENT.RUM/text()}</rum><payementType>{$x/MOVEMENT.PAYMENT_TYPE/text()}</payementType></result>
+}
+</Results>]]></path><content><![CDATA[<Results>
+  <result>
+    <rum>R0000012</rum>
+    <payementType>SEPA</payementType>
+  </result>
+</Results>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Frais de Création - TransactionType"><con:configuration><path>&lt;Results>
+{
+for $x in //Row[contains(MOVEMENT.PRODUCTID/text(), 'Frais/Creation')]
+return &lt;result>{$x/MOVEMENT.TRANSACTIONTYPE/text()}&lt;/result>
+}
+&lt;/Results></path><content>&lt;Results>
+  &lt;result>DEBIT&lt;/result>
+&lt;/Results></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Frais de Création - Period"><con:configuration><path>&lt;Results>
+{
+for $x in //Row[contains(MOVEMENT.PRODUCTID/text(), 'Frais/Creation')]
+return &lt;result>{$x/MOVEMENT.STARTFROM} {$x/MOVEMENT.ENDTO}&lt;/result>
+}
+&lt;/Results></path><content><![CDATA[<Results>
+  <result>
+    <MOVEMENT.STARTFROM>${=new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").parse('${InfosFacture#DateLivraison}').format('yyyy-MM-dd')}</MOVEMENT.STARTFROM>
+    <MOVEMENT.ENDTO>${=new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S").parse('${InfosFacture#DateLivraison}').format('yyyy-MM-dd')}</MOVEMENT.ENDTO>
+  </result>
+</Results>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:loadTest name="Test Create"><con:settings/><con:threadCount>50</con:threadCount><con:startDelay>0</con:startDelay><con:sampleInterval>250</con:sampleInterval><con:calculateTPSOnTimePassed>true</con:calculateTPSOnTimePassed><con:resetStatisticsOnThreadCountChange>true</con:resetStatisticsOnThreadCountChange><con:historyLimit>-1</con:historyLimit><con:testLimit>60</con:testLimit><con:limitType>TIME</con:limitType><con:loadStrategy><con:type>Simple</con:type></con:loadStrategy><con:assertion type="Step Status" name="Step Status"/><con:maxAssertionErrors>100</con:maxAssertionErrors><con:cancelExcessiveThreads>true</con:cancelExcessiveThreads><con:strategyInterval>500</con:strategyInterval></con:loadTest><con:properties><con:property><con:name>RefCommande</con:name><con:value>a22bf9da-6a25-4f34-b606-77c53728ec17</con:value></con:property><con:property><con:name>RefContrat</con:name><con:value>86acc1a6</con:value></con:property></con:properties></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Prepare Example" searchProperties="true" id="d0cb0712-e9c8-40c4-95eb-a702a586425a"><con:settings/><con:testStep type="restrequest" name="Preparer"><con:settings/><con:config service="http://10.10.2.52:8080" resourcePath="/contrat-core/contrat/preparer" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Preparer" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://10.10.2.52:8080</con:endpoint><con:request>{
+"produits" : 
+[
+  {
+    "reference": "sat.jet.option.50",
+    "label": "Option+ 50Go",
+    "identifiantProduit": "2",
+    "typeProduit": "SERVICE",
+    "numeroCommande": "order-01",
+    "prix": {
+      "periodicite": "3",
+      "typeTVA": "S",
+      "montant": "24",
+      "modePaiement": "SEPA",
+      "modeFacturation": "PREMIER_MOIS"
+    },
+    "refProduitParent": "sat.jet.10",
+    "identifiantProduitParent": "1"
+  },
+  {
+    "reference": "sat.jet.kit",
+    "label": "Kit Satellite Jet",
+    "identifiantProduit": "3",
+    "typeProduit": "BIEN",
+    "numeroCommande": "order-01",
+    "prix": {
+      "engagement": "24",
+      "periodicite": "1",
+      "typeTVA": "S",
+      "montant": "10",
+      "modePaiement": "SEPA",
+      "modeFacturation": "PREMIER_MOIS"
+    },
+    "refProduitParent": "sat.jet.10",
+    "identifiantProduitParent": "1"
+  },
+  {
+    "reference": "tv.canal+",
+    "label": "Abonnement Canal+",
+    "identifiantProduit": "4",
+    "typeProduit": "SERVICE",
+    "numeroCommande": "order-01",
+    "prix": {
+      "engagement": "12",
+      "periodicite": "1",
+      "typeTVA": "S",
+      "montant": "8",
+      "modePaiement": "SEPA",
+      "modeFacturation": "PREMIER_MOIS"
+    },
+    "refProduitParent": "sat.jet.kit",
+    "identifiantProduitParent": "3"
+  },
+  {
+    "reference": "voip.confort",
+    "label": "VoIP France Illimite",
+    "identifiantProduit": "5",
+    "typeProduit": "SERVICE",
+    "numeroCommande": "order-01",
+    "prix": {
+      "periodicite": "1",
+      "typeTVA": "S",
+      "montant": "10",
+      "modePaiement": "SEPA",
+      "modeFacturation": "DATE_ANNIVERSAIRE"
+    },
+    "refProduitParent": "sat.jet.10",
+    "identifiantProduitParent": "1"
+  },
+  {
+    "reference": "voip.tel.prestige",
+    "label": "2 Telephones VoIP de luxe",
+    "identifiantProduit": "6",
+    "typeProduit": "BIEN",
+    "numeroCommande": "order-01",
+    "prix": {
+      "typeTVA": "S",
+      "montant": "60",
+      "modePaiement": "CB",
+      "modeFacturation": "DATE_ANNIVERSAIRE"
+    },
+    "refProduitParent": "voip.confort",
+    "identifiantProduitParent": "5"
+  },
+  {
+    "reference": "avfw.confort",
+    "label": "Antivirus Firewall 6 postes",
+    "identifiantProduit": "7",
+    "typeProduit": "SERVICE",
+    "numeroCommande": "order-01",
+    "prix": {
+      "duree": "6",
+      "periodicite": "6",
+      "typeTVA": "S",
+      "montant": "50",
+      "modePaiement": "SEPA",
+      "modeFacturation": "DATE_ANNIVERSAIRE"
+    },
+    "refProduitParent": "sat.jet.10",
+    "identifiantProduitParent": "1"
+  },
+  {
+    "reference": "sat.jet.10",
+    "label": "Satellite Jet",
+    "identifiantProduit": "1",
+    "typeProduit": "SERVICE",
+    "numeroCommande": "order-01",
+    "prix": {
+      "periodicite": "1",
+      "typeTVA": "S",
+      "montant": "30",
+      "modePaiement": "SEPA",
+      "modeFacturation": "PREMIER_MOIS"
+    }
+  }
+],
+"user" : "test"
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="properties" name="InfosContrat"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>refContrat</con:name><con:value xsi:nil="true"/></con:property></con:properties></con:config></con:testStep><con:testStep type="transfer" name="Transfert-RefContrat"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>RefContrat</con:name><con:sourceType>ResponseAsXml</con:sourceType><con:sourceStep>Preparer</con:sourceStep><con:sourcePath>declare namespace nsa='http://10.10.2.52/topaze-contrat/contrat/preparer';
+//nsa:reference</con:sourcePath><con:targetType>refContrat</con:targetType><con:targetStep>InfosContrat</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="jdbc" name="Contrat Prepare"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://10.10.2.52:3306/topaze_test?user=test&amp;password=test</con:connectionString><con:query>select * from contrat 
+where reference = '${InfosContrat#refContrat}'</con:query><con:assertion type="XQuery Match" name="DateValidation is NULL"><con:configuration><path>&lt;Results>
+{
+for $i in //Row
+return $i/CONTRAT.DATEVALIDATION/text()
+}
+&lt;/Results></path><content>&lt;Results/></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="Simple Contains" name="DatePreparation is NOT NULL"><con:configuration><token>&lt;CONTRAT.DATEPREPARATION></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="restrequest" name="Validate"><con:settings/><con:config service="http://10.10.2.52:8080" resourcePath="/contrat-core/contrat/{refContrat}/valider" methodName="Method 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Validate" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://10.10.2.52:8080</con:endpoint><con:request>{
+  "idClient": "00131",
+  "idAdrFacturation": "685",
+  "paiementInfos": [
+    {
+      "referenceProduit": "sat.jet.10",
+      "identifiantProduit": "1",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "sat.jet.option.50",
+      "identifiantProduit": "2",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "sat.jet.kit",
+      "identifiantProduit": "3",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "tv.canal+",
+      "identifiantProduit": "4",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "voip.confort",
+      "identifiantProduit": "5",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "voip.tel.prestige",
+      "identifiantProduit": "6",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    },
+    {
+      "referenceProduit": "avfw.confort",
+      "identifiantProduit": "7",
+      "referenceModePaiement": "R0000012",
+      "idAdrLivraison": "adrliv1"
+    }
+  ],
+  "politiqueValidation": {
+    "fraisCreation": "true"
+  }
+}</con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="refContrat" value="${InfosContrat#RefContrat}" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:restRequest></con:config></con:testStep><con:testStep type="jdbc" name="Contrat Valide"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://10.10.2.52:3306/topaze_test?user=test&amp;password=test</con:connectionString><con:query>select * from contrat 
+where reference = '${InfosContrat#refContrat}'</con:query><con:assertion type="Simple Contains" name="DatePreparation is NOT NULL"><con:configuration><token>&lt;CONTRAT.DATEPREPARATION></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="DateValidation is NOT NULL"><con:configuration><token>&lt;CONTRAT.DATEVALIDATION></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="DateDebutFacturation is NULL"><con:configuration><token>&lt;CONTRAT.DATEDEBUTFACTURATION/></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="Element Contractuel Valide"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://10.10.2.52:3306/topaze_test?user=test&amp;password=test</con:connectionString><con:query>select * from elementcontractuel
+where reference LIKE '${InfosContrat#refContrat}%'</con:query><con:assertion type="Simple Contains" name="DateValidation is NOT NULL"><con:configuration><token>&lt;ELEMENTCONTRACTUEL.DATEVALIDATION></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="count(elements) = 7"><con:configuration><token>&lt;Row rowNumber="7"></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Type Contrat"><con:configuration><path>&lt;Result>
+{
+for $i in //Row
+order by $i/ELEMENTCONTRACTUEL.IDENTIFIANTPRODUIT
+return &lt;type.contrat> {data($i/ELEMENTCONTRACTUEL.TYPECONTRAT)} &lt;/type.contrat>
+}
+&lt;/Result></path><content><![CDATA[<Result>
+  <type.contrat>ABONNEMENT</type.contrat>
+  <type.contrat>ABONNEMENT</type.contrat>
+  <type.contrat>LOCATION</type.contrat>
+  <type.contrat>ABONNEMENT</type.contrat>
+  <type.contrat>ABONNEMENT</type.contrat>
+  <type.contrat>VENTE</type.contrat>
+  <type.contrat>ABONNEMENT</type.contrat>
+</Result>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:testStep type="jdbc" name="Element Livraison"><con:settings/><con:config xsi:type="con:JdbcRequestTestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:driver>com.mysql.jdbc.Driver</con:driver><con:connectionString>jdbc:mysql://10.10.2.52:3306/topaze_test?user=test&amp;password=test</con:connectionString><con:query>select l.* 
+from elementlivraison l
+  INNER JOIN elementcontractuel c on (l.reference = c.reference)
+where l.reference LIKE '${InfosContrat#refContrat}%'</con:query><con:assertion type="Simple Contains" name="count(elements) = 7"><con:configuration><token>&lt;Row rowNumber="7"></token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Service => Packager"><con:configuration><path>&lt;Result>
+{
+for $i in //Row
+where $i/ELEMENTLIVRAISON.TYPEELEMENT = "SERVICE"
+return &lt;type.acteur> {data($i/ELEMENTLIVRAISON.ACTEUR)} &lt;/type.acteur>
+}
+&lt;/Result></path><content><![CDATA[<Result>
+  <type.acteur>PACKAGER</type.acteur>
+  <type.acteur>PACKAGER</type.acteur>
+  <type.acteur>PACKAGER</type.acteur>
+  <type.acteur>PACKAGER</type.acteur>
+  <type.acteur>PACKAGER</type.acteur>
+</Result>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:assertion type="XQuery Match" name="Bien => NetDelivery"><con:configuration><path>&lt;Result>
+{
+for $i in //Row
+where $i/ELEMENTLIVRAISON.TYPEELEMENT = "BIEN"
+return &lt;type.acteur> {data($i/ELEMENTLIVRAISON.ACTEUR)} &lt;/type.acteur>
+}
+&lt;/Result></path><content><![CDATA[<Result>
+  <type.acteur>NETDELIVERY</type.acteur>
+  <type.acteur>NETDELIVERY</type.acteur>
+</Result>]]></content><allowWildcards>false</allowWildcards></con:configuration></con:assertion><con:properties/></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>

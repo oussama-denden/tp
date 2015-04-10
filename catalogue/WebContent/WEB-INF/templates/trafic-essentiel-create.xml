@@ -1,0 +1,24 @@
+<refe:productProperties xmlns:refe="http://www.nordnet.com/nordnet/referencing"
+nnbo_offerName="trafic.essentiel">
+	<refe:technicalContact>
+		<refe:customerKey>Client.Key</refe:customerKey>
+		<refe:email>Client.Email</refe:email>
+		<refe:name>Client.Last_Name</refe:name>
+		<refe:firstName>Client.First_Name</refe:firstName>
+		<refe:civility>Client.Civility</refe:civility>
+		<refe:company>Client.Company</refe:company>
+		<refe:status>Client.ProfileType</refe:status>
+		<refe:technicalContactAddress>
+			<refe:address1>Client.Address1</refe:address1>
+			<refe:address2>Client.Address2</refe:address2>
+			<refe:zipCode>Client.Zip</refe:zipCode>
+			<refe:city>Client.City</refe:city>
+			<refe:country>Client.Country</refe:country>
+		</refe:technicalContactAddress>
+		<refe:phone>Client.Phone</refe:phone>
+		<refe:fax>Client.Fax</refe:fax>
+		<refe:gsm>Client.Gsm</refe:gsm>
+		<refe:type>Personnelle</refe:type>
+	</refe:technicalContact>
+	<refe:domainName>Product.DomainName</refe:domainName>
+</refe:productProperties>

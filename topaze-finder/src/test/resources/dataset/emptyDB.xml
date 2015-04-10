@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<politiquecession />
+	<politiquemigration />
+	<politiquerenouvellement />
+	<avenant />
+	<politiqueresiliation />
+	<politiquevalidation />
+	<contrat />
+	<contrathistorique />
+	<elementcontractuel />
+	<fraiscontrat />
+	<elementcontractuelfraiscontrat />
+	<elementcontractuelhistorique />
+	<elementcontractuelfraiscontrathistorique />
+	<keygen />
+	<modification />
+	<reduction />
+	<bonpreparation />
+	<elementlivraison />
+</dataset>

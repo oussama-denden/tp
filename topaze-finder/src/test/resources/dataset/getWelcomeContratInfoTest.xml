@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+<politiqueresiliation/>
+<politiqueresiliation id="10000" fraisResiliation="true" typeResiliation="RIC" remboursement="true" penalite="true" dateResiliation="[now+10days]" enCascade="true" commentaire="commentaire" />
+<contrat/>
+<contrat id="10000" titre="Contrat Tedst" reference="00010000" idClient="10000"   datePreparation="[now]" dateValidation="[now]" dateDebutFacturation="[now]" politiqueResiliationId="10000"/>
+<elementcontractuel/>
+<elementcontractuel id="10000" numeroCommande="00010000" numEC="1" modeFacturation="DATE_ANNIVERSAIRE"  idAdrFacturation="id-fact" typeProduit="SERVICE" referenceProduit="avfwpro-confort-s" titre="Contrat ABONNEMENT pour le produit : avfwpro-confort-s" datePreparation="[now]" dateValidation="[now]"  dateDebutFacturation="[now]" contratParent="10000" montant="5" modePaiement="CB" typeTVA="R" periodicite="1" duree="24" engagement="12" dateDerniereFacture="[now+7days]" dateFinContrat="[now+10years]"  />
+<fraiscontrat/>
+<fraiscontrat id="10000" titre="Frais de dossier" montant="20" typeFrais="RESILIATION" contratId="10000"/>
+<avenant/>
+
+
+</dataset>

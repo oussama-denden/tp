@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+<bonpreparation/>
+<bonpreparation id="1" reference="REF_BM_GLOBAL" dateInitiation="[now-7days]" dateLivraisonTermine="[now+7days]" dateRetourTermine="[now+7days]" datePreparation="[now]" idClient="ID_CLIENT" typeBonPreparation="MIGRATION" />
+</dataset>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.nordnet.com/email" xmlns:email="http://www.nordnet.com/email">
+  <xs:element name="productProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="email:emailbox"/>
+      </xs:sequence>
+      <xs:attribute name="nnbo_offerName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="emailbox">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="email:address"/>
+        <xs:element ref="email:name"/>
+        <xs:element ref="email:lastname"/>
+        <xs:element ref="email:clearPassword"/>
+        <xs:element ref="email:enableEmailReception"/>
+        <xs:element ref="email:enableIMAP"/>
+        <xs:element ref="email:enablePOP3"/>
+        <xs:element ref="email:enableWebMail"/>
+        <xs:element ref="email:policy"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="address" type="xs:NCName"/>
+  <xs:element name="name" type="xs:NCName"/>
+  <xs:element name="lastname" type="xs:NCName"/>
+  <xs:element name="clearPassword">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="enableEmailReception" type="xs:boolean"/>
+  <xs:element name="enableIMAP" type="xs:boolean"/>
+  <xs:element name="enablePOP3" type="xs:boolean"/>
+  <xs:element name="enableWebMail" type="xs:boolean"/>
+  <xs:element name="policy">
+    <xs:complexType/>
+  </xs:element>
+</xs:schema>

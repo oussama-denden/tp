@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset> 
+<bonpreparation id="1" reference="REF_BP_GLOBAL_RETOUR" dateInitiation="[now-7days]" idClient="1"  typeBonPreparation="RETOUR"  />
+<bonpreparation id="2" reference="REF_BP_GLOBAL_RETOUR_NON_PREPARER" dateInitiation="[now-7days]" idClient="1"  typeBonPreparation="RETOUR" />
+<bonpreparation id="3" reference="REF_BP_GLOBAL_RETOUR-PREPARER" dateInitiation="[now-7days]" datePreparation="[now]" idClient="1"  typeBonPreparation="RETOUR"  />
+<elementlivraison id="2" reference="REF_SBP_1" addresseLivraison="ADR_LIV" bonPreparationParent="1" retailerPackagerId="CODE_PRODUIT_1" dateInitiation="[now-7days]" acteur="PACKAGER" referenceProduit="REF_PRODUIT_1" typeBonPreparation="RETOUR"/>
+<elementlivraison id="3" reference="REF_SBP_2" addresseLivraison="ADR_LIV" bonPreparationParent="1" retailerPackagerId="CODE_PRODUIT_2" dateInitiation="[now-7days]" acteur="NETDELIVERY" referenceProduit="REF_PRODUIT_2" typeBonPreparation="RETOUR" codeColis="CODE_COLIS_TST_1"/>
+<elementlivraison id="4" reference="REF_SBP_3" addresseLivraison="ADR_LIV" bonPreparationParent="1" retailerPackagerId="CODE_PRODUIT_3" dateInitiation="[now-7days]" acteur="NETDELIVERY" referenceProduit="REF_PRODUIT_3" typeBonPreparation="RETOUR" codeColis="CODE_COLIS_TST_1"/>
+
+<elementlivraison id="6" reference="REF_SBP_4" addresseLivraison="ADR_LIV" bonPreparationParent="2" retailerPackagerId="CODE_PRODUIT_1" dateInitiation="[now-7days]" datePreparation="[now]" acteur="PACKAGER" referenceProduit="REF_PRODUIT_1" typeBonPreparation="RETOUR" />
+<elementlivraison id="7" reference="REF_SBP_5" addresseLivraison="ADR_LIV" bonPreparationParent="2" retailerPackagerId="CODE_PRODUIT_2" dateInitiation="[now-7days]" datePreparation="[now]" acteur="NETDELIVERY" referenceProduit="REF_PRODUIT_2" typeBonPreparation="RETOUR" codeColis="CODE_COLIS_TST_1"/>
+<elementlivraison id="8" reference="REF_SBP_6" addresseLivraison="ADR_LIV" bonPreparationParent="2" retailerPackagerId="CODE_PRODUIT_3" dateInitiation="[now-7days]" acteur="NETDELIVERY" referenceProduit="REF_PRODUIT_3" typeBonPreparation="RETOUR" codeColis="CODE_COLIS_TST_1"/>
+
+</dataset>

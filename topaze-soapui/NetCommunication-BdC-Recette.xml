@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="NetCommunication - BdC - Recette" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="NetCommBonCommandeWSImplServiceSoapBinding" type="wsdl" bindingName="{http://www.nordnet.com/netcommboncommande/schemas}NetCommBonCommandeWSImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommBonCommande?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:endpoints><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommBonCommande</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="generateAndSendPDF" bindingOperationName="generateAndSendPDF" type="Request-Response" outputName="generateAndSendPDFResponse" inputName="generateAndSendPDF" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommBonCommande</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommboncommande/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:generateAndSendPDF>
+         <!--Optional:-->
+         <generateAndSaveBcRequest>
+            <!--Optional:-->
+            <templateName>gero et</templateName>
+            <!--Optional:-->
+            <templateCode>sonoras imperio</templateCode>
+            <!--Optional:-->
+            <xml>quae divum incedo</xml>
+            <!--Optional:-->
+            <dynamicFields>
+               <!--1 or more repetitions:-->
+               <Field>
+                  <name>verrantque per auras</name>
+                  <value>per auras</value>
+               </Field>
+            </dynamicFields>
+            <!--Optional:-->
+            <emailClient>circum claustra</emailClient>
+            <!--Optional:-->
+            <userInfos>
+               <userName>nimborum in</userName>
+               <httpUserAgent>foedere certo</httpUserAgent>
+               <ip>profundum quippe ferant</ip>
+            </userInfos>
+         </generateAndSaveBcRequest>
+      </sch:generateAndSendPDF>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/netcommboncommande/schemas/netCommBonCommande/generateAndSendPDF"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="generatePdf" bindingOperationName="generatePdf" type="Request-Response" outputName="generatePdfResponse" inputName="generatePdf" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommBonCommande</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommboncommande/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:generatePdf>
+         <!--Optional:-->
+         <GeneratePdfRequest>
+            <!--Optional:-->
+            <templateCode>NNCOM_LICENSE_SECURITOO_MOBILE</templateCode>
+         </GeneratePdfRequest>
+      </sch:generatePdf>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.nordnet.com/netcommboncommande/schemas/netCommBonCommande/generatePdf"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="COMPLEMENT" username="topaze" password="1e2cec460349e1218f534ce337042895" wssType="PasswordText">http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommBonCommande</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/></con:soapui-project>

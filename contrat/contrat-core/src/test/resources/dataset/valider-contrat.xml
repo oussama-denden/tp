@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+
+<contrat id="1" reference="REF_GB" titre="Contrat Pour Test" datePreparation="[now]"  />
+
+<elementcontractuel id="2" numeroCommande="1" modePaiement="CHEQUE" modeFacturation="PREMIER_MOIS"    referenceProduit="PROD-01" titre="Contrat ABONNEMENT" numEC="1" datePreparation="[now]" dateDebutFacturation="[now]" contratParent="1" referenceModePaiement="rum-0001" montant="22" typeTVA="S"/>
+<elementcontractuel id="3" numeroCommande="1" modePaiement="CHEQUE" modeFacturation="DATE_ANNIVERSAIRE"  referenceProduit="PROD-02" titre="Contrat LOCATION" datePreparation="[now]" dateDebutFacturation="[now]" contratParent="1" referenceModePaiement="rum-0002" montant="12" typeTVA="S"/>
+<elementcontractuel id="4" numeroCommande="1" modePaiement="CHEQUE" modeFacturation="PREMIER_MOIS"  referenceProduit="PROD-03" titre="Contrat VENTE" datePreparation="[now]" dateDebutFacturation="[now]" contratParent="1" referenceModePaiement="rum-0003" montant="12" typeTVA="S"/>
+<elementcontractuel id="5" numeroCommande="1" modePaiement="CHEQUE" modeFacturation="DATE_ANNIVERSAIRE"  referenceProduit="PROD-01" titre="Contrat VENTE" numEC="2" datePreparation="[now]" contratParent="1" referenceModePaiement="rum-0004" montant="12" typeTVA="S"/>
+
+<fraiscontrat id="1" titre="Frais de dossier" montant="20" typeFrais="CREATION"/>
+
+<elementcontractuelfraiscontrat elementcontractuel_id="2" frais_id="1"/>
+
+</dataset>

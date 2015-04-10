@@ -1,0 +1,16 @@
+<voip:productProperties xmlns:voip="http://www.nordnet.com/soo/voip">
+	<voip:phoneNumber>Product.Phone_number</voip:phoneNumber>
+	<voip:customerInfos>
+		<voip:firstname>Client.First_name</voip:firstname>
+		<voip:lastname>Client.Last_name</voip:lastname>
+		<voip:email>Client.Email</voip:email>
+		<voip:address>Client.Address</voip:address>
+		<voip:zipcode>Client.Zip</voip:zipcode>
+		<voip:city>Client.City</voip:city>
+	</voip:customerInfos>
+	<voip:product>
+		<voip:ipPhone>
+			<voip:psnOfferId>Product.psn_offer_id</voip:psnOfferId>
+		</voip:ipPhone>
+	</voip:product>
+</voip:productProperties>

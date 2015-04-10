@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.nordnet.com/nordnet/referencing" xmlns:refe="http://www.nordnet.com/nordnet/referencing">
+  <xs:element name="productProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="refe:technicalContact"/>
+        <xs:element ref="refe:domainName"/>
+      </xs:sequence>
+      <xs:attribute name="nnbo_offerName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="technicalContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="refe:customerKey"/>
+        <xs:element ref="refe:email"/>
+        <xs:element ref="refe:name"/>
+        <xs:element ref="refe:firstName"/>
+        <xs:element ref="refe:civility"/>
+        <xs:element ref="refe:company"/>
+        <xs:element ref="refe:status"/>
+        <xs:element ref="refe:technicalContactAddress"/>
+        <xs:element ref="refe:phone"/>
+        <xs:element ref="refe:fax"/>
+        <xs:element ref="refe:gsm"/>
+        <xs:element ref="refe:type"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="customerKey" type="xs:NCName"/>
+  <xs:element name="email" type="xs:NCName"/>
+  <xs:element name="name" type="xs:NCName"/>
+  <xs:element name="firstName" type="xs:NCName"/>
+  <xs:element name="civility" type="xs:NCName"/>
+  <xs:element name="company" type="xs:NCName"/>
+  <xs:element name="status" type="xs:NCName"/>
+  <xs:element name="technicalContactAddress">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="refe:address1"/>
+        <xs:element ref="refe:address2"/>
+        <xs:element ref="refe:zipCode"/>
+        <xs:element ref="refe:city"/>
+        <xs:element ref="refe:country"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="address1" type="xs:NCName"/>
+  <xs:element name="address2" type="xs:NCName"/>
+  <xs:element name="zipCode" type="xs:NCName"/>
+  <xs:element name="city" type="xs:NCName"/>
+  <xs:element name="country" type="xs:NCName"/>
+  <xs:element name="phone" type="xs:NCName"/>
+  <xs:element name="fax" type="xs:NCName"/>
+  <xs:element name="gsm" type="xs:NCName"/>
+  <xs:element name="type" type="xs:NCName"/>
+  <xs:element name="domainName" type="xs:NCName"/>
+</xs:schema>

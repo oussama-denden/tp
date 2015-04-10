@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" xmlns="test_topaze" targetNamespace="test_topaze">
+
+	<xsd:element name="dbmaintain_scripts" type="dbmaintain_scripts__type" />
+	<xsd:complexType name="dbmaintain_scripts__type">
+		<xsd:attribute name="succeeded" use="optional" />
+		<xsd:attribute name="file_last_modified_at" use="optional" />
+		<xsd:attribute name="executed_at" use="optional" />
+		<xsd:attribute name="checksum" use="optional" />
+		<xsd:attribute name="file_name" use="optional" />
+		<xsd:attribute name="version" use="optional" />
+	</xsd:complexType>
+	
+	<xsd:element name="fraisproduit" type="fraisproduit__type" />
+	<xsd:complexType name="fraisproduit__type">
+		<xsd:attribute name="id" use="optional" />
+		<xsd:attribute name="montant" use="optional" />
+		<xsd:attribute name="produitId" use="optional" />
+	</xsd:complexType>
+	
+	<xsd:element name="prix" type="prix__type" />
+	<xsd:complexType name="prix__type">
+		<xsd:attribute name="id" use="optional" />
+		<xsd:attribute name="engagement" use="optional" />
+		<xsd:attribute name="montant" use="optional" />
+		<xsd:attribute name="typePrix" use="optional" />
+		<xsd:attribute name="produitId" use="optional" />
+	</xsd:complexType>
+	
+	<xsd:element name="produit" type="produit__type" />
+	<xsd:complexType name="produit__type">
+		<xsd:attribute name="id" use="optional" />
+		<xsd:attribute name="label" use="optional" />
+		<xsd:attribute name="outilsLivraison" use="optional" />
+		<xsd:attribute name="reference" use="optional" />
+		<xsd:attribute name="typeProduit" use="optional" />
+		<xsd:attribute name="typeTVA" use="optional" />
+		<xsd:attribute name="xmlTemplatePath" use="optional" />
+		<xsd:attribute name="xsdTemplatePath" use="optional" />
+		<xsd:attribute name="delaisPreparation" use="optional" />
+	</xsd:complexType>
+	
+	<xsd:element name="contrat" type="contrat__type" />
+	<xsd:complexType name="contrat__type">
+		<xsd:attribute name="id" use="optional" />
+		<xsd:attribute name="idAdrFacturation" use="optional" />
+		<xsd:attribute name="idAdrLivraison" use="optional" />
+		<xsd:attribute name="dateDebutFacturation" use="optional" />
+		<xsd:attribute name="dateValidation" use="optional" />
+		<xsd:attribute name="engagement" use="optional" />
+		<xsd:attribute name="idClient" use="optional" />
+		<xsd:attribute name="modeFacturation" use="optional" />
+		<xsd:attribute name="reference" use="optional" />
+		<xsd:attribute name="referenceProduit" use="optional" />
+		<xsd:attribute name="titre" use="optional" />
+		<xsd:attribute name="typeContrat" use="optional" />
+		<xsd:attribute name="contratParent" use="optional" />
+	</xsd:complexType>
+	
+		<xsd:element name="fraiscontrat" type="fraiscontrat__type" />
+	<xsd:complexType name="fraiscontrat__type">
+		<xsd:attribute name="id" use="optional" />
+		<xsd:attribute name="montant" use="optional" />
+		<xsd:attribute name="contratId" use="optional" />
+	</xsd:complexType>
+	
+		<xsd:element name="tarif" type="tarif__type" />
+	<xsd:complexType name="tarif__type">
+		<xsd:attribute name="id" use="optional" />
+		<xsd:attribute name="modePaiement" use="optional" />
+		<xsd:attribute name="montant" use="optional" />
+		<xsd:attribute name="referenceModePaiement" use="optional" />
+		<xsd:attribute name="typePrix" use="optional" />
+		<xsd:attribute name="contratId" use="optional" />
+	</xsd:complexType>
+	
+	<xsd:element name="bonpreparation" type="bonpreparation__type" />
+	<xsd:complexType name="bonpreparation__type">
+		<xsd:attribute name="id" use="optional" />
+		<xsd:attribute name="reference" use="optional" />
+		<xsd:attribute name="idClient" use="optional" />
+		<xsd:attribute name="addressLivraison" use="optional" />
+		<xsd:attribute name="referenceProduit" use="optional" />
+		<xsd:attribute name="codeProduit" use="optional" />
+		<xsd:attribute name="codeColis" use="optional" />
+		<xsd:attribute name="outilLivraison" use="optional" />
+		<xsd:attribute name="dateInitiation" use="optional" />
+		<xsd:attribute name="datePreparation" use="optional" />
+		<xsd:attribute name="dateLivraison" use="optional" />
+		<xsd:attribute name="dateRecuperation" use="optional" />
+		<xsd:attribute name="etatBonPreparation" use="optional" />
+		<xsd:attribute name="typeBonPreparation" use="optional" />
+		<xsd:attribute name="bonPreparationParent" use="optional" />
+		<xsd:attribute name="causeNonlivraison" use="optional" />
+	</xsd:complexType>
+</xsd:schema>
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="NetCommunication - SMS - Recette" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="NetCommSmsWSImplServiceSoapBinding" type="wsdl" bindingName="{http://www.nordnet.com/netcommsms/schemas}NetCommSmsWSImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommSms?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:endpoints><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommSms</con:endpoint></con:endpoints><con:operation isOneWay="false" action="getCommunication" name="getCommunication" bindingOperationName="getCommunication" type="Request-Response" outputName="getCommunicationResponse" inputName="getCommunication" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommSms</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommsms/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:getCommunication>
+         <!--Optional:-->
+         <idRecipient>gero et</idRecipient>
+         <!--Optional:-->
+         <typeRecipient>PROSPECT</typeRecipient>
+         <!--Optional:-->
+         <startDate>aeoliam venit</startDate>
+         <!--Optional:-->
+         <endDate>ventos tempestatesque</endDate>
+      </sch:getCommunication>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="getCommunication"/></con:call></con:operation><con:operation isOneWay="false" action="resendSMS" name="resendSMS" bindingOperationName="resendSMS" type="Request-Response" outputName="resendSMSResponse" inputName="resendSMS" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommSms</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommsms/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:resendSMS>
+         <smsId>10</smsId>
+         <!--Optional:-->
+         <userInfos>
+            <userName>gero et</userName>
+            <httpUserAgent>sonoras imperio</httpUserAgent>
+            <ip>quae divum incedo</ip>
+         </userInfos>
+      </sch:resendSMS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="resendSMS"/></con:call></con:operation><con:operation isOneWay="false" action="sendSMS" name="sendSMS" bindingOperationName="sendSMS" type="Request-Response" outputName="sendSMSResponse" inputName="sendSMS" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommSms</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommsms/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:sendSMS>
+         <!--Optional:-->
+         <templateName>gero et</templateName>
+         <!--Optional:-->
+         <idRecipient>sonoras imperio</idRecipient>
+         <!--Optional:-->
+         <typeRecipient>PROVIDER</typeRecipient>
+         <!--Optional:-->
+         <origin>ventos tempestatesque</origin>
+         <!--Optional:-->
+         <highPriority>false</highPriority>
+         <!--Optional:-->
+         <dynamicFields>
+            <!--1 or more repetitions:-->
+            <Field>
+               <name>per auras</name>
+               <value>circum claustra</value>
+            </Field>
+         </dynamicFields>
+         <!--Optional:-->
+         <userInfos>
+            <userName>nimborum in</userName>
+            <httpUserAgent>foedere certo</httpUserAgent>
+            <ip>profundum quippe ferant</ip>
+         </userInfos>
+      </sch:sendSMS>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="sendSMS"/></con:call></con:operation><con:operation isOneWay="false" action="sendUrgentSms" name="sendUrgentSms" bindingOperationName="sendUrgentSms" type="Request-Response" outputName="sendUrgentSmsResponse" inputName="sendUrgentSms" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://tomcat7-1c1.tomcat.dev.nordnet.fr:8080/net-comm-ws-1.0.x/services/netCommSms</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sch="http://www.nordnet.com/netcommsms/schemas">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sch:sendUrgentSms/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="sendUrgentSms"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/></con:soapui-project>

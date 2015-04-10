@@ -1,0 +1,95 @@
+<!ELEMENT dataset (dbmaintain_scripts*,produit*,fraisproduit*,prix*,contrat*,fraiscontrat*,tarif*,bonpreparation*)>
+
+<!ELEMENT dbmaintain_scripts EMPTY>
+<!ATTLIST dbmaintain_scripts
+    succeeded CDATA #IMPLIED
+    file_last_modified_at CDATA #IMPLIED
+    executed_at CDATA #IMPLIED
+    checksum CDATA #IMPLIED
+    file_name CDATA #IMPLIED
+	version CDATA #IMPLIED  
+>
+
+<!ELEMENT fraisproduit EMPTY>
+<!ATTLIST fraisproduit
+    id CDATA #IMPLIED
+    montant CDATA #IMPLIED
+    produitId CDATA #IMPLIED
+>
+
+<!ELEMENT prix EMPTY>
+<!ATTLIST prix
+    id CDATA #IMPLIED
+    engagement CDATA #IMPLIED
+    montant CDATA #IMPLIED
+    typePrix CDATA #IMPLIED
+    produitId CDATA #IMPLIED
+>
+
+<!ELEMENT produit EMPTY>
+<!ATTLIST produit
+    id CDATA #IMPLIED
+    label CDATA #IMPLIED
+    outilsLivraison CDATA #IMPLIED
+    reference CDATA #IMPLIED
+    typeProduit CDATA #IMPLIED
+    typeTVA CDATA #IMPLIED
+     xmlTemplatePath CDATA #IMPLIED
+    xsdTemplatePath CDATA #IMPLIED
+    delaisPreparation CDATA #IMPLIED
+>
+
+<!ELEMENT contrat EMPTY>
+<!ATTLIST contrat
+    id CDATA #IMPLIED
+    idAdrFacturation CDATA #IMPLIED
+    idAdrLivraison CDATA #IMPLIED
+    dateDebutFacturation CDATA #IMPLIED
+    dateValidation CDATA #IMPLIED
+    engagement CDATA #IMPLIED  
+    idClient CDATA #IMPLIED  
+    modeFacturation CDATA #IMPLIED  
+    reference CDATA #IMPLIED  
+    referenceProduit CDATA #IMPLIED  
+    titre CDATA #IMPLIED  
+    typeContrat CDATA #IMPLIED  
+    contratParent CDATA #IMPLIED  
+>
+
+<!ELEMENT fraiscontrat EMPTY>
+<!ATTLIST fraiscontrat
+    id CDATA #IMPLIED
+    montant CDATA #IMPLIED
+    contratId CDATA #IMPLIED
+>
+
+<!ELEMENT tarif EMPTY>
+<!ATTLIST tarif
+    id CDATA #IMPLIED
+    modePaiement CDATA #IMPLIED
+    montant CDATA #IMPLIED
+    referenceModePaiement CDATA #IMPLIED
+    typePrix CDATA #IMPLIED
+    contratId CDATA #IMPLIED  
+>
+
+<!ELEMENT bonpreparation EMPTY>
+<!ATTLIST bonpreparation
+    id CDATA #IMPLIED
+    reference CDATA #IMPLIED  
+    idClient CDATA #IMPLIED
+    addressLivraison CDATA #IMPLIED
+    referenceProduit CDATA #IMPLIED
+    codeProduit CDATA #IMPLIED
+    codeColis CDATA #IMPLIED
+    outilLivraison CDATA #IMPLIED 
+    dateInitiation CDATA #IMPLIED
+    datePreparation CDATA #IMPLIED
+    dateLivraison CDATA #IMPLIED  
+    dateRecuperation CDATA #IMPLIED
+    etatBonPreparation CDATA #IMPLIED
+    typeBonPreparation CDATA #IMPLIED   
+    bonPreparationParent CDATA #IMPLIED  
+    causeNonlivraison CDATA #IMPLIED
+>
+

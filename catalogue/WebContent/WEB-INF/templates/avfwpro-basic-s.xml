@@ -1,0 +1,9 @@
+<avfwpro:productProperties xmlns:avfwpro="http://www.nordnet.com/soo/avfwpro"
+nnbo_offerName="avfwpro.basic.s">
+	<avfwpro:customerData>
+		<avfwpro:email>Client.Email</avfwpro:email>
+		<avfwpro:firstName>Client.First_Name</avfwpro:firstName>
+		<avfwpro:lastName>Client.Last_Name</avfwpro:lastName>
+		<avfwpro:company>Client.Company</avfwpro:company>
+	</avfwpro:customerData>
+</avfwpro:productProperties>

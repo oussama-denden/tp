@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.nordnet.com/nordnet/linuxWebHosting/" xmlns:lwh="http://www.nordnet.com/nordnet/linuxWebHosting/">
+  <xs:element name="productProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="lwh:ftpStatus"/>
+        <xs:element ref="lwh:phpVersion"/>
+        <xs:element ref="lwh:sqlOption"/>
+        <xs:element ref="lwh:sqlQuota"/>
+        <xs:element ref="lwh:handle"/>
+      </xs:sequence>
+      <xs:attribute name="nnbo_offerName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ftpStatus">
+    <xs:complexType>
+      <xs:attribute name="action" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="phpVersion" type="xs:integer"/>
+  <xs:element name="sqlOption" type="xs:boolean"/>
+  <xs:element name="sqlQuota" type="xs:integer"/>
+  <xs:element name="handle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="lwh:company"/>
+        <xs:element ref="lwh:civility"/>
+        <xs:element ref="lwh:firstName"/>
+        <xs:element ref="lwh:lastName"/>
+        <xs:element ref="lwh:address1"/>
+        <xs:element ref="lwh:address2"/>
+        <xs:element ref="lwh:address3"/>
+        <xs:element ref="lwh:zip"/>
+        <xs:element ref="lwh:city"/>
+        <xs:element ref="lwh:country"/>
+        <xs:element ref="lwh:phone"/>
+        <xs:element ref="lwh:fax"/>
+        <xs:element ref="lwh:email"/>
+        <xs:element ref="lwh:status"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="company" type="xs:NCName"/>
+  <xs:element name="civility" type="xs:NCName"/>
+  <xs:element name="firstName" type="xs:NCName"/>
+  <xs:element name="lastName" type="xs:NCName"/>
+  <xs:element name="address1" type="xs:NCName"/>
+  <xs:element name="address2" type="xs:NCName"/>
+  <xs:element name="address3">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="zip" type="xs:NCName"/>
+  <xs:element name="city" type="xs:NCName"/>
+  <xs:element name="country" type="xs:NCName"/>
+  <xs:element name="phone" type="xs:NCName"/>
+  <xs:element name="fax" type="xs:NCName"/>
+  <xs:element name="email" type="xs:NCName"/>
+  <xs:element name="status" type="xs:NCName"/>
+</xs:schema>

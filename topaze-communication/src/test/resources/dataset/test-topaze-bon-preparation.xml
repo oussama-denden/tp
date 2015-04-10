@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "..\dtd\Topaze.dtd">
+<dataset>
+<bonpreparation id="1" reference="REF_BP_GLOBAL" addressLivraison="ADR_LIV" codeProduit="CODE_PRODUIT" dateInitiation="[now-7days]" datePreparation="[now]" idClient="ID_CLIENT"  outilLivraison="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="GLOBAL" etatBonPreparation="LIVRAISON" />
+<bonpreparation id="2" reference="REF_SBP1" addressLivraison="ADR_LIV" bonPreparationParent="1" codeProduit="CODE_PRODUIT" dateInitiation="[now-7days]" dateLivraison="[now+7days]" datePreparation="[now]" idClient="ID_CLIENT"  outilLivraison="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="LOCATION" etatBonPreparation="LIVRAISON" />
+<bonpreparation id="3" reference="REF_SBP2" addressLivraison="ADR_LIV" bonPreparationParent="1" codeProduit="CODE_PRODUIT" dateInitiation="[now-7days]" dateLivraison="[now+7days]" datePreparation="[now]" idClient="ID_CLIENT"  outilLivraison="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="LOCATION" etatBonPreparation="LIVRAISON" />
+<bonpreparation id="4" reference="REF_SBP3" addressLivraison="ADR_LIV" bonPreparationParent="1" codeProduit="CODE_PRODUIT" dateInitiation="[now-7days]" dateLivraison="[now+7days]" datePreparation="[now]" idClient="ID_CLIENT"  outilLivraison="PACKAGER" referenceProduit="REF_PRODUIT_TEMPLATE" typeBonPreparation="LOCATION" etatBonPreparation="LIVRAISON" />
+
+<bonpreparation id="5" reference="REF_BP_GLOBAL_A_PREPARER" addressLivraison="ADR_LIV" codeProduit="CODE_PRODUIT" dateInitiation="[now-7days]" idClient="ID_CLIENT"  outilLivraison="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="GLOBAL" etatBonPreparation="LIVRAISON" />
+<bonpreparation id="6" reference="REF_SBP_A_PREPARER1" addressLivraison="ADR_LIV" bonPreparationParent="5" codeProduit="CODE_PRODUIT" dateInitiation="[now-7days]" idClient="ID_CLIENT"  outilLivraison="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="LOCATION" etatBonPreparation="LIVRAISON" />
+<bonpreparation id="7" reference="REF_SBP_A_PREPARER2" addressLivraison="ADR_LIV" bonPreparationParent="5" codeProduit="CODE_PRODUIT" dateInitiation="[now-7days]" idClient="ID_CLIENT"  outilLivraison="NETDELIVERY" referenceProduit="REF_PRODUIT" typeBonPreparation="LOCATION" etatBonPreparation="LIVRAISON" />
+<bonpreparation id="8" reference="REF_SBP_A_PREPARER3" addressLivraison="ADR_LIV" bonPreparationParent="5" codeProduit="CODE_PRODUIT" dateInitiation="[now-7days]" idClient="ID_CLIENT"  outilLivraison="PACKAGER" referenceProduit="REF_PRODUIT_TEMPLATE" typeBonPreparation="LOCATION" etatBonPreparation="LIVRAISON" />
+</dataset>

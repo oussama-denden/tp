@@ -1,0 +1,20 @@
+<wwh:productProperties xmlns:wwh="http://www.nordnet.com/windowswebhosting"
+nnbo_offerName="hebwin.basic">
+	<wwh:technicalContact>
+		<wwh:civility>Client.Civility</wwh:civility>
+		<wwh:firstName>Client.First_Name</wwh:firstName>
+		<wwh:name>Client.Last_Name</wwh:name>
+		<wwh:phone>Client.Phone</wwh:phone>
+		<wwh:fax>Client.Fax</wwh:fax>
+		<wwh:email>Client.Email</wwh:email>
+		<wwh:address>
+			<wwh:address1>Client.Address1</wwh:address1>
+			<wwh:address2>Client.Address2</wwh:address2>
+			<wwh:zipCode>Client.Zip</wwh:zipCode>
+			<wwh:city>Client.City</wwh:city>
+			<wwh:country>Client.Country</wwh:country>
+		</wwh:address>
+		<wwh:status>Client.ProfileType</wwh:status>
+		<wwh:company>Client.Company</wwh:company>
+	</wwh:technicalContact>
+</wwh:productProperties>

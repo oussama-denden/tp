@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+
+	<ResourceLink name="jdbc/TopazeDS"
+                global="jdbc/TopazeDS"
+                auth="Container"
+                type="javax.sql.DataSource" />
+
+<!-- 	<Resource name="TopazeDS" auth="Container" type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost:3306/topaze_test"
+		username="test" password="test" maxActive="30" maxIdle="10" /> -->
+		
+  
+</Context>
+

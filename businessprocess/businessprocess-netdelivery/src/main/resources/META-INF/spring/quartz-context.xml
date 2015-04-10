@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="netDeliveryService"
+		class="com.nordnet.topaze.businessprocess.netdelivery.service.NetDeliveryServiceImpl" />
+	<bean id="restClientNetDelivery" class="com.nordnet.topaze.client.rest.RestClientNetDelivery" />
+
+	<!-- Job Details Beans -->
+	<bean name="netDeliveryJob"
+		class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="jobClass"
+			value="com.nordnet.topaze.businessprocess.netdelivery.cron.NetDeliveryJob" />
+		<property name="jobDataAsMap">
+			<map>
+				<entry key="netDeliveryService" value-ref="netDeliveryService" />
+				<entry key="restClientNetDelivery" value-ref="restClientNetDelivery" />
+			</map>
+		</property>
+		<property name="durability" value="true" />
+	</bean>
+
+	<!-- Cron Triggers -->
+	<bean id="cronTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="netDeliveryJob" />
+		<property name="cronExpression" value="${cronNetDelivery}" />
+	</bean>
+
+	<!-- Job Schedulers Beans -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="jobDetails">
+			<list>
+				<ref bean="netDeliveryJob" />
+			</list>
+		</property>
+		<property name="triggers">
+			<list>
+				<ref bean="cronTrigger" />
+			</list>
+		</property>
+	</bean>
+</beans>

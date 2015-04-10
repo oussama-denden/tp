@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+
+<!-- ===================================================================== 
+	Log4j Configuration ===================================================================== -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+	debug="false">
+
+	<!-- ============================== -->
+	<!-- Append messages to the console -->
+	<!-- ============================== -->
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%5p %d{ISO8601} %c.%M - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="ROLL" class="org.apache.log4j.DailyRollingFileAppender">
+		<!-- The active file to log to -->
+		<param name="file" value="/var/log/tomcat/default/topaze/topaze.log" />
+		<param name="Threshold" value="WARN"/>
+		<param name="append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-ww" />
+		<param name="encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- The log message pattern -->
+			<param name="ConversionPattern" value="%5p %d{ISO8601} %c.%M - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="LIVRAISON-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+		<!-- The active file to log to -->
+		<param name="file"
+			value="/var/log/tomcat/default/topaze/topaze.livraison.core.log" />
+		<param name="Threshold" value="WARN"/>
+		<param name="append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-ww" />
+		<param name="encoding" value="UTF-8" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- The log message pattern -->
+			<param name="ConversionPattern" value="%5p %d{ISO8601} %c.%M - %m%n" />
+		</layout>
+	</appender>
+
+	<category name="com.nordnet.topaze.livraison.core" additivity="true">
+		<appender-ref ref="LIVRAISON-APPENDER" />
+	</category>
+
+	<logger name="log4j.logger.org.springframework.ws">
+		<level value="DEBUG" />
+	</logger>
+
+	<logger name="log4j.logger.org.springframework.xml">
+		<level value="DEBUG" />
+	</logger>
+
+	<logger name="log4j.logger.openjpa">
+		<level value="INFO" />
+	</logger>
+
+	<!-- Limit the org.apache category to ERROR as its INFO is verbose -->
+	<!-- <category name="org"> <priority value="ERROR" /> </category> -->
+
+	<!-- ======================= -->
+	<!-- Setup the Root category -->
+	<!-- ======================= -->
+	<root>
+		<priority value="INFO" />
+		<appender-ref ref="ROLL" />
+	</root>
+
+
+</log4j:configuration>

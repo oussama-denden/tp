@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.nordnet.com/windowswebhosting" xmlns:wwh="http://www.nordnet.com/windowswebhosting">
+  <xs:element name="productProperties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="wwh:technicalContact"/>
+      </xs:sequence>
+      <xs:attribute name="nnbo_offerName" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="technicalContact">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="wwh:civility"/>
+        <xs:element ref="wwh:firstName"/>
+        <xs:element ref="wwh:name"/>
+        <xs:element ref="wwh:phone"/>
+        <xs:element ref="wwh:fax"/>
+        <xs:element ref="wwh:email"/>
+        <xs:element ref="wwh:address"/>
+        <xs:element ref="wwh:status"/>
+        <xs:element ref="wwh:company"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="civility" type="xs:NCName"/>
+  <xs:element name="firstName" type="xs:NCName"/>
+  <xs:element name="name" type="xs:NCName"/>
+  <xs:element name="phone" type="xs:NCName"/>
+  <xs:element name="fax" type="xs:NCName"/>
+  <xs:element name="email" type="xs:NCName"/>
+  <xs:element name="address">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="wwh:address1"/>
+        <xs:element ref="wwh:address2"/>
+        <xs:element ref="wwh:zipCode"/>
+        <xs:element ref="wwh:city"/>
+        <xs:element ref="wwh:country"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="address1" type="xs:NCName"/>
+  <xs:element name="address2" type="xs:NCName"/>
+  <xs:element name="zipCode" type="xs:NCName"/>
+  <xs:element name="city" type="xs:NCName"/>
+  <xs:element name="country" type="xs:NCName"/>
+  <xs:element name="status" type="xs:NCName"/>
+  <xs:element name="company" type="xs:NCName"/>
+</xs:schema>

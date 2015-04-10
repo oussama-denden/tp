@@ -1,0 +1,300 @@
+<!ELEMENT dataset (
+    avenant*,
+    contrat*,
+    contrathistorique*,
+    elementcontractuel*,
+    elementcontractuelfraiscontrat*,
+    elementcontractuelfraiscontrathistorique*,
+    elementcontractuelhistorique*,
+    fraiscontrat*,
+    keygen*,
+    modification*,
+    politiquecession*,
+    politiquemigration*,
+    politiquerenouvellement*,
+    politiqueresiliation*,
+    politiquevalidation*,
+    reduction*,
+    bonpreparation*,
+    elementlivraison*)>
+
+<!ELEMENT avenant EMPTY>
+<!ATTLIST avenant
+    id CDATA #REQUIRED
+    commentaire CDATA #IMPLIED
+    commentaireAnnulation CDATA #IMPLIED
+    dateAnnulation CDATA #IMPLIED
+    dateModification CDATA #IMPLIED
+    referenceContrat CDATA #IMPLIED
+    typeAvenant CDATA #IMPLIED
+    version CDATA #IMPLIED
+    politiqueCessionId CDATA #IMPLIED
+    politiqueMigrationId CDATA #IMPLIED
+    politiqueRenouvellementId CDATA #IMPLIED
+>
+
+<!ELEMENT contrat EMPTY>
+<!ATTLIST contrat
+    id CDATA #REQUIRED
+    dateDebutFacturation CDATA #IMPLIED
+    dateDerniereFacture CDATA #IMPLIED
+    dateFactureResiliation CDATA #IMPLIED
+    dateFinContrat CDATA #IMPLIED
+    datePreparation CDATA #IMPLIED
+    dateValidation CDATA #IMPLIED
+    idClient CDATA #IMPLIED
+    reference CDATA #IMPLIED
+    segmentTVA CDATA #IMPLIED
+    titre CDATA #IMPLIED
+    typeResiliation CDATA #IMPLIED
+    politiqueResiliationId CDATA #IMPLIED
+    politiqueValidationId CDATA #IMPLIED
+>
+
+<!ELEMENT contrathistorique EMPTY>
+<!ATTLIST contrathistorique
+    id CDATA #REQUIRED
+    dateDebutFacturation CDATA #IMPLIED
+    dateDerniereFacture CDATA #IMPLIED
+    dateFactureResiliation CDATA #IMPLIED
+    dateFinContrat CDATA #IMPLIED
+    datePreparation CDATA #IMPLIED
+    dateValidation CDATA #IMPLIED
+    idClient CDATA #IMPLIED
+    reference CDATA #IMPLIED
+    segmentTVA CDATA #IMPLIED
+    titre CDATA #IMPLIED
+    typeResiliation CDATA #IMPLIED
+    version CDATA #IMPLIED
+    politiqueResiliationId CDATA #IMPLIED
+    politiqueValidationId CDATA #IMPLIED
+>
+
+<!ELEMENT elementcontractuel EMPTY>
+<!ATTLIST elementcontractuel
+    id CDATA #REQUIRED
+    dateDebutFacturation CDATA #IMPLIED
+    dateDerniereFacture CDATA #IMPLIED
+    dateFactureResiliation CDATA #IMPLIED
+    dateFinContrat CDATA #IMPLIED
+    dateFinDuree CDATA #IMPLIED
+    dateFinEngagement CDATA #IMPLIED
+    datePreparation CDATA #IMPLIED
+    dateValidation CDATA #IMPLIED
+    duree CDATA #IMPLIED
+    engagement CDATA #IMPLIED
+    idAdrFacturation CDATA #IMPLIED
+    idAdrLivraison CDATA #IMPLIED
+    isMigre CDATA #IMPLIED
+    modeFacturation CDATA #IMPLIED
+    modePaiement CDATA #IMPLIED
+    montant CDATA #IMPLIED
+    numEC CDATA #IMPLIED
+    numeroCommande CDATA #IMPLIED
+    periodicite CDATA #IMPLIED
+    referenceModePaiement CDATA #IMPLIED
+    referenceProduit CDATA #IMPLIED
+    referenceTarif CDATA #IMPLIED
+    remboursable CDATA #IMPLIED
+    titre CDATA #IMPLIED
+    typeProduit CDATA #IMPLIED
+    typeResiliation CDATA #IMPLIED
+    typeTVA CDATA #IMPLIED
+    contratParent CDATA #IMPLIED
+    dependDe CDATA #IMPLIED
+    politiqueResiliationId CDATA #IMPLIED
+>
+
+<!ELEMENT elementcontractuelfraiscontrat EMPTY>
+<!ATTLIST elementcontractuelfraiscontrat
+    elementcontractuel_id CDATA #REQUIRED
+    frais_id CDATA #REQUIRED
+>
+
+<!ELEMENT elementcontractuelfraiscontrathistorique EMPTY>
+<!ATTLIST elementcontractuelfraiscontrathistorique
+    elementcontractuelhistorique_id CDATA #REQUIRED
+    frais_id CDATA #REQUIRED
+>
+
+<!ELEMENT elementcontractuelhistorique EMPTY>
+<!ATTLIST elementcontractuelhistorique
+    id CDATA #REQUIRED
+    dateDebutFacturation CDATA #IMPLIED
+    dateDerniereFacture CDATA #IMPLIED
+    dateFactureResiliation CDATA #IMPLIED
+    dateFinContrat CDATA #IMPLIED
+    dateFinDuree CDATA #IMPLIED
+    dateFinEngagement CDATA #IMPLIED
+    datePreparation CDATA #IMPLIED
+    dateValidation CDATA #IMPLIED
+    duree CDATA #IMPLIED
+    engagement CDATA #IMPLIED
+    idAdrFacturation CDATA #IMPLIED
+    idAdrLivraison CDATA #IMPLIED
+    isMigre CDATA #REQUIRED
+    modeFacturation CDATA #IMPLIED
+    modePaiement CDATA #IMPLIED
+    montant CDATA #IMPLIED
+    numEC CDATA #IMPLIED
+    numeroCommande CDATA #IMPLIED
+    periodicite CDATA #IMPLIED
+    referenceModePaiement CDATA #IMPLIED
+    referenceProduit CDATA #IMPLIED
+    referenceTarif CDATA #IMPLIED
+    remboursable CDATA #IMPLIED
+    titre CDATA #IMPLIED
+    typeProduit CDATA #IMPLIED
+    typeResiliation CDATA #IMPLIED
+    typeTVA CDATA #IMPLIED
+    contratParent CDATA #IMPLIED
+    dependDe CDATA #IMPLIED
+    politiqueResiliationId CDATA #IMPLIED
+>
+
+<!ELEMENT fraiscontrat EMPTY>
+<!ATTLIST fraiscontrat
+    id CDATA #REQUIRED
+    montant CDATA #IMPLIED
+    nombreMois CDATA #IMPLIED
+    ordre CDATA #IMPLIED
+    titre CDATA #IMPLIED
+    typeFrais CDATA #IMPLIED
+>
+
+<!ELEMENT keygen EMPTY>
+<!ATTLIST keygen
+    id CDATA #REQUIRED
+    entite CDATA #IMPLIED
+    reference CDATA #IMPLIED
+>
+
+<!ELEMENT modification EMPTY>
+<!ATTLIST modification
+    id CDATA #REQUIRED
+    numEC CDATA #IMPLIED
+    trameJson CDATA #IMPLIED
+    avenantId CDATA #IMPLIED
+>
+
+<!ELEMENT politiquecession EMPTY>
+<!ATTLIST politiquecession
+    id CDATA #REQUIRED
+    conserverAncienneReduction CDATA #IMPLIED
+    dateAction CDATA #IMPLIED
+    fraisCession CDATA #REQUIRED
+    montantRemboursement CDATA #IMPLIED
+    remboursement CDATA #REQUIRED
+>
+
+<!ELEMENT politiquemigration EMPTY>
+<!ATTLIST politiquemigration
+    id CDATA #REQUIRED
+    dateAction CDATA #IMPLIED
+    fraisCreation CDATA #REQUIRED
+    fraisMigration CDATA #IMPLIED
+    fraisResiliation CDATA #REQUIRED
+    montantRemboursement CDATA #IMPLIED
+    montantResiliation CDATA #IMPLIED
+    penalite CDATA #REQUIRED
+    reductionAncienne CDATA #REQUIRED
+    remboursement CDATA #REQUIRED
+    user CDATA #IMPLIED
+>
+
+<!ELEMENT politiquerenouvellement EMPTY>
+<!ATTLIST politiquerenouvellement
+    id CDATA #REQUIRED
+    conserverAncienneReduction CDATA #IMPLIED
+    forceRenouvellement CDATA #IMPLIED
+    user CDATA #IMPLIED
+>
+
+<!ELEMENT politiqueresiliation EMPTY>
+<!ATTLIST politiqueresiliation
+    id CDATA #REQUIRED
+    commentaire CDATA #IMPLIED
+    commentaireAnnulation CDATA #IMPLIED
+    dateAnnulation CDATA #IMPLIED
+    dateRemboursement CDATA #IMPLIED
+    dateResiliation CDATA #IMPLIED
+    delaiDeSecurite CDATA #IMPLIED
+    enCascade CDATA #REQUIRED
+    fraisResiliation CDATA #REQUIRED
+    montantRemboursement CDATA #IMPLIED
+    montantResiliation CDATA #IMPLIED
+    motif CDATA #IMPLIED
+    penalite CDATA #REQUIRED
+    remboursement CDATA #REQUIRED
+    typeResiliation CDATA #IMPLIED
+>
+
+<!ELEMENT politiquevalidation EMPTY>
+<!ATTLIST politiquevalidation
+    id CDATA #REQUIRED
+    checkIsPackagerCreationPossible CDATA #IMPLIED
+    commentaire CDATA #IMPLIED
+    fraisCreation CDATA #IMPLIED
+>
+
+<!ELEMENT reduction EMPTY>
+<!ATTLIST reduction
+    id CDATA #REQUIRED
+    codeCatalogueReduction CDATA #IMPLIED
+    contextReduction CDATA #IMPLIED
+    dateAnnulation CDATA #IMPLIED
+    dateDebut CDATA #IMPLIED
+    dateFin CDATA #IMPLIED
+    isAffichableSurFacture CDATA #IMPLIED
+    nbUtilisationEnCours CDATA #IMPLIED
+    nbUtilisationMax CDATA #IMPLIED
+    numEC CDATA #IMPLIED
+    ordre CDATA #IMPLIED
+    reference CDATA #IMPLIED
+    referenceContrat CDATA #IMPLIED
+    titre CDATA #IMPLIED
+    typeFrais CDATA #IMPLIED
+    typeReduction CDATA #IMPLIED
+    typeValeur CDATA #IMPLIED
+    valeur CDATA #IMPLIED
+    version CDATA #IMPLIED
+>
+
+<!ELEMENT bonpreparation EMPTY>
+<!ATTLIST bonpreparation
+    id CDATA #REQUIRED
+    causeNonlivraison CDATA #IMPLIED
+    dateDebutPreparation CDATA #IMPLIED
+    dateInitiation CDATA #IMPLIED
+    dateLivraisonTermine CDATA #IMPLIED
+    datePreparation CDATA #IMPLIED
+    dateRetourTermine CDATA #IMPLIED
+    idClient CDATA #IMPLIED
+    reference CDATA #IMPLIED
+    typeBonPreparation CDATA #IMPLIED
+>
+
+<!ELEMENT elementlivraison EMPTY>
+<!ATTLIST elementlivraison
+    id CDATA #REQUIRED
+    acteur CDATA #IMPLIED
+    addresseLivraison CDATA #IMPLIED
+    ancienCodeColis CDATA #IMPLIED
+    ancienRetailerPackagerId CDATA #IMPLIED
+    causeNonlivraison CDATA #IMPLIED
+    codeColis CDATA #IMPLIED
+    dateDebutPreparation CDATA #IMPLIED
+    dateInitiation CDATA #IMPLIED
+    dateLivraisonTermine CDATA #IMPLIED
+    datePreparation CDATA #IMPLIED
+    dateRetourTermine CDATA #IMPLIED
+    numEC CDATA #IMPLIED
+    reference CDATA #IMPLIED
+    referenceAncienProduit CDATA #IMPLIED
+    referenceProduit CDATA #IMPLIED
+    resiliationPartiel CDATA #IMPLIED
+    retailerPackagerId CDATA #IMPLIED
+    typeBonPreparation CDATA #IMPLIED
+    typeContrat CDATA #IMPLIED
+    bonPreparationParent CDATA #IMPLIED
+>

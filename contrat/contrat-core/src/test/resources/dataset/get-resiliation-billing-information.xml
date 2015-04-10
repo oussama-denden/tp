@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE dataset SYSTEM "./src/test/resources/dtd/topaze.dtd">
+<dataset>
+
+<contrat id="1" reference="REF_GB_REISL" titre="Contrat Pour Test" datePreparation="[now]" dateValidation="[now]" dateDebutFacturation="[now]" />
+
+<elementcontractuel id="2" numeroCommande="1" modeFacturation="DATE_ANNIVERSAIRE"  typeProduit="BIEN" referenceProduit="PROD-01" titre="Contrat ABONNEMENT pour le produit : PROD-01" datePreparation="[now]" dateValidation="[now]"  dateDebutFacturation="[now]" contratParent="1" montant="22" typeTVA="S" periodicite="1" duree="24" engagement="12" dateDerniereFacture="[now+10days]" dateFinContrat="[now+10years]"  />
+<elementcontractuel id="3" numeroCommande="1" modeFacturation="DATE_ANNIVERSAIRE"  typeProduit="SERVICE" referenceProduit="PROD-02" titre="Contrat LOCATION pour le produit : PROD-02" datePreparation="[now]" dateValidation="[now]"  dateDebutFacturation="[now]" contratParent="1" montant="12" typeTVA="S" periodicite="3" duree="24" engagement="24" dateDerniereFacture="[now+10days]" dateFinContrat="[now+10years]" />
+<elementcontractuel id="4" numeroCommande="1" modeFacturation="DATE_ANNIVERSAIRE"  typeProduit="BIEN" referenceProduit="PROD-03" titre="Contrat VENTE pour le produit : PROD-03" datePreparation="[now]" dateValidation="[now]"  dateDebutFacturation="[now]" contratParent="1" montant="12" typeTVA="S" duree="0" engagement="0" dateDerniereFacture="[now+10days]" />
+
+</dataset>

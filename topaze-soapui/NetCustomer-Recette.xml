@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="NetCustomer - Recette" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="NetCustomerImplServiceSoapBinding" type="wsdl" bindingName="{http://impl.ws.backoffice.nordnet.com/}NetCustomerImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:endpoints><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint></con:endpoints><con:operation isOneWay="false" action="" name="addComment" bindingOperationName="addComment" type="Request-Response" outputName="addCommentResponse" inputName="addComment" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:addComment>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:comment>sonoras imperio</ws:comment>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>quae divum incedo</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>verrantque per auras</typ:ip>
+            <!--Optional:-->
+            <typ:userName>per auras</typ:userName>
+         </ws:userInfos>
+      </ws:addComment>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/addComment"/></con:call></con:operation><con:operation isOneWay="false" action="" name="addIBANRecorder" bindingOperationName="addIBANRecorder" type="Request-Response" outputName="addIBANRecorderResponse" inputName="addIBANRecorder" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:ord="http://order.types.ws.backoffice.nordnet.com" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:addIBANRecorder>
+         <!--Optional:-->
+         <ws:iban>
+            <!--Optional:-->
+            <ord:codeBIC>gero et</ord:codeBIC>
+            <!--Optional:-->
+            <ord:codeIBAN>sonoras imperio</ord:codeIBAN>
+            <!--Optional:-->
+            <ord:date>2004-02-14T19:44:14</ord:date>
+            <!--Optional:-->
+            <ord:ip>temperat iras</ord:ip>
+            <!--Optional:-->
+            <ord:isMandate>false</ord:isMandate>
+         </ws:iban>
+         <!--Optional:-->
+         <ws:productKey>circum claustra</ws:productKey>
+         <!--Optional:-->
+         <ws:productDomainKey>nimborum in</ws:productDomainKey>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>foedere certo</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>profundum quippe ferant</typ:ip>
+            <!--Optional:-->
+            <typ:userName>et carcere</typ:userName>
+         </ws:userInfos>
+      </ws:addIBANRecorder>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/addIBANRecorder"/></con:call></con:operation><con:operation isOneWay="false" action="" name="checkPassword" bindingOperationName="checkPassword" type="Request-Response" outputName="checkPasswordResponse" inputName="checkPassword" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:checkPassword>
+         <!--Optional:-->
+         <ws:login>gero et</ws:login>
+         <!--Optional:-->
+         <ws:password>sonoras imperio</ws:password>
+      </ws:checkPassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/checkPassword"/></con:call></con:operation><con:operation isOneWay="false" action="" name="create" bindingOperationName="create" type="Request-Response" outputName="createResponse" inputName="create" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:cus="http://customer.types.ws.backoffice.nordnet.com" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:create>
+         <!--Optional:-->
+         <ws:customer>
+            <!--Optional:-->
+            <cus:accountValidationDate>2008-09-29T03:49:45</cus:accountValidationDate>
+            <!--Optional:-->
+            <cus:activationKey>aeoliam venit</cus:activationKey>
+            <!--Optional:-->
+            <cus:changeDate>2014-06-09T17:15:04+02:00</cus:changeDate>
+            <!--Optional:-->
+            <cus:createdBy>per auras</cus:createdBy>
+            <!--Optional:-->
+            <cus:creationDate>2013-05-22T03:02:49+02:00</cus:creationDate>
+            <!--Optional:-->
+            <cus:customerKey>fremunt celsa</cus:customerKey>
+            <!--Optional:-->
+            <cus:customerType>ferant rapidi</cus:customerType>
+            <!--Optional:-->
+            <cus:dateRegistrationMarguerite>2016-01-01T20:07:42</cus:dateRegistrationMarguerite>
+            <!--Optional:-->
+            <cus:defaultHandle>
+               <!--Optional:-->
+               <cus:activationKeyGenDate>2012-01-07T20:42:56</cus:activationKeyGenDate>
+               <!--Optional:-->
+               <cus:address1>profundum quippe ferant</cus:address1>
+               <!--Optional:-->
+               <cus:address2>nubibus ignem disiecitque</cus:address2>
+               <!--Optional:-->
+               <cus:changeDate>2017-11-01T09:15:53+01:00</cus:changeDate>
+               <!--Optional:-->
+               <cus:city>ac vinclis</cus:city>
+               <!--Optional:-->
+               <cus:civility>speluncis abdidit</cus:civility>
+               <!--Optional:-->
+               <cus:company>aris imponet honorem</cus:company>
+               <!--Optional:-->
+               <cus:country>praeterea aut</cus:country>
+               <!--Optional:-->
+               <cus:creationDate>2014-06-27T21:41:15+02:00</cus:creationDate>
+               <!--Optional:-->
+               <cus:customLabel>certo et premere</cus:customLabel>
+               <!--Optional:-->
+               <cus:dateValidationEmail>2017-04-19T16:38:57+02:00</cus:dateValidationEmail>
+               <!--Optional:-->
+               <cus:dateValidationSMS>2008-08-06T16:17:00+02:00</cus:dateValidationSMS>
+               <!--Optional:-->
+               <cus:email>talia flammato secum</cus:email>
+               <!--Optional:-->
+               <cus:emailState>austris aeoliam</cus:emailState>
+               <!--Optional:-->
+               <cus:fax>sciret dare</cus:fax>
+               <!--Optional:-->
+               <cus:firstName>dare iussus</cus:firstName>
+               <!--Optional:-->
+               <cus:gsm>bella gero</cus:gsm>
+               <!--Optional:-->
+               <cus:gsmState>dedit qui foedere</cus:gsmState>
+               <!--Optional:-->
+               <cus:handleKey>magno cum</cus:handleKey>
+               <!--Optional:-->
+               <cus:intraTVA>ac terras</cus:intraTVA>
+               <!--Optional:-->
+               <cus:modifiable>false</cus:modifiable>
+               <!--Optional:-->
+               <cus:name>annos bella gero</cus:name>
+               <!--Optional:-->
+               <cus:phone>ventos tempestatesque sonoras</cus:phone>
+               <!--Optional:-->
+               <cus:profileType>regina iovisque</cus:profileType>
+               <!--Optional:-->
+               <cus:siren>rapidum iaculata</cus:siren>
+               <!--Optional:-->
+               <cus:type>insuper altos</cus:type>
+               <!--Optional:-->
+               <cus:zipCode>cum murmure</cus:zipCode>
+            </cus:defaultHandle>
+            <!--Optional:-->
+            <cus:godFatherKey>in patriam</cus:godFatherKey>
+            <!--Optional:-->
+            <cus:handleKeys>
+               <!--Zero or more repetitions:-->
+               <ws:string>abdidit atris hoc</ws:string>
+            </cus:handleKeys>
+            <!--Optional:-->
+            <cus:hasRejection>true</cus:hasRejection>
+            <!--Optional:-->
+            <cus:isMarguerite>false</cus:isMarguerite>
+            <!--Optional:-->
+            <cus:lastLoginDate>2009-07-28T21:14:45</cus:lastLoginDate>
+            <!--Optional:-->
+            <cus:login>aris imponet honorem</cus:login>
+            <!--Optional:-->
+            <cus:oldCustomerKeys>
+               <!--Zero or more repetitions:-->
+               <ws:string>aris imponet</ws:string>
+            </cus:oldCustomerKeys>
+            <!--Optional:-->
+            <cus:orangeCode>premere et</cus:orangeCode>
+            <!--Optional:-->
+            <cus:partner>insuper altos</cus:partner>
+            <!--Optional:-->
+            <cus:password>ferant rapidi secum</cus:password>
+            <!--Optional:-->
+            <cus:rateBand>nimborum in</cus:rateBand>
+            <!--Optional:-->
+            <cus:saariCode>vasto rex</cus:saariCode>
+            <!--Optional:-->
+            <cus:versionMarguerite>flammato secum</cus:versionMarguerite>
+         </ws:customer>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>tempestatesque sonoras</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>tenens mollitque</typ:ip>
+            <!--Optional:-->
+            <typ:userName>premit ac</typ:userName>
+         </ws:userInfos>
+      </ws:create>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/create"/></con:call></con:operation><con:operation isOneWay="false" action="" name="createByLogin" bindingOperationName="createByLogin" type="Request-Response" outputName="createByLoginResponse" inputName="createByLogin" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:cus="http://customer.types.ws.backoffice.nordnet.com" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:createByLogin>
+         <!--Optional:-->
+         <ws:customerLight>
+            <!--Optional:-->
+            <cus:customerType>gero et</cus:customerType>
+            <!--Optional:-->
+            <cus:login>sonoras imperio</cus:login>
+            <!--Optional:-->
+            <cus:password>quae divum incedo</cus:password>
+            <!--Optional:-->
+            <cus:profileType>verrantque per auras</cus:profileType>
+         </ws:customerLight>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>per auras</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>circum claustra</typ:ip>
+            <!--Optional:-->
+            <typ:userName>nimborum in</typ:userName>
+         </ws:userInfos>
+      </ws:createByLogin>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/createByLogin"/></con:call></con:operation><con:operation isOneWay="false" action="" name="errorUpdateEmail" bindingOperationName="errorUpdateEmail" type="Request-Response" outputName="errorUpdateEmailResponse" inputName="errorUpdateEmail" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:util="http://util.java" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:errorUpdateEmail>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:reasons>
+            <!--Zero or more repetitions:-->
+            <util:string>sonoras imperio</util:string>
+         </ws:reasons>
+         <!--Optional:-->
+         <ws:companyField>quae divum incedo</ws:companyField>
+         <!--Optional:-->
+         <ws:personField>verrantque per auras</ws:personField>
+         <!--Optional:-->
+         <ws:other>per auras</ws:other>
+         <!--Optional:-->
+         <ws:newMail>circum claustra</ws:newMail>
+         <!--Optional:-->
+         <ws:comment>nimborum in</ws:comment>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>foedere certo</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>profundum quippe ferant</typ:ip>
+            <!--Optional:-->
+            <typ:userName>et carcere</typ:userName>
+         </ws:userInfos>
+      </ws:errorUpdateEmail>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/errorUpdateEmail"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getByKey" bindingOperationName="getByKey" type="Request-Response" outputName="getByKeyResponse" inputName="getByKey" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getByKey>
+         <!--Optional:-->
+         <ws:customerKey>29521000</ws:customerKey>
+      </ws:getByKey>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/getByKey"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getHandleByKey" bindingOperationName="getHandleByKey" type="Request-Response" outputName="getHandleByKeyResponse" inputName="getHandleByKey" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getHandleByKey>
+         <!--Optional:-->
+         <ws:handleKey>00062264</ws:handleKey>
+      </ws:getHandleByKey>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/getHandleByKey"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getIdentifiers" bindingOperationName="getIdentifiers" type="Request-Response" outputName="getIdentifiersResponse" inputName="getIdentifiers" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getIdentifiers>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+      </ws:getIdentifiers>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/getIdentifiers"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getLENInformation" bindingOperationName="getLENInformation" type="Request-Response" outputName="getLENInformationResponse" inputName="getLENInformation" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getLENInformation>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+      </ws:getLENInformation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/getLENInformation"/></con:call></con:operation><con:operation isOneWay="false" action="" name="getProductListByCustomerKey" bindingOperationName="getProductListByCustomerKey" type="Request-Response" outputName="getProductListByCustomerKeyResponse" inputName="getProductListByCustomerKey" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:getProductListByCustomerKey>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <ws:isActif>true</ws:isActif>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>aeoliam venit</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>ventos tempestatesque</typ:ip>
+            <!--Optional:-->
+            <typ:userName>temperat iras</typ:userName>
+         </ws:userInfos>
+      </ws:getProductListByCustomerKey>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/getProductListByCustomerKey"/></con:call></con:operation><con:operation isOneWay="false" action="" name="isLoginAlreadyExist" bindingOperationName="isLoginAlreadyExist" type="Request-Response" outputName="isLoginAlreadyExistResponse" inputName="isLoginAlreadyExist" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:isLoginAlreadyExist>
+         <!--Optional:-->
+         <ws:login>gero et</ws:login>
+      </ws:isLoginAlreadyExist>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/isLoginAlreadyExist"/></con:call></con:operation><con:operation isOneWay="false" action="" name="listHandles" bindingOperationName="listHandles" type="Request-Response" outputName="listHandlesResponse" inputName="listHandles" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:util="http://util.java">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:listHandles>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:handleType>
+            <!--Zero or more repetitions:-->
+            <util:string>sonoras imperio</util:string>
+         </ws:handleType>
+      </ws:listHandles>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/listHandles"/></con:call></con:operation><con:operation isOneWay="false" action="" name="listInvoices" bindingOperationName="listInvoices" type="Request-Response" outputName="listInvoicesResponse" inputName="listInvoices" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:listInvoices>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+      </ws:listInvoices>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/listInvoices"/></con:call></con:operation><con:operation isOneWay="false" action="" name="listLogs" bindingOperationName="listLogs" type="Request-Response" outputName="listLogsResponse" inputName="listLogs" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:listLogs>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:typeOfLog>sonoras imperio</ws:typeOfLog>
+      </ws:listLogs>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/listLogs"/></con:call></con:operation><con:operation isOneWay="false" action="" name="processNPAILetter" bindingOperationName="processNPAILetter" type="Request-Response" outputName="processNPAILetterResponse" inputName="processNPAILetter" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:util="http://util.java" xmlns:typ="http://types.ws.backoffice.nordnet.com" xmlns:typ1="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:processNPAILetter>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:reasonNPAI>sonoras imperio</ws:reasonNPAI>
+         <!--Optional:-->
+         <ws:datas>
+            <!--Zero or more repetitions:-->
+            <util:MapObject>
+               <!--Optional:-->
+               <typ:key>quae divum incedo</typ:key>
+               <!--Optional:-->
+               <typ:value>verrantque per auras</typ:value>
+            </util:MapObject>
+         </ws:datas>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ1:httpUserAgent>per auras</typ1:httpUserAgent>
+            <!--Optional:-->
+            <typ1:ip>circum claustra</typ1:ip>
+            <!--Optional:-->
+            <typ1:userName>nimborum in</typ1:userName>
+         </ws:userInfos>
+      </ws:processNPAILetter>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/processNPAILetter"/></con:call></con:operation><con:operation isOneWay="false" action="" name="recoverIdentifiers" bindingOperationName="recoverIdentifiers" type="Request-Response" outputName="recoverIdentifiersResponse" inputName="recoverIdentifiers" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:recoverIdentifiers>
+         <!--Optional:-->
+         <ws:key>gero et</ws:key>
+         <!--Optional:-->
+         <ws:typeOfKey>sonoras imperio</ws:typeOfKey>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>quae divum incedo</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>verrantque per auras</typ:ip>
+            <!--Optional:-->
+            <typ:userName>per auras</typ:userName>
+         </ws:userInfos>
+      </ws:recoverIdentifiers>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/recoverIdentifiers"/></con:call></con:operation><con:operation isOneWay="false" action="" name="search" bindingOperationName="search" type="Request-Response" outputName="searchResponse" inputName="search" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.backoffice.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:search>
+         <!--Optional:-->
+         <ws:key>gero et</ws:key>
+         <!--Optional:-->
+         <ws:typeOfKey>sonoras imperio</ws:typeOfKey>
+         <!--Optional:-->
+         <ws:cursor>
+            <!--Optional:-->
+            <typ:page>3</typ:page>
+            <!--Optional:-->
+            <typ:resultsPerPage>3</typ:resultsPerPage>
+         </ws:cursor>
+      </ws:search>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/search"/></con:call></con:operation><con:operation isOneWay="false" action="" name="searchListProductsByProductKey" bindingOperationName="searchListProductsByProductKey" type="Request-Response" outputName="searchListProductsByProductKeyResponse" inputName="searchListProductsByProductKey" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.backoffice.nordnet.com" xmlns:typ1="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:searchListProductsByProductKey>
+         <!--Optional:-->
+         <ws:productKey>gero et</ws:productKey>
+         <ws:isActif>true</ws:isActif>
+         <!--Optional:-->
+         <ws:type>aeoliam venit</ws:type>
+         <!--Optional:-->
+         <ws:cursor>
+            <!--Optional:-->
+            <typ:page>3</typ:page>
+            <!--Optional:-->
+            <typ:resultsPerPage>3</typ:resultsPerPage>
+         </ws:cursor>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ1:httpUserAgent>ventos tempestatesque</typ1:httpUserAgent>
+            <!--Optional:-->
+            <typ1:ip>temperat iras</typ1:ip>
+            <!--Optional:-->
+            <typ1:userName>turbine corripuit</typ1:userName>
+         </ws:userInfos>
+      </ws:searchListProductsByProductKey>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/searchListProductsByProductKey"/></con:call></con:operation><con:operation isOneWay="false" action="" name="sendActivationKeyByMail" bindingOperationName="sendActivationKeyByMail" type="Request-Response" outputName="sendActivationKeyByMailResponse" inputName="sendActivationKeyByMail" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:sendActivationKeyByMail>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>sonoras imperio</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>quae divum incedo</typ:ip>
+            <!--Optional:-->
+            <typ:userName>verrantque per auras</typ:userName>
+         </ws:userInfos>
+      </ws:sendActivationKeyByMail>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/sendActivationKeyByMail"/></con:call></con:operation><con:operation isOneWay="false" action="" name="setLENInformation" bindingOperationName="setLENInformation" type="Request-Response" outputName="setLENInformationResponse" inputName="setLENInformation" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:cus="http://customer.types.ws.backoffice.nordnet.com" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:setLENInformation>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:lenInfo>
+            <!--Optional:-->
+            <cus:infoLRI>true</cus:infoLRI>
+            <!--Optional:-->
+            <cus:infoNordnet>true</cus:infoNordnet>
+            <!--Optional:-->
+            <cus:infoPartner>true</cus:infoPartner>
+         </ws:lenInfo>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>ventos tempestatesque</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>temperat iras</typ:ip>
+            <!--Optional:-->
+            <typ:userName>turbine corripuit</typ:userName>
+         </ws:userInfos>
+      </ws:setLENInformation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/setLENInformation"/></con:call></con:operation><con:operation isOneWay="false" action="" name="setMarguerite" bindingOperationName="setMarguerite" type="Request-Response" outputName="setMargueriteResponse" inputName="setMarguerite" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:setMarguerite>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>sonoras imperio</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>quae divum incedo</typ:ip>
+            <!--Optional:-->
+            <typ:userName>verrantque per auras</typ:userName>
+         </ws:userInfos>
+      </ws:setMarguerite>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/setMarguerite"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateCustomerType" bindingOperationName="updateCustomerType" type="Request-Response" outputName="updateCustomerTypeResponse" inputName="updateCustomerType" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updateCustomerType>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:customerType>sonoras imperio</ws:customerType>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>quae divum incedo</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>verrantque per auras</typ:ip>
+            <!--Optional:-->
+            <typ:userName>per auras</typ:userName>
+         </ws:userInfos>
+      </ws:updateCustomerType>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/updateCustomerType"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateHandle" bindingOperationName="updateHandle" type="Request-Response" outputName="updateHandleResponse" inputName="updateHandle" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:cus="http://customer.types.ws.backoffice.nordnet.com" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updateHandle>
+         <!--Optional:-->
+         <ws:handle>
+            <!--Optional:-->
+            <cus:activationKeyGenDate>2008-09-29T03:49:45</cus:activationKeyGenDate>
+            <!--Optional:-->
+            <cus:address1>aeoliam venit</cus:address1>
+            <!--Optional:-->
+            <cus:address2>ventos tempestatesque</cus:address2>
+            <!--Optional:-->
+            <cus:changeDate>2018-11-01T06:36:46+01:00</cus:changeDate>
+            <!--Optional:-->
+            <cus:city>circum claustra</cus:city>
+            <!--Optional:-->
+            <cus:civility>nimborum in</cus:civility>
+            <!--Optional:-->
+            <cus:company>foedere certo</cus:company>
+            <!--Optional:-->
+            <cus:country>profundum quippe ferant</cus:country>
+            <!--Optional:-->
+            <cus:creationDate>2009-10-14T09:16:36</cus:creationDate>
+            <!--Optional:-->
+            <cus:customLabel>flammato secum dea</cus:customLabel>
+            <!--Optional:-->
+            <cus:dateValidationEmail>2014-10-27T10:44:59</cus:dateValidationEmail>
+            <!--Optional:-->
+            <cus:dateValidationSMS>2013-06-17T19:14:58</cus:dateValidationSMS>
+            <!--Optional:-->
+            <cus:email>rapidum iaculata e</cus:email>
+            <!--Optional:-->
+            <cus:emailState>caelumque profundum</cus:emailState>
+            <!--Optional:-->
+            <cus:fax>circum claustra</cus:fax>
+            <!--Optional:-->
+            <cus:firstName>coniunx una</cus:firstName>
+            <!--Optional:-->
+            <cus:gsm>arce sceptra</cus:gsm>
+            <!--Optional:-->
+            <cus:gsmState>circum claustra fremunt</cus:gsmState>
+            <!--Optional:-->
+            <cus:handleKey>certo et premere</cus:handleKey>
+            <!--Optional:-->
+            <cus:intraTVA>et montis</cus:intraTVA>
+            <!--Optional:-->
+            <cus:modifiable>false</cus:modifiable>
+            <!--Optional:-->
+            <cus:name>ac vinclis</cus:name>
+            <!--Optional:-->
+            <cus:phone>pectore flammas</cus:phone>
+            <!--Optional:-->
+            <cus:profileType>pectore flammas</cus:profileType>
+            <!--Optional:-->
+            <cus:siren>annos bella gero</cus:siren>
+            <!--Optional:-->
+            <cus:type>certo et</cus:type>
+            <!--Optional:-->
+            <cus:zipCode>rates evertitque aequora</cus:zipCode>
+         </ws:handle>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>volutans nimborum in</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>faciat maria</typ:ip>
+            <!--Optional:-->
+            <typ:userName>et quisquam</typ:userName>
+         </ws:userInfos>
+      </ws:updateHandle>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/updateHandle"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateLoginAndPassword" bindingOperationName="updateLoginAndPassword" type="Request-Response" outputName="updateLoginAndPasswordResponse" inputName="updateLoginAndPassword" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updateLoginAndPassword>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:login>sonoras imperio</ws:login>
+         <!--Optional:-->
+         <ws:password>quae divum incedo</ws:password>
+         <ws:generated>true</ws:generated>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>temperat iras</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>turbine corripuit</typ:ip>
+            <!--Optional:-->
+            <typ:userName>regemque dedit</typ:userName>
+         </ws:userInfos>
+      </ws:updateLoginAndPassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/updateLoginAndPassword"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updatePassword" bindingOperationName="updatePassword" type="Request-Response" outputName="updatePasswordResponse" inputName="updatePassword" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updatePassword>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:password>sonoras imperio</ws:password>
+         <ws:generated>true</ws:generated>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>ventos tempestatesque</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>temperat iras</typ:ip>
+            <!--Optional:-->
+            <typ:userName>turbine corripuit</typ:userName>
+         </ws:userInfos>
+      </ws:updatePassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/updatePassword"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateRateBand" bindingOperationName="updateRateBand" type="Request-Response" outputName="updateRateBandResponse" inputName="updateRateBand" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updateRateBand>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:newRateBand>sonoras imperio</ws:newRateBand>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>quae divum incedo</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>verrantque per auras</typ:ip>
+            <!--Optional:-->
+            <typ:userName>per auras</typ:userName>
+         </ws:userInfos>
+      </ws:updateRateBand>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/updateRateBand"/></con:call></con:operation><con:operation isOneWay="false" action="" name="updateSAARICode" bindingOperationName="updateSAARICode" type="Request-Response" outputName="updateSAARICodeResponse" inputName="updateSAARICode" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:updateSAARICode>
+         <!--Optional:-->
+         <ws:customerKey>gero et</ws:customerKey>
+         <!--Optional:-->
+         <ws:saariCode>sonoras imperio</ws:saariCode>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>quae divum incedo</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>verrantque per auras</typ:ip>
+            <!--Optional:-->
+            <typ:userName>per auras</typ:userName>
+         </ws:userInfos>
+      </ws:updateSAARICode>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/updateSAARICode"/></con:call></con:operation><con:operation isOneWay="false" action="" name="validateMailbyActivationKey" bindingOperationName="validateMailbyActivationKey" type="Request-Response" outputName="validateMailbyActivationKeyResponse" inputName="validateMailbyActivationKey" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:validateMailbyActivationKey>
+         <!--Optional:-->
+         <ws:activationKey>gero et</ws:activationKey>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>sonoras imperio</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>quae divum incedo</typ:ip>
+            <!--Optional:-->
+            <typ:userName>verrantque per auras</typ:userName>
+         </ws:userInfos>
+      </ws:validateMailbyActivationKey>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/validateMailbyActivationKey"/></con:call></con:operation><con:operation isOneWay="false" action="" name="validateSMSbyActivationKey" bindingOperationName="validateSMSbyActivationKey" type="Request-Response" outputName="validateSMSbyActivationKeyResponse" inputName="validateSMSbyActivationKey" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:validateSMSbyActivationKey>
+         <!--Optional:-->
+         <ws:activationKey>gero et</ws:activationKey>
+         <!--Optional:-->
+         <ws:customerKey>sonoras imperio</ws:customerKey>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>quae divum incedo</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>verrantque per auras</typ:ip>
+            <!--Optional:-->
+            <typ:userName>per auras</typ:userName>
+         </ws:userInfos>
+      </ws:validateSMSbyActivationKey>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/validateSMSbyActivationKey"/></con:call></con:operation><con:operation isOneWay="false" action="" name="createHandle" bindingOperationName="createHandle" type="Request-Response" outputName="createHandleResponse" inputName="createHandle" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.backoffice.nordnet.com/" xmlns:cus="http://customer.types.ws.backoffice.nordnet.com" xmlns:typ="http://types.ws.common.nordnet.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:createHandle>
+         <!--Optional:-->
+         <ws:handle>
+            <!--Optional:-->
+            <cus:activationKeyGenDate>2008-09-29T03:49:45</cus:activationKeyGenDate>
+            <!--Optional:-->
+            <cus:address1>aeoliam venit</cus:address1>
+            <!--Optional:-->
+            <cus:address2>ventos tempestatesque</cus:address2>
+            <!--Optional:-->
+            <cus:changeDate>2018-11-01T06:36:46+01:00</cus:changeDate>
+            <!--Optional:-->
+            <cus:city>circum claustra</cus:city>
+            <!--Optional:-->
+            <cus:civility>nimborum in</cus:civility>
+            <!--Optional:-->
+            <cus:company>foedere certo</cus:company>
+            <!--Optional:-->
+            <cus:country>profundum quippe ferant</cus:country>
+            <!--Optional:-->
+            <cus:creationDate>2009-10-14T09:16:36</cus:creationDate>
+            <!--Optional:-->
+            <cus:customLabel>flammato secum dea</cus:customLabel>
+            <!--Optional:-->
+            <cus:dateValidationEmail>2014-10-27T10:44:59</cus:dateValidationEmail>
+            <!--Optional:-->
+            <cus:dateValidationSMS>2013-06-17T19:14:58</cus:dateValidationSMS>
+            <!--Optional:-->
+            <cus:email>rapidum iaculata e</cus:email>
+            <!--Optional:-->
+            <cus:emailState>caelumque profundum</cus:emailState>
+            <!--Optional:-->
+            <cus:fax>circum claustra</cus:fax>
+            <!--Optional:-->
+            <cus:firstName>coniunx una</cus:firstName>
+            <!--Optional:-->
+            <cus:gsm>arce sceptra</cus:gsm>
+            <!--Optional:-->
+            <cus:gsmState>circum claustra fremunt</cus:gsmState>
+            <!--Optional:-->
+            <cus:handleKey>certo et premere</cus:handleKey>
+            <!--Optional:-->
+            <cus:intraTVA>et montis</cus:intraTVA>
+            <!--Optional:-->
+            <cus:modifiable>false</cus:modifiable>
+            <!--Optional:-->
+            <cus:name>ac vinclis</cus:name>
+            <!--Optional:-->
+            <cus:phone>pectore flammas</cus:phone>
+            <!--Optional:-->
+            <cus:profileType>pectore flammas</cus:profileType>
+            <!--Optional:-->
+            <cus:siren>annos bella gero</cus:siren>
+            <!--Optional:-->
+            <cus:type>certo et</cus:type>
+            <!--Optional:-->
+            <cus:zipCode>rates evertitque aequora</cus:zipCode>
+         </ws:handle>
+         <!--Optional:-->
+         <ws:customerKey>volutans nimborum in</ws:customerKey>
+         <!--Optional:-->
+         <ws:userInfos>
+            <!--Optional:-->
+            <typ:httpUserAgent>faciat maria</typ:httpUserAgent>
+            <!--Optional:-->
+            <typ:ip>et quisquam</typ:ip>
+            <!--Optional:-->
+            <typ:userName>et soror</typ:userName>
+         </ws:userInfos>
+      </ws:createHandle>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://impl.ws.backoffice.nordnet.com/NetCustomer/createHandle"/></con:call></con:operation></con:interface><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="OVERRIDE" username="topaze" wssType="PasswordText" password="1e2cec460349e1218f534ce337042895">http://jboss42-1c2.jboss.dev.nordnet.fr:8080/backoffice-ws-2.1.x/services/NetCustomer</con:endpoint></con:endpointStrategy><con:properties/><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>
