@@ -107,10 +107,9 @@
 	</distributionManagement>
 
 	<scm>
-		<connection>scm:git:git@git.dvpt.nordnet.fr:dsi-si/topaze.git</connection>
-		<url>git@git.dvpt.nordnet.fr/dsi-si/topaze.git</url>
-		<developerConnection>scm:git:git@git.dvpt.nordnet.fr:dsi-si/topaze.git</developerConnection>
-		<tag>0.0.1</tag>
+		<connection>scm:git:http://stash.dvpt.nordnet.fr:7990/scm/top/topaze.git</connection>
+		<developerConnection>scm:git:http://stash.dvpt.nordnet.fr:7990/scm/top/topaze.git</developerConnection>
+		<url>http://stash.dvpt.nordnet.fr:7990/scm/top/topaze.git</url>
 	</scm>
 
 	<properties>
